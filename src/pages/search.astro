@@ -1,0 +1,1111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import {
+  fetchProducts,
+  getMinPrice,
+  getMaxPrice,
+  formatPrice,
+  getPrimaryImage,
+  getProductAlt,
+  getMaterials,
+  productUrl,
+} from '../data/products';
+
+const allProducts = await fetchProducts();
+
+// Build serialisable product index for client-side search
+const searchIndex = allProducts.map((p) => ({
+  handle:       p.handle,
+  title:        p.title,
+  product_type: p.product_type,
+  tags:         p.tags,
+  minPrice:     getMinPrice(p),
+  maxPrice:     getMaxPrice(p),
+  image:        getPrimaryImage(p),
+  alt:          getProductAlt(p),
+  materials:    getMaterials(p),
+  isMimetic:    p.title.toLowerCase().includes('mimetic') || p.body_html.toLowerCase().includes('mimetic'),
+}));
+
+// Global price bounds (kept for price range filter)
+const allPrices = allProducts.map(getMinPrice).filter((p) => p > 0);
+const globalMin = Math.floor(Math.min(...allPrices));
+const globalMax = Math.ceil(Math.max(...allPrices));
+---
+
+<BaseLayout
+  title="Search Meteorite Jewelry — Find Rings, Earrings & Pendants"
+  description="Discover authentic Gibeon meteorite jewelry — rings, earrings, pendants, cufflinks and more. Explore the full collection and find your perfect piece at Jewelry by Johan."
+>
+  <Nav />
+
+  <main class="search-page">
+
+    <!-- ── HERO BAR ── -->
+    <header class="search-header">
+      <div class="sh-bg" aria-hidden="true"><div class="sh-glow"></div></div>
+      <div class="container sh-inner">
+        <p class="label">Search</p>
+        <h1 class="serif sh-heading">Find Your Piece</h1>
+        <p class="sh-sub">Search by keyword, filter by price, category, or material.</p>
+
+        <!-- Keyword input -->
+        <div class="search-box-wrap">
+          <label for="search-input" class="sr-only">Search products</label>
+          <svg class="sb-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            class="search-input"
+            placeholder="e.g. titanium ring, gold band, dinosaur bone…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="search-clear" class="sb-clear" aria-label="Clear search" hidden>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── FILTERS + RESULTS ── -->
+    <div class="search-body container">
+
+      <!-- Sidebar filters -->
+      <div class="filters-backdrop" id="filters-backdrop" aria-hidden="true"></div>
+      <aside class="filters-panel" id="filters-panel" aria-label="Search filters">
+
+        <!-- Mobile close button -->
+        <div class="filters-panel-header">
+          <span class="filters-panel-title">Filters</span>
+          <button id="filters-close-btn" class="filters-close" aria-label="Close filters">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="filter-group">
+          <h2 class="filter-title">Category</h2>
+          <div class="filter-pills" id="filter-category">
+            {['All','Rings','Earrings','Pendants','Cuff Links','Tie Clips','Unique'].map((cat) => (
+              <button class={`fpill ${cat === 'All' ? 'active' : ''}`} data-value={cat.toLowerCase().replace(' ', '-')}>{cat}</button>
+            ))}
+          </div>
+          <button id="filters-exit-btn" class="filters-exit-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+            Exit Search Filters
+          </button>
+        </div>
+
+        <div class="filter-group">
+          <h2 class="filter-title">Price Range</h2>
+          <div class="price-range-wrap">
+            <div class="price-labels">
+              <span id="price-label-min">{formatPrice(globalMin)}</span>
+              <span id="price-label-max">{formatPrice(globalMax)}</span>
+            </div>
+            <div class="dual-range" id="dual-range">
+              <div class="range-track">
+                <div class="range-fill" id="range-fill"></div>
+              </div>
+              <input type="range" id="range-min" class="range-input range-min"
+                min={globalMin} max={globalMax} value={globalMin} step="50" aria-label="Minimum price" />
+              <input type="range" id="range-max" class="range-input range-max"
+                min={globalMin} max={globalMax} value={globalMax} step="50" aria-label="Maximum price" />
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h2 class="filter-title">Material</h2>
+          <div class="filter-checks" id="filter-material">
+            {[
+              'Gibeon Meteorite',
+              'Titanium',
+              '14k Yellow Gold',
+              '14k White Gold',
+              '14k Rose Gold',
+              'Diamond',
+              'Moissanite',
+              'Sapphire',
+              'Dinosaur Bone',
+              'Whiskey Barrel Oak',
+            ].map((mat) => (
+              <label class="fcheck">
+                <input type="checkbox" class="fcheck-input" value={mat} />
+                <span class="fcheck-box" aria-hidden="true"></span>
+                {mat}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h2 class="filter-title">Style</h2>
+          <div class="filter-checks" id="filter-style">
+            {[
+              'Wedding Band',
+              'Engagement Ring',
+              'Ring Set',
+              'Men\'s',
+              'Women\'s',
+              'Unisex',
+            ].map((style) => (
+              <label class="fcheck">
+                <input type="checkbox" class="fcheck-input" value={style} />
+                <span class="fcheck-box" aria-hidden="true"></span>
+                {style}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <button id="reset-filters" class="btn btn-outline reset-btn">Reset All Filters</button>
+      </aside>
+
+      <!-- Results -->
+      <section class="results-panel" aria-live="polite" aria-label="Search results">
+
+        <!-- Toolbar -->
+        <div class="results-toolbar">
+          <span class="results-count" id="results-count">— pieces</span>
+          <div class="toolbar-right">
+            <button id="mobile-filter-btn" class="btn btn-outline mobile-filter-toggle" aria-expanded="false" aria-controls="filters-panel">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+              Filters
+            </button>
+            <select class="filter-select" id="sort-select" aria-label="Sort results">
+              <option value="relevance">Most Relevant</option>
+              <option value="name-asc">Name: A–Z</option>
+              <option value="name-desc">Name: Z–A</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Active filter chips -->
+        <div class="active-chips" id="active-chips"></div>
+
+        <!-- Grid -->
+        <div class="results-grid" id="results-grid"></div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="empty-state" hidden>
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20 32 L32 20 L44 32 L32 44 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+          </svg>
+          <h2 class="serif empty-title">No pieces found</h2>
+          <p class="empty-body">Try different keywords or adjust your filters.</p>
+          <button id="empty-reset" class="btn btn-outline">Clear All Filters</button>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<!-- Embed product data at build time -->
+<script
+  id="search-data"
+  type="application/json"
+  set:html={JSON.stringify({ products: searchIndex, globalMin, globalMax })}
+></script>
+
+<script>
+// ─────────────────────────────────────────────
+//  SEARCH ENGINE — runs entirely client-side
+// ─────────────────────────────────────────────
+
+interface SearchProduct {
+  handle: string;
+  title: string;
+  product_type: string;
+  tags: string;
+  minPrice: number;
+  maxPrice: number;
+  image: string;
+  alt: string;
+  materials: string[];
+  isMimetic: boolean;
+}
+
+const raw = JSON.parse(document.getElementById('search-data')!.textContent!);
+const ALL_PRODUCTS: SearchProduct[] = raw.products;
+const GLOBAL_MIN: number = raw.globalMin;
+const GLOBAL_MAX: number = raw.globalMax;
+
+// State
+let query       = '';
+let category    = 'all';
+let priceMin    = GLOBAL_MIN;
+let priceMax    = GLOBAL_MAX;
+let materials:  string[] = [];
+let styles:     string[] = [];
+let sortBy      = 'relevance';
+
+// DOM refs
+const searchInput   = document.getElementById('search-input')    as HTMLInputElement;
+const searchClear   = document.getElementById('search-clear')    as HTMLButtonElement;
+const rangeMin      = document.getElementById('range-min')       as HTMLInputElement;
+const rangeMax      = document.getElementById('range-max')       as HTMLInputElement;
+const rangeFill     = document.getElementById('range-fill')      as HTMLDivElement;
+const priceLabelMin = document.getElementById('price-label-min') as HTMLSpanElement;
+const priceLabelMax = document.getElementById('price-label-max') as HTMLSpanElement;
+const resultsGrid   = document.getElementById('results-grid')    as HTMLDivElement;
+const resultsCount  = document.getElementById('results-count')   as HTMLSpanElement;
+const emptyState    = document.getElementById('empty-state')     as HTMLDivElement;
+const activeChips   = document.getElementById('active-chips')    as HTMLDivElement;
+const sortSelect    = document.getElementById('sort-select')     as HTMLSelectElement;
+const resetBtn      = document.getElementById('reset-filters')   as HTMLButtonElement;
+const emptyReset    = document.getElementById('empty-reset')     as HTMLButtonElement;
+const mobileFilterBtn = document.getElementById('mobile-filter-btn') as HTMLButtonElement;
+const filtersPanel  = document.getElementById('filters-panel')   as HTMLElement;
+const searchBody    = document.querySelector('.search-body')      as HTMLElement;
+
+// Format price
+function fmt(n: number): string {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
+}
+
+// Update dual range slider fill
+function updateRangeFill() {
+  const pct1 = ((priceMin - GLOBAL_MIN) / (GLOBAL_MAX - GLOBAL_MIN)) * 100;
+  const pct2 = ((priceMax - GLOBAL_MIN) / (GLOBAL_MAX - GLOBAL_MIN)) * 100;
+  rangeFill.style.left  = pct1 + '%';
+  rangeFill.style.width = (pct2 - pct1) + '%';
+  priceLabelMin.textContent = fmt(priceMin);
+  priceLabelMax.textContent = fmt(priceMax);
+}
+
+// Score product relevance vs query
+function scoreProduct(p: SearchProduct, terms: string[]): number {
+  if (!terms.length) return 1;
+  const haystack = [p.title, p.tags, p.product_type, p.materials.join(' ')].join(' ').toLowerCase();
+  return terms.reduce((score, term) => {
+    if (p.title.toLowerCase().includes(term)) return score + 3;
+    if (haystack.includes(term)) return score + 1;
+    return score;
+  }, 0);
+}
+
+// Category match
+function matchesCategory(p: SearchProduct): boolean {
+  if (category === 'all') return true;
+  const type = p.product_type.toLowerCase();
+  const tags = p.tags.toLowerCase();
+  if (category === 'rings')      return type === 'rings' && !tags.includes('earring') && !tags.includes('pendant');
+  if (category === 'earrings')   return type === 'earrings' || tags.includes('earring');
+  if (category === 'pendants')   return type === 'pendants' || type === 'necklaces' || tags.includes('pendant') || tags.includes('necklace');
+  if (category === 'cuff-links') return type === 'cufflinks' || type === 'cuff links' || tags.includes('cufflink') || tags.includes('cuff link');
+  if (category === 'tie-clips')  return type === 'tie clips' || type === 'tie clip' || tags.includes('tie clip') || tags.includes('tie tack') || tags.includes('tie bar');
+  if (category === 'unique')     return type === 'ring sets' || tags.includes('unique') || (type !== 'rings' && type !== 'earrings' && type !== 'pendants' && type !== 'necklaces' && type !== 'cufflinks' && type !== 'cuff links' && type !== 'tie clips' && type !== 'tie clip');
+  return true;
+}
+
+// Style match
+function matchesStyle(p: SearchProduct): boolean {
+  if (!styles.length) return true;
+  const combined = [p.title, p.tags, p.product_type].join(' ').toLowerCase();
+  return styles.some((s) => {
+    const sv = s.toLowerCase();
+    if (sv === 'wedding band')    return combined.includes('wedding') || combined.includes('band');
+    if (sv === 'engagement ring') return combined.includes('engagement');
+    if (sv === 'ring set')        return p.product_type.toLowerCase() === 'ring sets' || combined.includes('ring set') || combined.includes('ring-set');
+    if (sv === "men's")           return combined.includes("men") || combined.includes("mens");
+    if (sv === "women's")         return combined.includes("women") || combined.includes("womens") || combined.includes("ladies");
+    if (sv === 'unisex')          return combined.includes('unisex');
+    return false;
+  });
+}
+
+// Main filter + sort
+function runSearch() {
+  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+
+  let results = ALL_PRODUCTS.filter((p) => {
+    // Price
+    if (p.minPrice > 0 && (p.minPrice > priceMax || p.minPrice < priceMin)) return false;
+    // Category
+    if (!matchesCategory(p)) return false;
+    // Materials
+    if (materials.length && !materials.some((m) => p.materials.includes(m))) return false;
+    // Style
+    if (!matchesStyle(p)) return false;
+    // Keyword
+    if (terms.length) {
+      const score = scoreProduct(p, terms);
+      if (score === 0) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  if (sortBy === 'relevance' && terms.length) {
+    results = results.sort((a, b) => scoreProduct(b, terms) - scoreProduct(a, terms));
+  } else if (sortBy === 'name-desc') {
+    results = results.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  renderResults(results);
+  renderChips();
+}
+
+// Render product cards
+function renderResults(products: SearchProduct[]) {
+  resultsCount.textContent = `${products.length} piece${products.length !== 1 ? 's' : ''}`;
+
+  if (!products.length) {
+    resultsGrid.innerHTML = '';
+    emptyState.hidden = false;
+    return;
+  }
+
+  emptyState.hidden = true;
+  resultsGrid.innerHTML = products.map((p) => {
+    const isAuth     = p.tags.toLowerCase().includes('meteorite') && !p.isMimetic;
+    const authBadge  = isAuth ? `<span class="badge badge-meteorite">Authentic Meteorite</span>` : '';
+    const setbadge   = p.product_type === 'Ring Sets' ? `<span class="badge badge-set">Ring Set</span>` : '';
+    return `
+      <article class="product-card">
+        <a href="/products/${p.handle}" class="card-image-wrap" aria-label="View ${p.title}">
+          <img src="${p.image}" alt="${p.alt}" loading="lazy" decoding="async" class="card-img" width="600" height="600" />
+          <div class="card-badges">${authBadge}${setbadge}</div>
+          <div class="card-overlay" aria-hidden="true"><span class="overlay-text">View Details</span></div>
+          <div class="card-watermark" aria-hidden="true">Jewelry by Johan</div>
+        </a>
+        <div class="card-body">
+          <h3 class="card-title"><a href="/products/${p.handle}">${p.title}</a></h3>
+          <div class="card-footer">
+            <a href="https://jewelrybyjohan.com/products/${p.handle}" target="_blank" rel="noopener" class="card-btn" aria-label="View ${p.title} at Jewelry by Johan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              View at Johan
+            </a>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+}
+
+// Active filter chips
+function renderChips() {
+  const chips: string[] = [];
+  if (query)                           chips.push(`<button class="chip" data-type="query">🔍 "${query}" ×</button>`);
+  if (category !== 'all')              chips.push(`<button class="chip" data-type="category">${category} ×</button>`);
+  if (priceMin > GLOBAL_MIN || priceMax < GLOBAL_MAX) chips.push(`<button class="chip" data-type="price">${fmt(priceMin)} – ${fmt(priceMax)} ×</button>`);
+  materials.forEach((m) =>             chips.push(`<button class="chip" data-type="material" data-value="${m}">${m} ×</button>`));
+  styles.forEach((s) =>                chips.push(`<button class="chip" data-type="style" data-value="${s}">${s} ×</button>`));
+  activeChips.innerHTML = chips.join('');
+
+  activeChips.querySelectorAll('.chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const type  = (chip as HTMLElement).dataset.type!;
+      const value = (chip as HTMLElement).dataset.value;
+      if (type === 'query')    { query = ''; searchInput.value = ''; searchClear.hidden = true; }
+      if (type === 'category') { category = 'all'; document.querySelectorAll('#filter-category .fpill').forEach((b) => b.classList.toggle('active', (b as HTMLElement).dataset.value === 'all')); }
+      if (type === 'price')    { priceMin = GLOBAL_MIN; priceMax = GLOBAL_MAX; rangeMin.value = String(GLOBAL_MIN); rangeMax.value = String(GLOBAL_MAX); updateRangeFill(); }
+      if (type === 'material') { materials = materials.filter((m) => m !== value); (document.querySelector(`#filter-material input[value="${value}"]`) as HTMLInputElement).checked = false; }
+      if (type === 'style')    { styles    = styles.filter((s) => s !== value);    (document.querySelector(`#filter-style input[value="${value}"]`)    as HTMLInputElement).checked = false; }
+      runSearch();
+    });
+  });
+}
+
+// Reset everything
+function resetAll() {
+  query = ''; searchInput.value = ''; searchClear.hidden = true;
+  category = 'all';
+  priceMin = GLOBAL_MIN; priceMax = GLOBAL_MAX;
+  rangeMin.value = String(GLOBAL_MIN); rangeMax.value = String(GLOBAL_MAX);
+  materials = []; styles = [];
+  document.querySelectorAll('#filter-category .fpill').forEach((b) => b.classList.toggle('active', (b as HTMLElement).dataset.value === 'all'));
+  document.querySelectorAll('#filter-material .fcheck-input, #filter-style .fcheck-input').forEach((c) => (c as HTMLInputElement).checked = false);
+  sortSelect.value = 'relevance'; sortBy = 'relevance';
+  updateRangeFill();
+  runSearch();
+}
+
+// ── Event listeners ──
+
+searchInput.addEventListener('input', () => {
+  query = searchInput.value;
+  searchClear.hidden = !query;
+  runSearch();
+});
+searchClear.addEventListener('click', () => {
+  query = ''; searchInput.value = ''; searchClear.hidden = true;
+  runSearch();
+});
+
+document.querySelectorAll('#filter-category .fpill').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filter-category .fpill').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    category = (btn as HTMLElement).dataset.value!;
+    runSearch();
+  });
+});
+
+rangeMin.addEventListener('input', () => {
+  priceMin = Math.min(parseInt(rangeMin.value), priceMax - 50);
+  rangeMin.value = String(priceMin);
+  updateRangeFill(); runSearch();
+});
+rangeMax.addEventListener('input', () => {
+  priceMax = Math.max(parseInt(rangeMax.value), priceMin + 50);
+  rangeMax.value = String(priceMax);
+  updateRangeFill(); runSearch();
+});
+
+document.querySelectorAll('#filter-material .fcheck-input').forEach((cb) => {
+  cb.addEventListener('change', () => {
+    const val = (cb as HTMLInputElement).value;
+    if ((cb as HTMLInputElement).checked) { materials.push(val); } else { materials = materials.filter((m) => m !== val); }
+    runSearch();
+  });
+});
+document.querySelectorAll('#filter-style .fcheck-input').forEach((cb) => {
+  cb.addEventListener('change', () => {
+    const val = (cb as HTMLInputElement).value;
+    if ((cb as HTMLInputElement).checked) { styles.push(val); } else { styles = styles.filter((s) => s !== val); }
+    runSearch();
+  });
+});
+
+sortSelect.addEventListener('change', () => { sortBy = sortSelect.value; runSearch(); });
+resetBtn.addEventListener('click', resetAll);
+emptyReset.addEventListener('click', resetAll);
+
+// Filter panel open/close (mobile = slide-in overlay, desktop = sticky sidebar)
+const filtersBackdrop = document.getElementById('filters-backdrop') as HTMLElement;
+
+function isMobile(): boolean {
+  return window.innerWidth <= 900;
+}
+
+function openFilters() {
+  filtersPanel.classList.add('open');
+  filtersPanel.style.display = '';
+  if (isMobile()) {
+    filtersBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    searchBody.style.gridTemplateColumns = '260px 1fr';
+  }
+  mobileFilterBtn?.setAttribute('aria-expanded', 'true');
+}
+
+function closeFilters() {
+  filtersPanel.classList.remove('open');
+  if (isMobile()) {
+    filtersBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    mobileFilterBtn?.setAttribute('aria-expanded', 'false');
+  } else {
+    filtersPanel.style.display = 'none';
+    searchBody.style.gridTemplateColumns = '1fr';
+    mobileFilterBtn?.setAttribute('aria-expanded', 'false');
+  }
+}
+
+mobileFilterBtn?.addEventListener('click', () => {
+  const isClosed = filtersPanel.style.display === 'none' || (!filtersPanel.classList.contains('open') && !isMobile());
+  if (filtersPanel.classList.contains('open')) {
+    closeFilters();
+  } else {
+    openFilters();
+  }
+});
+
+// Backdrop click closes panel (mobile only)
+filtersBackdrop?.addEventListener('click', closeFilters);
+
+// Close button inside panel header (mobile)
+const filtersCloseBtn = document.getElementById('filters-close-btn') as HTMLButtonElement;
+filtersCloseBtn?.addEventListener('click', closeFilters);
+
+// Exit Search Filters button (desktop + mobile)
+const filtersExitBtn = document.getElementById('filters-exit-btn') as HTMLButtonElement;
+filtersExitBtn?.addEventListener('click', closeFilters);
+
+// On desktop resize back from mobile, restore panel if hidden
+window.addEventListener('resize', () => {
+  if (!isMobile()) {
+    filtersPanel.style.display = '';
+    searchBody.style.gridTemplateColumns = '260px 1fr';
+    filtersBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// Pre-fill keyword from URL query param: /search?q=titanium
+const urlQ = new URLSearchParams(location.search).get('q');
+if (urlQ) { searchInput.value = urlQ; query = urlQ; searchClear.hidden = false; }
+
+// Initialise
+updateRangeFill();
+runSearch();
+</script>
+
+<style>
+  /* ── PAGE LAYOUT ── */
+  .search-page {
+    min-height: 100vh;
+    padding-top: 68px;
+  }
+
+  /* ── HEADER ── */
+  .search-header {
+    position: relative;
+    padding: clamp(4rem, 8vw, 7rem) 0 3rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .sh-bg { position: absolute; inset: 0; pointer-events: none; }
+  .sh-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .sh-inner { position: relative; }
+  .sh-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--c-text);
+    margin: 0.5rem 0;
+  }
+  .sh-sub {
+    color: var(--c-text-muted);
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+    max-width: 500px;
+  }
+
+  /* ── SEARCH BOX ── */
+  .search-box-wrap {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .sb-icon {
+    position: absolute;
+    left: 1.125rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--c-text-muted);
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 3.25rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-full);
+    color: var(--c-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+  .search-input::placeholder { color: var(--c-text-faint); }
+  .search-input:focus {
+    border-color: var(--c-border-gold);
+    box-shadow: 0 0 0 3px rgba(201,144,31,0.1);
+  }
+  .sb-clear {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--c-text-muted);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+  .sb-clear:hover { color: var(--c-text); }
+
+  /* ── BODY ── */
+  .filters-backdrop { display: none; }
+
+  .search-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  /* ── FILTERS PANEL ── */
+  .filters-panel {
+    position: sticky;
+    top: 88px;
+    max-height: calc(100vh - 108px);
+    overflow-y: auto;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .filters-panel-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--c-border);
+    margin-bottom: -.25rem;
+  }
+
+  .filters-panel-title {
+    font-family: var(--font-sans);
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--c-text);
+  }
+
+  .filters-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-bg-3);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-full);
+    color: var(--c-text-muted);
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+  }
+
+  .filters-close:hover {
+    color: var(--c-text);
+    border-color: var(--c-border-gold);
+  }
+  .filter-title {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-text-faint);
+    margin-bottom: 0.875rem;
+  }
+
+  /* Category pills */
+  .filter-pills { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .fpill {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--c-border);
+    background: transparent;
+    color: var(--c-text-muted);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .fpill:hover { border-color: var(--c-border-gold); color: var(--c-text); }
+  .fpill.active {
+    background: var(--c-gold);
+    border-color: var(--c-gold);
+    color: #0a0a0f;
+  }
+
+  /* Price range */
+  .price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: var(--c-text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .dual-range {
+    position: relative;
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+  .range-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--c-bg-3);
+    border-radius: 2px;
+  }
+  .range-fill {
+    position: absolute;
+    height: 4px;
+    background: var(--c-gold);
+    border-radius: 2px;
+  }
+  .range-input {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    -webkit-appearance: none;
+    pointer-events: none;
+    outline: none;
+  }
+  .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    border: 2px solid var(--c-bg);
+    cursor: pointer;
+    pointer-events: all;
+    transition: transform 0.15s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .range-input::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  .range-input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    border: 2px solid var(--c-bg);
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  /* Checkboxes */
+  .filter-checks { display: flex; flex-direction: column; gap: 0.5rem; }
+  .fcheck {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.8125rem;
+    color: var(--c-text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1.3;
+  }
+  .fcheck:hover { color: var(--c-text); }
+  .fcheck-input { display: none; }
+  .fcheck-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--c-border);
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s;
+    position: relative;
+  }
+  .fcheck-input:checked ~ .fcheck-box {
+    background: var(--c-gold);
+    border-color: var(--c-gold);
+  }
+  .fcheck-input:checked ~ .fcheck-box::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 6px;
+    height: 9px;
+    border: 1.5px solid #0a0a0f;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  .reset-btn {
+    font-size: 0.75rem;
+    padding: 0.625rem 1rem;
+    align-self: flex-start;
+  }
+
+  .filters-exit-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.875rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(201,144,31,0.08);
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius);
+    color: var(--c-gold-light);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s;
+    justify-content: center;
+  }
+
+  .filters-exit-btn:hover {
+    background: rgba(201,144,31,0.15);
+  }
+
+  /* ── RESULTS PANEL ── */
+  .results-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  .results-count {
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    font-family: var(--font-sans);
+  }
+  .toolbar-right { display: flex; align-items: center; gap: 0.75rem; }
+  .filter-select {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    color: var(--c-text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .filter-select:focus { border-color: var(--c-border-gold); }
+
+  /* Active chips */
+  .active-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 1.25rem;
+    min-height: 0;
+  }
+  .chip {
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    background: rgba(201,144,31,0.12);
+    border: 1px solid rgba(201,144,31,0.25);
+    color: var(--c-gold-light);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .chip:hover { background: rgba(201,144,31,0.2); }
+
+  /* Results grid */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  /* ── PRODUCT CARD (search version) ── */
+  .product-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s, border-color 0.4s;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--c-border-gold);
+  }
+  .card-image-wrap {
+    display: block;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--c-bg-2);
+  }
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease-smooth);
+  }
+  .product-card:hover .card-img { transform: scale(1.04); }
+  .card-badges {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    z-index: 2;
+  }
+  .badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+  }
+  .badge-meteorite {
+    background: rgba(201,144,31,0.2);
+    color: var(--c-gold-light);
+    border: 1px solid rgba(201,144,31,0.3);
+    backdrop-filter: blur(8px);
+  }
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,15,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s;
+    z-index: 1;
+  }
+  .product-card:hover .card-overlay { opacity: 1; }
+  .overlay-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 0.625rem 1.5rem;
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(8px);
+  }
+  .card-watermark {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  }
+  .card-body { padding: 1.125rem 1.25rem 1.25rem; }
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--c-text);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+  .card-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .card-title a:hover { color: var(--c-gold-light); }
+  .card-footer { display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem; }
+  .card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-gold);
+    padding: 0.4rem 0.875rem;
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .card-btn:hover { background: var(--c-gold); color: #0a0a0f; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--c-text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .empty-title { font-size: 1.75rem; color: var(--c-text); }
+  .empty-body { font-size: 0.9375rem; max-width: 380px; margin: 0; }
+
+  /* ── SR ONLY ── */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* ── MOBILE FILTER TOGGLE ── */
+  .mobile-filter-toggle { display: none; font-size: 0.75rem; padding: 0.5rem 1rem; gap: 0.375rem; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .search-body {
+      grid-template-columns: 1fr;
+    }
+    .filters-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 85vw;
+      max-width: 320px;
+      height: 100%;
+      max-height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      z-index: 301;
+      transform: translateX(-100%);
+      transition: transform 0.35s var(--ease-smooth);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+    .filters-panel.open { transform: translateX(0); }
+    .filters-panel-header { display: flex; }
+    .mobile-filter-toggle { display: inline-flex; }
+    .filters-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .filters-backdrop.open { display: block; opacity: 1; }
+  }
+
+  @media (max-width: 600px) {
+    .results-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+  }
+</style>

@@ -1,0 +1,22 @@
+# Redirect trailing slashes
+/rings/ /rings 301
+/ring-sets/ /ring-sets 301
+/earrings/ /earrings 301
+/pendants/ /pendants 301
+/cufflinks/ /cufflinks 301
+/tie-clips/ /tie-clips 301
+/unique/ /unique 301
+/about/ /about 301
+/blog/ /blog 301
+/sizing-guide/ /sizing-guide 301
+/contact/ /contact 301
+/search/ /search 301
+/return-policy/ /return-policy 301
+
+# Legacy / alternate paths
+/shop /rings 301
+/collection /rings 301
+/collections/rings /rings 301
+/collections/all /rings 301
+/size-guide /sizing-guide 301
+/ring-sizer /sizing-guide 301

@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { blogPosts, formatBlogDate } from '../../data/blog';
+
+// Precompute the 8 orbital dot positions so we can use simple expression maps in the template
+const orbitalDots = Array.from({ length: 8 }, (_, i) => {
+  const angle = (i / 8) * Math.PI * 2;
+  const radius = 50;
+  return {
+    cx: +(70 + Math.cos(angle) * radius).toFixed(2),
+    cy: +(70 + Math.sin(angle) * radius).toFixed(2),
+  };
+});
+---
+
+<BaseLayout
+  title="Meteorite Journal — Stories, Science & Style | Jewelry by Johan"
+  description="Explore the Meteorite Journal — cosmic science, styling guides, care tips, and the stories behind Gibeon meteorite jewelry. Written by Jewelry by Johan."
+>
+  <Nav />
+
+  <main style="padding-top:68px">
+
+    <!-- Header -->
+    <header class="blog-header">
+      <div class="bh-bg" aria-hidden="true">
+        <div class="bh-glow"></div>
+      </div>
+      <div class="container bh-inner">
+        <div class="reveal">
+          <p class="label">The Meteorite Journal</p>
+          <h1 class="serif bh-heading">
+            Stories from<br />
+            <em>4.5 billion years.</em>
+          </h1>
+          <p class="bh-sub">
+            Cosmic science, style guides, ring care, and the stories that make
+            meteorite jewelry worth understanding deeply.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured post -->
+    <section class="blog-featured container">
+      {blogPosts.slice(0,1).map(post => (
+        <a href={`/blog/${post.slug}`} class="featured-post reveal" aria-label={`Read: ${post.title}`}>
+          <div class="fp-content">
+            <div class="fp-meta">
+              <span class="label">{post.category}</span>
+              <span class="fp-date">{formatBlogDate(post.date)}</span>
+            </div>
+            <h2 class="serif fp-title">{post.title}</h2>
+            <p class="fp-subtitle serif">{post.subtitle}</p>
+            <p class="fp-excerpt">{post.excerpt}</p>
+            <div class="fp-footer">
+              <span class="fp-read">Read Article →</span>
+              <span class="fp-time">{post.readTime} min read</span>
+            </div>
+          </div>
+          <div class="fp-visual" aria-hidden="true">
+            <div class="fp-decoration">
+              <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="60" stroke="currentColor" stroke-width="1" opacity=".15"/>
+                <path d="M70 20 L120 70 L70 120 L20 70 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".3"/>
+                <path d="M70 40 L100 70 L70 100 L40 70 Z" stroke="currentColor" stroke-width="1" fill="none" opacity=".5"/>
+                <circle cx="70" cy="70" r="8" fill="currentColor" opacity=".2"/>
+                {orbitalDots.map((dot) => (
+                  <circle cx={dot.cx} cy={dot.cy} r="2" fill="currentColor" opacity=".3"/>
+                ))}
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <!-- All posts grid -->
+    <section class="blog-grid-section container">
+      <p class="label blog-grid-label">All Articles</p>
+      <div class="blog-grid">
+        {blogPosts.map((post, i) => (
+          <article class="post-card reveal" style={`animation-delay:${i * 0.07}s`}>
+            <a href={`/blog/${post.slug}`} class="post-card-link" aria-label={`Read: ${post.title}`}>
+              <div class="post-card-visual" aria-hidden="true">
+                <div class="pcv-inner">
+                  <div class="pcv-icon">
+                    {post.category === 'Meteorite Science' && '⬡'}
+                    {post.category === 'Trends' && '◈'}
+                    {post.category === 'Style Guide' && '◇'}
+                    {post.category === 'Care Guide' && '◉'}
+                    {post.category === 'Wedding Guide' && '♦'}
+                  </div>
+                </div>
+              </div>
+              <div class="post-card-body">
+                <div class="pc-meta">
+                  <span class="pc-cat">{post.category}</span>
+                  <span class="pc-time">{post.readTime} min</span>
+                </div>
+                <h3 class="serif pc-title">{post.title}</h3>
+                <p class="pc-excerpt">{post.excerpt}</p>
+                <div class="pc-footer">
+                  <span class="pc-date">{formatBlogDate(post.date)}</span>
+                  <span class="pc-read">Read →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="blog-newsletter">
+      <div class="container-sm" style="text-align:center">
+        <div class="reveal">
+          <p class="label">Stay Cosmic</p>
+          <h2 class="serif" style="font-size:clamp(1.8rem,4vw,3rem);margin:.5rem 0 1rem;font-weight:300">
+            New stories from the cosmos
+          </h2>
+          <p style="color:var(--c-text-muted);margin-bottom:2rem;font-size:1.0625rem">
+            Follow our journey and get notified of new pieces, stories, and science.
+            Subscribe via the main store.
+          </p>
+          <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary">
+            Subscribe on Main Store →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .blog-header {
+    position: relative;
+    padding: clamp(5rem,10vw,9rem) clamp(1.25rem,4vw,3rem) clamp(3.5rem,7vw,7rem);
+    overflow: hidden;
+  }
+
+  .bh-bg { position: absolute; inset: 0; z-index: 0; }
+  .bh-glow {
+    position: absolute;
+    top: -100px; left: 20%;
+    width: 60%; height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,.07) 0%, transparent 65%);
+    filter: blur(60px);
+  }
+
+  .bh-inner { position: relative; z-index: 1; max-width: 800px; }
+
+  .bh-heading {
+    font-size: clamp(2.8rem,6.5vw,6rem);
+    font-weight: 300;
+    letter-spacing: -.02em;
+    color: var(--c-text);
+    line-height: .95;
+    margin: .75rem 0 1.5rem;
+  }
+
+  .bh-heading em { font-style: italic; color: var(--c-gold-light); }
+
+  .bh-sub {
+    font-size: clamp(1rem,1.5vw,1.2rem);
+    color: var(--c-text-muted);
+    max-width: 600px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Featured post */
+  .blog-featured {
+    padding: 0 clamp(1.25rem,4vw,2.5rem) 3rem;
+  }
+
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    padding: clamp(2rem,4vw,3.5rem);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .4s, box-shadow .4s, transform .4s var(--ease-smooth);
+  }
+
+  .featured-post:hover {
+    border-color: var(--c-border-gold);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+  }
+
+  .fp-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .fp-date { font-size: .8125rem; color: var(--c-text-muted); }
+
+  .fp-title { font-size: clamp(1.6rem,3vw,2.6rem); font-weight: 300; color: var(--c-text); line-height: 1.15; margin-bottom: .75rem; }
+  .fp-subtitle { font-size: 1.1875rem; font-style: italic; color: var(--c-gold-light); margin-bottom: 1.25rem; }
+  .fp-excerpt { font-size: 1.0625rem; color: var(--c-text-muted); line-height: 1.7; max-width: 600px; margin-bottom: 2rem; }
+
+  .fp-footer { display: flex; align-items: center; gap: 1.5rem; }
+  .fp-read { font-size: .8125rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--c-gold); }
+  .fp-time { font-size: .8125rem; color: var(--c-text-muted); }
+
+  .fp-visual { flex-shrink: 0; }
+  .fp-decoration { color: var(--c-gold); opacity: .6; }
+
+  /* Blog grid */
+  .blog-grid-section {
+    padding: 3rem clamp(1.25rem,4vw,2.5rem) 5rem;
+  }
+
+  .blog-grid-label { margin-bottom: 2rem; display: block; }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color .4s, transform .4s var(--ease-smooth), box-shadow .4s;
+  }
+
+  .post-card:hover {
+    border-color: var(--c-border-gold);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .post-card-link { display: block; text-decoration: none; color: inherit; }
+
+  .post-card-visual {
+    aspect-ratio: 16/7;
+    background: var(--c-bg-2);
+    overflow: hidden;
+  }
+
+  .pcv-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-bg-2);
+    transition: transform .6s var(--ease-smooth);
+  }
+
+  .post-card:hover .pcv-inner { transform: scale(1.04); }
+
+  .pcv-icon {
+    font-size: 2.5rem;
+    color: var(--c-gold);
+    opacity: .4;
+    line-height: 1;
+  }
+
+  .post-card-body { padding: 1.5rem; }
+
+  .pc-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: .875rem; }
+  .pc-cat { font-size: .625rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--c-gold); }
+  .pc-time { font-size: .75rem; color: var(--c-text-muted); }
+
+  .pc-title { font-size: 1.125rem; font-weight: 400; color: var(--c-text); line-height: 1.3; margin-bottom: .75rem; }
+  .pc-excerpt { font-size: .875rem; color: var(--c-text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
+
+  .pc-footer { display: flex; align-items: center; justify-content: space-between; }
+  .pc-date { font-size: .75rem; color: var(--c-text-faint); }
+  .pc-read { font-size: .75rem; font-weight: 600; color: var(--c-gold); letter-spacing: .06em; text-transform: uppercase; }
+
+  /* Newsletter */
+  .blog-newsletter {
+    padding: clamp(4rem,7vw,7rem) clamp(1.25rem,4vw,3rem);
+    border-top: 1px solid var(--c-border);
+    background: var(--c-bg-2);
+  }
+
+  @media (max-width:1024px) { .blog-grid { grid-template-columns: repeat(2,1fr); } }
+
+  @media (max-width:768px) {
+    .featured-post { grid-template-columns: 1fr; }
+    .fp-visual { display: none; }
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>

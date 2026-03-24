@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="404 — Page Not Found | Meteorite Jewelry by Johan"
+  description="This page drifted into deep space. Return to the Meteorite Jewelry collection."
+  noindex={true}
+>
+  <Nav />
+  <main style="padding-top:68px;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem">
+    <div>
+      <p class="label" style="margin-bottom:1.5rem">Lost in Space</p>
+      <h1 class="serif" style="font-size:clamp(3rem,8vw,8rem);font-weight:300;color:var(--c-text);opacity:.15;line-height:1;margin-bottom:2rem">404</h1>
+      <h2 class="serif" style="font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;margin-bottom:1rem">This page drifted into deep space.</h2>
+      <p style="color:var(--c-text-muted);margin-bottom:2.5rem;max-width:400px;margin-left:auto;margin-right:auto">
+        The cosmic winds took it somewhere we can't reach. Let us guide you back to the collection.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/" class="btn btn-primary">Return Home</a>
+        <a href="/rings" class="btn btn-outline">Browse Rings</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

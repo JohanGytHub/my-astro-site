@@ -1,0 +1,33 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'pendants');
+---
+
+<CollectionLayout
+  title="Meteorite Pendants"
+  metaTitle="Meteorite Pendants & Necklaces | Gibeon Meteorite Jewelry by Johan"
+  description="Handcrafted Gibeon meteorite pendants and necklaces. Meteorite slice pendants, geometric forms, and custom designs with authentic Widmanstätten patterns. USA made."
+  heading="Meteorite Pendants"
+  subheading="Wear a slice of the cosmos around your neck — meteorite pendants hand-cut from authentic Gibeon iron, etched to reveal the ancient crystal structure within."
+  products={products}
+  category="Pendants Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>A meteorite pendant brings 4.5 billion years of cosmic history to one of the most personal pieces of jewelry a person can wear. Gibeon meteorite pendants are typically cut as polished slices — thin cross-sections through the iron mass that expose the full width of the Widmanstätten crystal pattern in a single plane. The result looks almost architectural: geometric bands of kamacite and taenite crystal arranged in patterns that formed before Earth existed.</p>
+          <p>Johan crafts each pendant by hand in Minneapolis, selecting meteorite slices for strong pattern expression and minimal inclusions. Pendants are available in a range of sizes and forms, paired with different chain lengths and metal settings depending on the design. Every piece of Gibeon used is from pre-2004 inventory — legally acquired before Namibia's national monument designation closed new collection.</p>
+        </div>
+        <div>
+          <p>The <strong>Stardust collection</strong> offers a distinct alternative for those who want meteorite's cosmic character in a hypoallergenic format: genuine meteorite pieces and shavings are suspended in resin and set into the pendant face, creating a jewel-like expression of the same material. Both approaches use authentic Gibeon meteorite — the difference is form, not authenticity.</p>
+          <p>Gibeon meteorite is iron-based and requires proper sealing for daily wear. All Johan meteorite pendants are sealed at the workshop and backed by the same lifetime cleaning and re-etching service that covers every other piece in the collection. Orders and customization are handled on <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

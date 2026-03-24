@@ -1,0 +1,1266 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { fetchProducts, getFeaturedProducts, getBestsellers, getCategoryProducts } from '../data/products';
+
+const products = await fetchProducts();
+const featured = getFeaturedProducts(products, 8);
+const bestsellers = getBestsellers(products, 6);
+
+const heroProduct   = featured[0];
+
+const categories = [
+  {
+    href: '/rings',
+    title: 'Meteorite Rings',
+    sub: 'Wedding bands & engagement rings',
+    icon: '○',
+    count: getCategoryProducts(products, 'rings').length,
+    gradient: 'linear-gradient(135deg, #0d0d14 0%, #1a1a28 100%)',
+  },
+  {
+    href: '/earrings',
+    title: 'Earrings',
+    sub: 'Studs, drops & ear cuffs',
+    icon: '◇',
+    count: null,
+    gradient: 'linear-gradient(135deg, #14101a 0%, #1f1428 100%)',
+  },
+  {
+    href: '/pendants',
+    title: 'Pendants & Necklaces',
+    sub: 'Meteorite slice pendants & necklaces',
+    icon: '▽',
+    count: getCategoryProducts(products, 'pendants').length,
+    gradient: 'linear-gradient(135deg, #0f1218 0%, #18202a 100%)',
+  },
+  {
+    href: '/cufflinks',
+    title: 'Cuff Links',
+    sub: 'Meteorite cufflinks for every occasion',
+    icon: '◈',
+    count: getCategoryProducts(products, 'cufflinks').length,
+    gradient: 'linear-gradient(135deg, #0d1014 0%, #181a28 100%)',
+  },
+  {
+    href: '/tie-clips',
+    title: 'Tie Clips',
+    sub: 'Tie clips, tacks & bars',
+    icon: '▬',
+    count: getCategoryProducts(products, 'tie-clips').length,
+    gradient: 'linear-gradient(135deg, #100d14 0%, #1a1428 100%)',
+  },
+  {
+    href: '/unique',
+    title: 'Unique Pieces',
+    sub: 'One-of-a-kind sculptural pieces',
+    icon: '✦',
+    count: getCategoryProducts(products, 'unique').length,
+    gradient: 'linear-gradient(135deg, #0d1210 0%, #182018 100%)',
+  },
+];
+---
+
+<BaseLayout
+  title="Meteorite Jewelry by Johan — Authentic Gibeon Meteorite Rings & Jewelry"
+  description="Handcrafted Gibeon meteorite jewelry with iconic Widmanstätten patterns. Wedding rings, engagement bands, earrings, and pendants forged from 4.5 billion-year-old cosmic iron. USA-made."
+>
+  <Nav />
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <!-- Animated background -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-stars" id="hero-stars"></div>
+      <div class="crystal-lines"></div>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <p class="label hero-label">Authentic Gibeon Meteorite · USA Handcrafted</p>
+
+        <h1 id="hero-heading" class="hero-heading">
+          <span class="shimmer-text">Forged in</span>
+          <br />
+          <em class="hero-em serif">Cosmic Fire.</em>
+          <br />
+          <span class="hero-sub-heading">Worn for Eternity.</span>
+        </h1>
+
+        <p class="hero-body">
+          Every piece carries a fragment of the ancient solar system —
+          Gibeon meteorite with its unmistakable Widmanstätten crystal pattern,
+          billions of years in the making, set by hand in Minneapolis.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num serif">4.5B</span>
+            <span class="stat-label">Years in Formation</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num serif">∞</span>
+            <span class="stat-label">Unique Patterns</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num serif">100%</span>
+            <span class="stat-label">Handmade USA</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="/rings" class="btn btn-primary hero-btn-primary">
+            Explore the Collection
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="/about" class="btn btn-outline">Our Story</a>
+        </div>
+
+        <!-- Quick nav pills -->
+        <div class="hero-pills">
+          {['Rings', 'Ring Sets', 'Earrings', 'Pendants', 'Unique'].map(cat => (
+            <a href={`/${cat.toLowerCase().replace(' ', '-')}`} class="pill">{cat}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Featured product showcase -->
+      <div class="hero-visual">
+        <div class="hero-ring-frame">
+          {featured[0] && (
+            <a
+              href={`/products/${featured[0].handle}`}
+              class="hero-ring-link"
+              aria-label={`Featured: ${featured[0].title}`}
+            >
+              <div class="hero-ring-img-wrap shimmer-overlay">
+                <img
+                  src={featured[0].images[0]?.src}
+                  alt={featured[0].images[0]?.alt || featured[0].title}
+                  loading="eager"
+                  decoding="async"
+                  class="hero-ring-img"
+                  width="600"
+                  height="600"
+                />
+                <div class="hero-img-watermark" aria-hidden="true">Jewelry by Johan</div>
+              </div>
+              <div class="hero-ring-caption">
+                <span class="label">Featured Piece</span>
+                <span class="serif hero-ring-name">{featured[0].title}</span>
+              </div>
+            </a>
+          )}
+          <!-- Orbital decoration -->
+          <div class="orbital orbit-1" aria-hidden="true"></div>
+          <div class="orbital orbit-2" aria-hidden="true"></div>
+          <div class="sparkle sp-1" aria-hidden="true"></div>
+          <div class="sparkle sp-2" aria-hidden="true"></div>
+          <div class="sparkle sp-3" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TRUST BAR
+  ═══════════════════════════════════════ -->
+  <TrustBar />
+
+  <!-- ═══════════════════════════════════════
+       STORY INTRO
+  ═══════════════════════════════════════ -->
+  <section class="story-section section">
+    <div class="container-sm">
+      <div class="story-inner reveal">
+        <p class="label" style="text-align:center;margin-bottom:1.5rem;">The Meteorite Story</p>
+        <h2 class="story-heading serif">
+          Before Earth existed,<br />
+          <em>your ring was already forming.</em>
+        </h2>
+        <div class="story-divider"></div>
+        <p class="story-body">
+          Gibeon meteorite cooled at approximately 1°C per million years inside
+          an ancient asteroid — so slowly that vast interlocking crystals of iron
+          and nickel grew into geometric perfection. These are the Widmanstätten
+          figures: cosmic fingerprints that no forge on Earth can recreate.
+          Namibia's government now protects Gibeon as a national monument.
+          The supply is finite. Your piece is singular.
+        </p>
+        <a href="/about" class="btn btn-outline" style="margin-top:2.5rem;">
+          Read the Full Story →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CATEGORY GRID
+  ═══════════════════════════════════════ -->
+  <section class="categories-section section" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Collections</p>
+        <h2 id="categories-heading">Explore by Category</h2>
+        <p class="section-sub">Every form of cosmic adornment, forged from authentic Gibeon meteorite.</p>
+      </div>
+
+      <div class="categories-grid">
+        {categories.map((cat, i) => (
+          <a
+            href={cat.href}
+            class="cat-card reveal"
+            style={`animation-delay: ${i * 0.1}s; background: ${cat.gradient};`}
+          >
+            <div class="cat-icon" aria-hidden="true">{cat.icon}</div>
+            <div class="cat-body">
+              <h3 class="cat-title serif">{cat.title}</h3>
+              <p class="cat-sub">{cat.sub}</p>
+              {cat.count && (
+                <span class="cat-count">{cat.count} pieces</span>
+              )}
+            </div>
+            <div class="cat-arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <div class="cat-shimmer" aria-hidden="true"></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BESTSELLERS
+  ═══════════════════════════════════════ -->
+  <section class="bestsellers-section section" aria-labelledby="bestsellers-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Most Loved</p>
+        <h2 id="bestsellers-heading">Customer Favorites</h2>
+        <p class="section-sub">The pieces our couples wear every day — from wedding day to eternity.</p>
+      </div>
+
+      <div class="products-grid">
+        {bestsellers.map((product, i) => (
+          <div class="reveal" style={`animation-delay: ${i * 0.08}s`}>
+            <ProductCard product={product} featured={i === 0} />
+          </div>
+        ))}
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="/rings" class="btn btn-outline">View All Rings →</a>
+        <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary">
+          Explore Full Collection
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       BEHIND THE PIECE — Lore Sections
+  ═══════════════════════════════════════ -->
+  <section class="lore-section" aria-labelledby="lore-heading">
+    <div class="container">
+      <div class="lore-grid">
+
+        <!-- Lore 1: The Pattern -->
+        <div class="lore-card reveal">
+          <div class="lore-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4 L36 20 L20 36 L4 20 Z" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <path d="M20 10 L30 20 L20 30 L10 20 Z" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+              <circle cx="20" cy="20" r="3" fill="currentColor"/>
+              <path d="M20 10 L20 4M20 36 L20 30M10 20 L4 20M36 20 L30 20" stroke="currentColor" stroke-width="0.75" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3 class="lore-title serif">The Widmanstätten Pattern</h3>
+          <p class="lore-body">
+            Cooling at 1°C per million years, iron-nickel crystals grew into
+            interlocking geometric formations unlike anything produced on Earth.
+            Etched with acid, these ancient figures emerge like stars drawn in metal.
+          </p>
+          <a href="/blog/cosmic-origins-of-gibeon-meteorite" class="lore-link">
+            Learn the science →
+          </a>
+        </div>
+
+        <!-- Lore 2: The Origin -->
+        <div class="lore-card reveal" style="animation-delay:0.1s">
+          <div class="lore-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <circle cx="20" cy="20" r="9" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+              <circle cx="20" cy="20" r="3" fill="currentColor"/>
+              <path d="M5 20 A15 15 0 0 1 35 20" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3 class="lore-title serif">4.5 Billion Years Old</h3>
+          <p class="lore-body">
+            Before Earth formed, the parent asteroid of Gibeon meteorite drifted
+            through space. It fell near Gibeon, Namibia approximately 30,000 years
+            ago — long before the first human civilization. It has been waiting for you.
+          </p>
+          <a href="/about" class="lore-link">
+            Our full origin story →
+          </a>
+        </div>
+
+        <!-- Lore 3: No Two Alike -->
+        <div class="lore-card reveal" style="animation-delay:0.2s">
+          <div class="lore-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4 L26 14 L38 14 L29 21 L32 33 L20 26 L8 33 L11 21 L2 14 L14 14 Z"
+                stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+              <path d="M20 10 L23 17 L30 17 L25 21 L27 28 L20 24 L13 28 L15 21 L10 17 L17 17 Z"
+                fill="currentColor" opacity="0.15"/>
+            </svg>
+          </div>
+          <h3 class="lore-title serif">Utterly Singular</h3>
+          <p class="lore-body">
+            Every meteorite inlay is cut from a unique fragment. Your ring's
+            Widmanstätten pattern has never appeared on any other piece and
+            never will. No duplicates. No mass production. One cosmos, one ring.
+          </p>
+          <a href="/sizing-guide" class="lore-link">
+            Start designing yours →
+          </a>
+        </div>
+
+        <!-- Lore 4: Protected -->
+        <div class="lore-card reveal" style="animation-delay:0.3s">
+          <div class="lore-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4 L34 10 L34 22 C34 30 20 36 20 36 C20 36 6 30 6 22 L6 10 Z"
+                stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+              <path d="M14 20 L18 24 L26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="lore-title serif">Protected & Finite</h3>
+          <p class="lore-body">
+            Since 2004, Namibia has declared Gibeon meteorite a protected national
+            monument. No new collection is permitted. The supply in circulation is
+            all that exists. When it's gone, it's gone — forever.
+          </p>
+          <a href="/blog/why-meteorite-makes-the-best-wedding-band" class="lore-link">
+            Why this matters →
+          </a>
+        </div>
+
+        <!-- Lore 5: USA Craft -->
+        <div class="lore-card reveal" style="animation-delay:0.4s">
+          <div class="lore-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 6 C13 6 7 11 7 20 C7 29 13 34 20 34 C27 34 33 29 33 20 C33 11 27 6 20 6"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M12 20 L20 12 L28 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <circle cx="20" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="lore-title serif">Handmade in Minneapolis</h3>
+          <p class="lore-body">
+            Johan shapes, cuts, etches, inlays, and polishes every single piece
+            by hand in the USA. No factory. No offshore shortcuts. Each ring
+            carries hours of skilled artisan work alongside billions of years of cosmic formation.
+          </p>
+          <a href="/about" class="lore-link">
+            Meet the maker →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FEATURED GRID (More Products)
+  ═══════════════════════════════════════ -->
+  <section class="featured-section section" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">The Collection</p>
+        <h2 id="featured-heading">Every Piece, One of a Kind</h2>
+        <p class="section-sub">Browse the full range of meteorite jewelry — from bold men's bands to sculptural engagement rings.</p>
+      </div>
+
+      <div class="products-grid">
+        {featured.slice(2, 8).map((product, i) => (
+          <div class="reveal" style={`animation-delay: ${i * 0.07}s`}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="/rings" class="btn btn-primary">View All Rings →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SOCIAL PROOF / REVIEWS
+  ═══════════════════════════════════════ -->
+  <section class="reviews-section section" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Customer Stories</p>
+        <h2 id="reviews-heading">What Our Couples Say</h2>
+      </div>
+
+      <div class="reviews-grid">
+        {[
+          {
+            quote: "The Widmanstätten pattern on my husband's band is unlike anything I've ever seen. He gets compliments every single day. Worth every penny.",
+            name: "Sarah M.",
+            ring: "Gibeon Meteorite Titanium Band",
+            stars: 5,
+          },
+          {
+            quote: "I wanted something that felt as significant as the commitment. A billion-year-old piece of the solar system on my finger — that's it. That's the feeling.",
+            name: "Marcus T.",
+            ring: "Meteorite & Yellow Gold Wedding Band",
+            stars: 5,
+          },
+          {
+            quote: "Johan was patient, thoughtful, and the craftsmanship is extraordinary. The ring arrived perfectly — I cried when I opened the box.",
+            name: "Elena & James K.",
+            ring: "Meteorite Engagement Ring Set",
+            stars: 5,
+          },
+        ].map((r, i) => (
+          <div class="review-card reveal" style={`animation-delay: ${i * 0.1}s`}>
+            <div class="review-stars" aria-label={`${r.stars} out of 5 stars`}>
+              {'★'.repeat(r.stars)}
+            </div>
+            <blockquote class="review-quote serif">"{r.quote}"</blockquote>
+            <div class="review-author">
+              <span class="review-name">{r.name}</span>
+              <span class="review-ring">{r.ring}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="reviews-note reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+        </svg>
+        <span>Thousands of verified reviews on <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan →</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FINAL CTA BANNER
+  ═══════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="cta-bg" aria-hidden="true">
+      <div class="cta-glow"></div>
+    </div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <p class="label">Begin Your Journey</p>
+        <h2 class="serif cta-heading">
+          Your ring is waiting<br />
+          <em>in the cosmos.</em>
+        </h2>
+        <p class="cta-sub">
+          Every piece is made to order. Customized to your size, your metal,
+          your vision. Start exploring today — complete your order at
+          JewelryByJohan.com, where every purchase is fulfilled.
+        </p>
+        <div class="cta-actions">
+          <a
+            href="https://jewelrybyjohan.com"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary cta-btn"
+          >
+            Order at Jewelry by Johan
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="/sizing-guide" class="btn btn-outline">Find Your Ring Size</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ──────── HERO ──────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 68px; /* nav height */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .hero-glow-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,144,31,0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: heroGlow1 8s ease-in-out infinite;
+  }
+
+  .hero-glow-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(124,106,255,0.05) 0%, transparent 70%);
+    bottom: 100px;
+    left: 0;
+    animation: heroGlow2 10s ease-in-out infinite;
+  }
+
+  @keyframes heroGlow1 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+    50% { transform: translate(30px, 20px) scale(1.1); opacity: 1; }
+  }
+
+  @keyframes heroGlow2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 30px); }
+  }
+
+  /* Star field */
+  .hero-stars {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Crystal lines (Widmanstätten decorative) */
+  .crystal-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        15deg, transparent, transparent 60px,
+        rgba(201,144,31,0.025) 60px, rgba(201,144,31,0.025) 61px
+      ),
+      repeating-linear-gradient(
+        -15deg, transparent, transparent 80px,
+        rgba(200,205,214,0.02) 80px, rgba(200,205,214,0.02) 81px
+      );
+  }
+
+  .hero-inner {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Text */
+  .hero-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-heading {
+    font-size: clamp(2.8rem, 6.5vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: var(--c-text);
+  }
+
+  .hero-em {
+    font-style: italic;
+    color: var(--c-text);
+    font-weight: 300;
+  }
+
+  .hero-sub-heading {
+    display: block;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-body {
+    font-size: 1.125rem;
+    color: var(--c-text-muted);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-num {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--c-text);
+    line-height: 1;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    margin-top: 3px;
+  }
+
+  .stat-div {
+    width: 1px;
+    height: 40px;
+    background: var(--c-border);
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btn-primary {
+    padding: 1rem 2rem;
+    font-size: 0.875rem;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    padding: 0.35rem 0.875rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-full);
+    transition: color 0.2s, border-color 0.2s;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    color: var(--c-gold-light);
+    border-color: var(--c-border-gold);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-ring-frame {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .hero-ring-link {
+    display: block;
+    text-decoration: none;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+    transition: border-color 0.4s, box-shadow 0.4s;
+  }
+
+  .hero-ring-link:hover {
+    border-color: var(--c-border-gold);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hero-ring-img-wrap {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-ring-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-smooth);
+  }
+
+  .hero-ring-link:hover .hero-ring-img {
+    transform: scale(1.04);
+  }
+
+  .hero-img-watermark {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.875rem;
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+  }
+
+  .hero-ring-caption {
+    padding: 1.25rem 1.5rem;
+    background: var(--c-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .hero-ring-name {
+    font-size: 1rem;
+    color: var(--c-text);
+  }
+
+  /* Orbital decorations */
+  .orbital {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201,144,31,0.15);
+    pointer-events: none;
+  }
+
+  .orbit-1 {
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    animation: orbit1 20s linear infinite;
+  }
+
+  .orbit-2 {
+    width: 125%;
+    height: 125%;
+    top: -12.5%;
+    left: -12.5%;
+    border-color: rgba(200,205,214,0.06);
+    animation: orbit1 30s linear infinite reverse;
+  }
+
+  @keyframes orbit1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    box-shadow: 0 0 10px var(--c-gold);
+    pointer-events: none;
+  }
+
+  .sp-1 { top: 10%; right: -3%; animation: sparkle1 3s ease-in-out infinite; }
+  .sp-2 { bottom: 20%; left: -4%; animation: sparkle1 4s ease-in-out infinite 1s; }
+  .sp-3 { top: 60%; right: -5%; animation: sparkle1 3.5s ease-in-out infinite 0.5s; }
+
+  @keyframes sparkle1 {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Scroll hint */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--c-gold));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  .scroll-hint span {
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 0.5; }
+    50% { transform: scaleY(1.2); opacity: 1; }
+  }
+
+  /* ──────── STORY ──────── */
+  .story-section {
+    text-align: center;
+  }
+
+  .story-heading {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--c-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .story-heading em {
+    font-style: italic;
+    color: var(--c-gold-light);
+  }
+
+  .story-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--c-gold);
+    margin: 1.5rem auto;
+  }
+
+  .story-body {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* ──────── CATEGORIES ──────── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-sub {
+    font-size: 1.0625rem;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .cat-card {
+    position: relative;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.4s, transform 0.4s var(--ease-smooth), box-shadow 0.4s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .cat-card:hover {
+    border-color: var(--c-border-gold);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .cat-icon {
+    font-size: 1.75rem;
+    color: var(--c-gold);
+    line-height: 1;
+    font-family: var(--font-serif);
+  }
+
+  .cat-title {
+    font-size: 1.25rem;
+    color: #eeeef2;
+    font-weight: 400;
+  }
+
+  .cat-sub {
+    font-size: 0.875rem;
+    color: #b4b7cc;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .cat-count {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-gold);
+    font-weight: 500;
+    font-family: var(--font-sans);
+  }
+
+  .cat-arrow {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    color: var(--c-text-faint);
+    transition: transform 0.3s var(--ease-smooth), color 0.3s;
+  }
+
+  .cat-card:hover .cat-arrow {
+    transform: translate(4px, -4px);
+    color: var(--c-gold);
+  }
+
+  .cat-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(201,144,31,0.04) 50%, transparent 100%);
+    background-size: 200% 200%;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+
+  .cat-card:hover .cat-shimmer { opacity: 1; }
+
+  /* ──────── PRODUCTS GRID ──────── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .section-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  /* ──────── LORE ──────── */
+  .lore-section {
+    padding: clamp(4rem, 8vw, 9rem) clamp(1.25rem, 4vw, 3rem);
+    background: var(--c-bg-2);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .lore-grid {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+
+  .lore-card {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--c-border);
+    transition: background 0.3s;
+  }
+
+  .lore-card:last-child { border-right: none; }
+
+  .lore-card:hover { background: var(--c-bg-3); }
+
+  .lore-icon {
+    color: var(--c-gold);
+    margin-bottom: 1.25rem;
+    opacity: 0.8;
+  }
+
+  .lore-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--c-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .lore-body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--c-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .lore-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--c-gold);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .lore-link:hover { color: var(--c-gold-light); }
+
+  /* ──────── REVIEWS ──────── */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .review-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .review-card:hover {
+    border-color: var(--c-border-gold);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .review-stars {
+    color: var(--c-gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .review-quote {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--c-text);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .review-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--c-text);
+  }
+
+  .review-ring {
+    font-size: 0.75rem;
+    color: var(--c-text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  .reviews-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+    text-align: center;
+  }
+
+  .reviews-note svg { color: var(--c-gold); }
+
+  .reviews-note a {
+    color: var(--c-gold);
+    transition: color 0.2s;
+  }
+
+  .reviews-note a:hover { color: var(--c-gold-light); }
+
+  /* ──────── CTA BANNER ──────── */
+  .cta-banner {
+    position: relative;
+    padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 4vw, 3rem);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .cta-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(201,144,31,0.12) 0%, transparent 70%);
+    filter: blur(40px);
+    animation: ctaGlow 6s ease-in-out infinite;
+  }
+
+  @keyframes ctaGlow {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-heading {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--c-text);
+    line-height: 1.15;
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  .cta-heading em {
+    font-style: italic;
+    color: var(--c-gold-light);
+  }
+
+  .cta-sub {
+    font-size: 1.0625rem;
+    color: var(--c-text-muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    padding: 1rem 2.25rem;
+    font-size: 0.875rem;
+  }
+
+  /* ──────── RESPONSIVE ──────── */
+  @media (max-width: 1280px) {
+    .lore-grid { grid-template-columns: repeat(3, 1fr); }
+    .lore-card:nth-child(3) { border-right: none; }
+    .lore-card:nth-child(4) { border-top: 1px solid var(--c-border); }
+    .lore-card:nth-child(5) { border-top: 1px solid var(--c-border); }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .lore-grid { grid-template-columns: repeat(2, 1fr); }
+    .lore-card { border-top: 1px solid var(--c-border); border-right: 1px solid var(--c-border); }
+    .lore-card:nth-child(even) { border-right: none; }
+  }
+
+  @media (max-width: 640px) {
+    .categories-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .lore-grid { grid-template-columns: 1fr; }
+    .lore-card { border-right: none; }
+    .hero-stats { gap: 1rem; }
+    .stat-num { font-size: 1.375rem; }
+  }
+</style>
+
+<script>
+  // Generate star field
+  const starsContainer = document.getElementById('hero-stars');
+  if (starsContainer) {
+    const count = window.innerWidth > 768 ? 80 : 40;
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      const size = Math.random() * 1.5 + 0.5;
+      const opacity = Math.random() * 0.5 + 0.1;
+      const duration = Math.random() * 4 + 2;
+      const delay = Math.random() * 5;
+      star.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: white;
+        border-radius: 50%;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        opacity: ${opacity};
+        animation: starTwinkle ${duration}s ease-in-out ${delay}s infinite;
+        --dur: ${duration}s;
+        --opacity: ${opacity};
+      `;
+      starsContainer.appendChild(star);
+    }
+  }
+</script>

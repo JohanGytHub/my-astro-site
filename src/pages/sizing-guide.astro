@@ -1,0 +1,604 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const sizeChart = [
+  { us: '4',    mm: '14.9', inch: '0.587', circ: '46.8' },
+  { us: '4.5',  mm: '15.3', inch: '0.602', circ: '48.0' },
+  { us: '5',    mm: '15.7', inch: '0.618', circ: '49.3' },
+  { us: '5.5',  mm: '16.1', inch: '0.634', circ: '50.6' },
+  { us: '6',    mm: '16.5', inch: '0.649', circ: '51.9' },
+  { us: '6.5',  mm: '16.9', inch: '0.665', circ: '53.1' },
+  { us: '7',    mm: '17.3', inch: '0.681', circ: '54.4' },
+  { us: '7.5',  mm: '17.7', inch: '0.697', circ: '55.7' },
+  { us: '8',    mm: '18.2', inch: '0.717', circ: '57.2' },
+  { us: '8.5',  mm: '18.6', inch: '0.733', circ: '58.5' },
+  { us: '9',    mm: '19.0', inch: '0.748', circ: '59.7' },
+  { us: '9.5',  mm: '19.4', inch: '0.764', circ: '61.0' },
+  { us: '10',   mm: '19.8', inch: '0.780', circ: '62.3' },
+  { us: '10.5', mm: '20.2', inch: '0.795', circ: '63.5' },
+  { us: '11',   mm: '20.6', inch: '0.811', circ: '64.8' },
+  { us: '11.5', mm: '21.0', inch: '0.827', circ: '66.0' },
+  { us: '12',   mm: '21.4', inch: '0.843', circ: '67.3' },
+  { us: '12.5', mm: '21.8', inch: '0.858', circ: '68.5' },
+  { us: '13',   mm: '22.2', inch: '0.874', circ: '69.8' },
+  { us: '13.5', mm: '22.6', inch: '0.890', circ: '71.1' },
+  { us: '14',   mm: '23.0', inch: '0.906', circ: '72.3' },
+];
+---
+
+<BaseLayout
+  title="Ring Sizing Guide — Measure Your Finger for the Perfect Fit"
+  description="Find your exact ring size with our complete guide. Includes US size chart with mm diameter and circumference, comfort fit vs standard fit explanation, measurement tips, and printable sizer for meteorite rings."
+>
+  <Nav />
+
+  <main style="padding-top:68px">
+
+    <!-- Header -->
+    <header class="sg-header">
+      <div class="sg-bg" aria-hidden="true"><div class="sg-glow"></div></div>
+      <div class="container sg-inner">
+        <nav class="sg-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Ring Sizing Guide</span>
+        </nav>
+        <div class="reveal">
+          <p class="label">Sizing Guide</p>
+          <h1 class="serif sg-heading">
+            Find your<br />
+            <em>perfect fit.</em>
+          </h1>
+          <p class="sg-sub">
+            A ring that fits perfectly is one you'll wear every day for the rest of your life.
+            Use this guide to measure accurately — then contact Johan if you have any questions.
+          </p>
+          <div class="sg-cta-bar">
+            <a href="https://jewelrybyjohan.com/products/ring-sizer-custom-made-1170" target="_blank" rel="noopener" class="btn btn-primary">
+              Order a Custom Made Ring Sizer — $10
+            </a>
+            <span class="sg-cta-note">A ring sizer set is included with every ring purchase.</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Methods -->
+    <section class="sg-methods section">
+      <div class="container">
+        <div class="reveal" style="text-align:center;margin-bottom:3rem">
+          <p class="label">Three Ways to Measure</p>
+          <h2 class="serif">Find your size.</h2>
+        </div>
+
+        <div class="methods-grid">
+
+          <!-- Method 1: String -->
+          <div class="method-card reveal">
+            <div class="method-num serif">01</div>
+            <h3 class="method-title">The String Method</h3>
+            <p class="method-sub">Most accurate for home measurement</p>
+            <ol class="method-steps">
+              <li>Cut a thin strip of paper or string about 15cm long.</li>
+              <li>Wrap it around the base of your finger — the knuckle counts too, so make sure it can pass over.</li>
+              <li>Mark where the paper meets itself with a pen.</li>
+              <li>Lay it flat and measure the length in millimeters.</li>
+              <li>This is your circumference. Cross-reference with our size chart below.</li>
+            </ol>
+            <div class="method-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span>Measure in the afternoon when your fingers are at their largest. Cold morning fingers run smaller.</span>
+            </div>
+          </div>
+
+          <!-- Method 2: Existing ring -->
+          <div class="method-card reveal" style="animation-delay:.1s">
+            <div class="method-num serif">02</div>
+            <h3 class="method-title">Measure an Existing Ring</h3>
+            <p class="method-sub">Best if you already own a well-fitting ring</p>
+            <ol class="method-steps">
+              <li>Take a ring you know fits the correct finger perfectly.</li>
+              <li>Place it on a ruler and measure the inside diameter — edge to edge across the interior.</li>
+              <li>Record this in millimeters.</li>
+              <li>Find this diameter in our size chart to get your US size.</li>
+            </ol>
+            <div class="method-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span>Different finger positions have different sizes. A ring for your ring finger may not fit your middle finger.</span>
+            </div>
+          </div>
+
+          <!-- Method 3: Ring Sizer -->
+          <div class="method-card reveal" style="animation-delay:.2s">
+            <div class="method-num serif">03</div>
+            <h3 class="method-title">Use a Custom Made Ring Sizer</h3>
+            <p class="method-sub">The most accurate option — Johan recommends this</p>
+            <ol class="method-steps">
+              <li>A ring sizer set is included with every ring purchase.</li>
+              <li>You can also order a <strong>Custom Made Ring Sizer</strong> for $10 before placing your ring order.</li>
+              <li>When ordering, select the <strong>size and width</strong> that matches the ring you want — this is critical for an accurate fit.</li>
+              <li>Try the sizer on, find the one that slides on comfortably but stays put, then include that size with your order.</li>
+            </ol>
+            <div class="method-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span><strong>Width matters.</strong> Most off-the-shelf ring sizers are thin and will not give an accurate fit for a wide ring. A wide ring in the same size will feel significantly tighter on the finger than a thin ring. Always order your sizer in the same width as the ring you intend to purchase.</span>
+            </div>
+            <a href="https://jewelrybyjohan.com/products/ring-sizer-custom-made-1170" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1.5rem;font-size:.8125rem">
+              Order Custom Made Ring Sizer — $10 →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Size Chart -->
+    <section class="sg-chart section" id="size-chart">
+      <div class="container">
+        <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+          <p class="label">Reference Chart</p>
+          <h2 class="serif">US Ring Size Chart</h2>
+        </div>
+
+        <div class="chart-wrap reveal">
+          <table class="size-table" aria-label="Ring size conversion chart">
+            <thead>
+              <tr>
+                <th scope="col">US Size</th>
+                <th scope="col">Diameter (mm)</th>
+                <th scope="col">Diameter (inch)</th>
+                <th scope="col">Circumference (mm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sizeChart.map((row, i) => (
+                <tr class={i % 2 === 0 ? 'row-even' : ''}>
+                  <td class="size-num serif">{row.us}</td>
+                  <td>{row.mm} mm</td>
+                  <td>{row.inch}"</td>
+                  <td>{row.circ} mm</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Interactive finder -->
+        <div class="size-finder reveal">
+          <h3 class="serif size-finder-heading">Find My Size</h3>
+          <div class="finder-inputs">
+            <div class="finder-group">
+              <label class="finder-label" for="circ-input">Enter circumference (mm)</label>
+              <input
+                type="number"
+                id="circ-input"
+                class="finder-input"
+                placeholder="e.g. 57.2"
+                min="40"
+                max="80"
+                step="0.1"
+                aria-describedby="finder-result"
+              />
+            </div>
+            <div class="finder-result" id="finder-result" aria-live="polite">
+              <span class="fr-placeholder">Your size will appear here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comfort Fit vs Standard -->
+    <section class="sg-fit section">
+      <div class="container">
+        <div class="fit-grid">
+          <div class="fit-text reveal">
+            <p class="label">Fit Types Explained</p>
+            <h2 class="serif fit-heading">Comfort Fit vs<br />Standard Fit</h2>
+            <div class="fit-divider"></div>
+            <p class="fit-body">
+              Not all rings feel the same on the inside. The interior profile matters
+              as much as the size — especially for a ring you'll wear every day.
+            </p>
+          </div>
+          <div class="fit-cards reveal" style="animation-delay:.12s">
+            <div class="fit-card">
+              <div class="fc-header">
+                <div class="fc-icon" aria-hidden="true">
+                  <svg width="36" height="20" viewBox="0 0 36 20" fill="none">
+                    <path d="M2 18 Q18 2 34 18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="fc-title">Comfort Fit</h3>
+                <span class="fc-badge">Recommended</span>
+              </div>
+              <p class="fc-body">
+                The interior of the ring is slightly rounded — like the inside of a dome.
+                This means only a narrow ridge contacts your finger, distributing pressure
+                evenly and allowing airflow. The ring slides on and off more easily.
+              </p>
+              <ul class="fc-pros">
+                <li>✓ Easier to put on and remove</li>
+                <li>✓ More comfortable for all-day wear</li>
+                <li>✓ Better air circulation</li>
+                <li>✓ Johan's default for most pieces</li>
+              </ul>
+            </div>
+            <div class="fit-card">
+              <div class="fc-header">
+                <div class="fc-icon" aria-hidden="true">
+                  <svg width="36" height="20" viewBox="0 0 36 20" fill="none">
+                    <line x1="2" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="fc-title">Standard Fit</h3>
+              </div>
+              <p class="fc-body">
+                The interior is completely flat — a cylinder. The full inner surface contacts
+                the finger uniformly. Some wearers prefer the feeling of a ring that sits more
+                snugly and doesn't shift around.
+              </p>
+              <ul class="fc-pros">
+                <li>○ More "secure" feeling on the finger</li>
+                <li>○ Traditional ring feel</li>
+                <li>○ Slightly harder to remove when warm</li>
+                <li>○ Available on request</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fit-note reveal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+          </svg>
+          <p>
+            <strong>Note:</strong> Comfort fit rings measure slightly larger when sizing — typically go up half a size
+            from your standard fit size measurement. If ordering comfort fit, Johan will account for this automatically.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pro Tips -->
+    <section class="sg-tips section">
+      <div class="container">
+        <div class="reveal" style="text-align:center;margin-bottom:3rem">
+          <p class="label">Pro Tips</p>
+          <h2 class="serif">Measure like a pro.</h2>
+        </div>
+        <div class="tips-grid">
+          {[
+            ['Measure Multiple Times', 'Measure your finger at least three times and take the average. Finger size can vary by up to half a size during a single day.'],
+            ['Temperature Matters', 'Cold constricts fingers; warmth expands them. The "true" ring size for all-day wear is best measured in the afternoon at room temperature.'],
+            ['Knuckle Clearance', 'The ring must pass over the knuckle. If your knuckle is significantly larger than your finger base, size to the knuckle and accept a slightly looser base fit.'],
+            ['Dominant vs Non-Dominant', 'Your dominant hand\'s ring finger is typically a half to full size larger than your non-dominant hand. Measure the specific hand you\'ll wear the ring on.'],
+            ['Wide Bands Fit Tighter', 'A 4mm band feels looser than an 8mm band at the same stated size, because wider bands contact more finger surface. For bands over 6mm, go up half a size.'],
+            ['When in Doubt, Go Larger', 'Our meteorite inlay rings cannot be resized after production. When between sizes, always go larger — a slightly loose ring is far better than one that won\'t fit.'],
+          ].map(([title, body], i) => (
+            <div class="tip-item reveal" style={`animation-delay:${i * 0.07}s`}>
+              <div class="tip-num serif">{String(i+1).padStart(2,'0')}</div>
+              <h3 class="tip-title">{title}</h3>
+              <p class="tip-body">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="sg-bottom-cta">
+      <div class="container-sm" style="text-align:center">
+        <div class="reveal">
+          <p class="label">Ready to Order?</p>
+          <h2 class="serif" style="font-size:clamp(1.8rem,4vw,3rem);margin:.5rem 0 1rem;font-weight:300">
+            Not sure? Johan will help.
+          </h2>
+          <p style="color:var(--c-text-muted);margin-bottom:2.5rem;font-size:1.0625rem;max-width:560px;margin-left:auto;margin-right:auto">
+            Our meteorite inlay rings <strong style="color:var(--c-text)">cannot be resized after production</strong> — getting your size right the first time is essential.
+            If you're unsure, order "Unknown — Send Ring Sizer First" and a sizer set will be included with your purchase.
+            Or <a href="https://jewelrybyjohan.com/products/ring-sizer-custom-made-1170" target="_blank" rel="noopener" style="color:var(--c-gold);text-decoration:none;">order a custom made ring sizer for $10</a> — made in the exact width of your desired ring for the most accurate fit.
+          </p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+            <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary">
+              Start Your Order →
+            </a>
+            <a href="/rings" class="btn btn-outline">Browse Rings</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .sg-header {
+    position: relative;
+    padding: clamp(4rem,8vw,8rem) clamp(1.25rem,4vw,3rem) clamp(3rem,5vw,5rem);
+    overflow: hidden;
+  }
+
+  .sg-bg { position: absolute; inset: 0; z-index: 0; }
+  .sg-glow {
+    position: absolute;
+    top: -80px; right: 5%;
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,.07) 0%, transparent 65%);
+    filter: blur(60px);
+  }
+
+  .sg-inner { position: relative; z-index: 1; max-width: 700px; }
+
+  .sg-breadcrumb {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: .8125rem; color: var(--c-text-muted); margin-bottom: 2rem;
+  }
+
+  .sg-breadcrumb a { color: var(--c-text-muted); transition: color .2s; }
+  .sg-breadcrumb a:hover { color: var(--c-gold); }
+
+  .sg-heading {
+    font-size: clamp(2.5rem,6vw,5.5rem);
+    font-weight: 300;
+    letter-spacing: -.02em;
+    line-height: .95;
+    color: var(--c-text);
+    margin: .75rem 0 1.5rem;
+  }
+
+  .sg-heading em { font-style: italic; color: var(--c-gold-light); }
+  .sg-sub { font-size: 1.125rem; color: var(--c-text-muted); max-width: 600px; line-height: 1.7; margin: 0 0 2rem; }
+
+  .sg-cta-bar { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+  .sg-cta-note { font-size: .875rem; color: var(--c-text-muted); }
+
+  /* Methods */
+  .methods-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+  .method-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    transition: border-color .3s, transform .3s var(--ease-smooth);
+  }
+
+  .method-card:hover { border-color: var(--c-border-gold); transform: translateY(-4px); }
+
+  .method-num { font-size: 2.5rem; font-weight: 300; color: var(--c-gold); opacity: .4; margin-bottom: 1rem; }
+  .method-title { font-size: 1.25rem; font-weight: 600; color: var(--c-text); margin-bottom: .375rem; font-family: var(--font-sans); }
+  .method-sub { font-size: .8125rem; color: var(--c-text-muted); margin-bottom: 1.25rem; letter-spacing: .03em; }
+
+  .method-steps {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .method-steps li { font-size: .9375rem; color: var(--c-text-muted); line-height: 1.6; }
+
+  .method-tip {
+    display: flex;
+    gap: .5rem;
+    align-items: flex-start;
+    background: var(--c-gold-pale);
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius);
+    padding: .875rem 1rem;
+    font-size: .8125rem;
+    color: var(--c-text-muted);
+    line-height: 1.55;
+  }
+
+  .method-tip svg { color: var(--c-gold); flex-shrink: 0; margin-top: 1px; }
+
+  /* Chart */
+  .sg-chart { background: var(--c-bg-2); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+
+  .chart-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--c-border);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .size-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+  }
+
+  .size-table th {
+    background: var(--c-bg-3);
+    font-size: .6875rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    padding: .875rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .size-table td {
+    padding: .875rem 1.25rem;
+    font-size: .9375rem;
+    color: var(--c-text-muted);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .size-table tr:last-child td { border-bottom: none; }
+  .row-even td { background: rgba(255,255,255,.02); }
+  .size-num { color: var(--c-text); font-size: 1.0625rem; }
+
+  /* Finder */
+  .size-finder {
+    max-width: 560px;
+    margin: 3rem auto 0;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+  }
+
+  .size-finder-heading { font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; }
+
+  .finder-inputs { display: flex; gap: 1.5rem; align-items: flex-end; flex-wrap: wrap; }
+
+  .finder-group { flex: 1; }
+
+  .finder-label {
+    display: block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    margin-bottom: .5rem;
+  }
+
+  .finder-input {
+    width: 100%;
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    color: var(--c-text);
+    font-size: 1rem;
+    padding: .875rem 1rem;
+    font-family: var(--font-sans);
+    transition: border-color .2s;
+  }
+
+  .finder-input:focus { border-color: var(--c-border-gold); outline: none; }
+
+  .finder-result {
+    flex: 1;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    padding: .875rem 1rem;
+    background: var(--c-bg-3);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    font-size: 1.125rem;
+    color: var(--c-text);
+    font-weight: 500;
+    font-family: var(--font-serif);
+    transition: border-color .3s;
+  }
+
+  .fr-placeholder { font-size: .875rem; color: var(--c-text-faint); font-family: var(--font-sans); font-weight: 400; }
+
+  /* Comfort fit */
+  .sg-fit { }
+
+  .fit-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; max-width: 1440px; margin: 0 auto; }
+  .fit-heading { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 300; line-height: 1.2; }
+  .fit-divider { width: 40px; height: 1px; background: var(--c-gold); margin: 1.5rem 0; }
+  .fit-body { font-size: 1.0625rem; color: var(--c-text-muted); line-height: 1.7; }
+
+  .fit-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+  .fit-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem;
+  }
+
+  .fc-header { display: flex; align-items: center; gap: .875rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .fc-icon { color: var(--c-gold); display: flex; align-items: center; }
+  .fc-title { font-size: 1.125rem; font-weight: 600; color: var(--c-text); font-family: var(--font-sans); }
+  .fc-badge { font-size: .625rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #0a0a0f; background: var(--c-gold); padding: .2rem .6rem; border-radius: var(--radius-full); }
+  .fc-body { font-size: .9375rem; color: var(--c-text-muted); line-height: 1.65; margin-bottom: 1rem; }
+  .fc-pros { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+  .fc-pros li { font-size: .875rem; color: var(--c-text-muted); }
+
+  .fit-note {
+    display: flex; gap: .75rem; align-items: flex-start;
+    background: var(--c-bg-2); border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+    margin-top: 2.5rem; font-size: .9375rem; color: var(--c-text-muted);
+    line-height: 1.6; max-width: 1440px;
+  }
+
+  .fit-note svg { color: var(--c-gold); flex-shrink: 0; margin-top: 2px; }
+  .fit-note strong { color: var(--c-text); }
+
+  /* Tips */
+  .tips-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+  .tip-item {
+    padding: 2rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    transition: border-color .3s, transform .3s var(--ease-smooth);
+  }
+
+  .tip-item:hover { border-color: var(--c-border-gold); transform: translateY(-3px); }
+
+  .tip-num { font-size: 2rem; font-weight: 300; color: var(--c-gold); opacity: .35; margin-bottom: .75rem; }
+  .tip-title { font-size: 1rem; font-weight: 600; color: var(--c-text); margin-bottom: .625rem; font-family: var(--font-sans); }
+  .tip-body { font-size: .9375rem; color: var(--c-text-muted); line-height: 1.65; margin: 0; }
+
+  /* Bottom CTA */
+  .sg-bottom-cta {
+    padding: clamp(4rem,7vw,7rem) clamp(1.25rem,4vw,3rem);
+    border-top: 1px solid var(--c-border);
+    background: var(--c-bg-2);
+  }
+
+  @media (max-width:1024px) {
+    .methods-grid { grid-template-columns: 1fr; }
+    .fit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .fit-cards { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: repeat(2,1fr); }
+  }
+
+  @media (max-width:640px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .finder-inputs { flex-direction: column; }
+  }
+</style>
+
+<script>
+  // Ring size finder
+  const sizeChart = [
+    { us: '4', circ: 46.8 }, { us: '4.5', circ: 48.0 }, { us: '5', circ: 49.3 },
+    { us: '5.5', circ: 50.6 }, { us: '6', circ: 51.9 }, { us: '6.5', circ: 53.1 },
+    { us: '7', circ: 54.4 }, { us: '7.5', circ: 55.7 }, { us: '8', circ: 57.2 },
+    { us: '8.5', circ: 58.5 }, { us: '9', circ: 59.7 }, { us: '9.5', circ: 61.0 },
+    { us: '10', circ: 62.3 }, { us: '10.5', circ: 63.5 }, { us: '11', circ: 64.8 },
+    { us: '11.5', circ: 66.0 }, { us: '12', circ: 67.3 }, { us: '12.5', circ: 68.5 },
+    { us: '13', circ: 69.8 }, { us: '13.5', circ: 71.1 }, { us: '14', circ: 72.3 },
+  ];
+
+  const input = document.getElementById('circ-input') as HTMLInputElement | null;
+  const result = document.getElementById('finder-result');
+
+  input?.addEventListener('input', () => {
+    const val = parseFloat(input.value);
+    if (isNaN(val) || val < 40 || val > 80) {
+      if (result) result.innerHTML = '<span class="fr-placeholder">Enter a circumference between 40–80mm</span>';
+      return;
+    }
+    // Find closest
+    let closest = sizeChart[0];
+    let minDiff = Infinity;
+    for (const row of sizeChart) {
+      const diff = Math.abs(row.circ - val);
+      if (diff < minDiff) { minDiff = diff; closest = row; }
+    }
+    if (result) {
+      result.innerHTML = `<span>US Size <strong style="color:var(--c-gold-light);font-size:1.4rem">${closest.us}</strong> <span style="font-size:.875rem;color:var(--c-text-muted);font-family:var(--font-sans)">(${closest.circ}mm circ.)</span></span>`;
+    }
+  });
+</script>

@@ -1,0 +1,325 @@
+---
+import type { Product } from '../types/product';
+import { getPrimaryImage, getProductAlt, getMaterials, productUrl } from '../data/products';
+
+export interface Props {
+  product: Product;
+  lazy?: boolean;
+  featured?: boolean;
+}
+
+const { product, lazy = true, featured = false } = Astro.props;
+
+const primaryImage = getPrimaryImage(product);
+const altText = getProductAlt(product);
+const materials = getMaterials(product);
+const shopUrl = productUrl(product.handle);
+const detailUrl = `/products/${product.handle}`;
+
+// Get second image for hover effect
+const hoverImage = product.images[1]?.src || primaryImage;
+---
+
+<article
+  class={`product-card ${featured ? 'featured' : ''}`}
+  data-handle={product.handle}
+  data-name={product.title.toLowerCase()}
+>
+  <a href={detailUrl} class="card-image-wrap shimmer-overlay" aria-label={`View ${product.title}`}>
+    <!-- Primary image -->
+    <img
+      src={primaryImage}
+      alt={altText}
+      loading={lazy ? 'lazy' : 'eager'}
+      decoding="async"
+      class="card-img card-img-primary"
+      width="600"
+      height="600"
+    />
+    <!-- Hover image -->
+    {hoverImage !== primaryImage && (
+      <img
+        src={hoverImage}
+        alt={`${altText} — alternate view`}
+        loading="lazy"
+        decoding="async"
+        class="card-img card-img-hover"
+        width="600"
+        height="600"
+        aria-hidden="true"
+      />
+    )}
+
+    <!-- Overlay badges -->
+    <div class="card-badges">
+      {product.tags.toLowerCase().includes('meteorite') && !product.title.toLowerCase().includes('mimetic') && !(product.body_html || '').toLowerCase().includes('mimetic') && (
+        <span class="badge badge-meteorite">Authentic Meteorite</span>
+      )}
+      {product.product_type === 'Ring Sets' && (
+        <span class="badge badge-set">Ring Set</span>
+      )}
+    </div>
+
+    <!-- Quick shop overlay -->
+    <div class="card-overlay" aria-hidden="true">
+      <span class="overlay-text">View Details</span>
+    </div>
+
+    <!-- Watermark -->
+    <div class="card-watermark" aria-hidden="true">Jewelry by Johan</div>
+  </a>
+
+  <div class="card-body">
+    <!-- Materials -->
+    {materials.length > 0 && (
+      <div class="card-materials">
+        {materials.slice(0, 2).map(m => (
+          <span class="material-tag">{m}</span>
+        ))}
+      </div>
+    )}
+
+    <!-- Title -->
+    <h3 class="card-title">
+      <a href={detailUrl}>{product.title}</a>
+    </h3>
+
+    <!-- Footer -->
+    <div class="card-footer">
+      <a
+        href={shopUrl}
+        target="_blank"
+        rel="noopener"
+        class="card-btn"
+        aria-label={`View ${product.title} at Jewelry by Johan`}
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        View at Johan
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition:
+      transform 0.4s var(--ease-smooth),
+      box-shadow 0.4s var(--ease-smooth),
+      border-color 0.4s var(--ease-smooth);
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--c-border-gold);
+  }
+
+  /* Image */
+  .card-image-wrap {
+    display: block;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--c-bg-2);
+    cursor: pointer;
+  }
+
+  .card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-smooth), opacity 0.4s ease;
+  }
+
+  .card-img-hover {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+
+  .product-card:hover .card-img-primary {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+
+  .product-card:hover .card-img-hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Badges */
+  .card-badges {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    z-index: 2;
+  }
+
+  .badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-meteorite {
+    background: rgba(201,144,31,0.2);
+    color: var(--c-gold-light);
+    border: 1px solid rgba(201,144,31,0.3);
+    backdrop-filter: blur(8px);
+  }
+
+  .badge-set {
+    background: rgba(200,205,214,0.15);
+    color: var(--c-silver);
+    border: 1px solid rgba(200,205,214,0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Overlay */
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10,10,15,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+  }
+
+  .product-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .overlay-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 0.625rem 1.5rem;
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(8px);
+    transform: translateY(6px);
+    transition: transform 0.35s var(--ease-smooth);
+  }
+
+  .product-card:hover .overlay-text {
+    transform: translateY(0);
+  }
+
+  /* Watermark */
+  .card-watermark {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.625rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Body */
+  .card-body {
+    padding: 1.125rem 1.25rem 1.25rem;
+  }
+
+  .card-materials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .material-tag {
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    background: var(--c-bg-3);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: var(--c-text);
+    line-height: 1.3;
+    margin-bottom: 0.875rem;
+  }
+
+  .card-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+  }
+
+  .card-title a:hover { color: var(--c-gold-light); }
+
+  /* Footer */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-gold);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius-full);
+    transition:
+      background 0.2s,
+      color 0.2s,
+      transform 0.2s var(--ease-bounce);
+    white-space: nowrap;
+  }
+
+  .card-btn:hover {
+    background: var(--c-gold);
+    color: #0a0a0f;
+    transform: scale(1.04);
+  }
+
+  /* Featured variant */
+  .product-card.featured .card-title {
+    font-size: 1.1875rem;
+  }
+
+  .product-card.featured .card-body {
+    padding: 1.375rem 1.5rem 1.5rem;
+  }
+</style>

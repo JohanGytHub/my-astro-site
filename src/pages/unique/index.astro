@@ -1,0 +1,49 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'unique');
+---
+
+<CollectionLayout
+  title="Unique Meteorite Pieces"
+  metaTitle="Unique Meteorite Jewelry — Ring Sets & One-of-a-Kind Pieces | Jewelry by Johan"
+  description="One-of-a-kind meteorite jewelry — matching ring sets, sculptural pieces, and collector's items featuring authentic Gibeon meteorite. Each truly unique. USA handmade."
+  heading="Unique Pieces"
+  subheading="Ring sets, sculptural experiments, and collector's one-offs — these are the pieces that defy category, made for those who reject the ordinary."
+  products={products}
+  category="Unique Collection"
+/>---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'unique');
+---
+
+<CollectionLayout
+  title="Unique Meteorite Pieces"
+  metaTitle="Unique Meteorite Pieces — One-of-a-Kind | Jewelry by Johan"
+  description="One-of-a-kind meteorite jewelry — sculptural pieces and collector's items featuring authentic Gibeon meteorite. Each truly unique. USA handmade."
+  heading="Unique Pieces"
+  subheading="Sculptural experiments and collector's one-offs — pieces that defy category, made for those who reject the ordinary."
+  products={products}
+  category="Unique Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>The pieces in this collection resist easy categorization. Some are experimental forms that Johan made to explore what the material could do when freed from the conventions of ring or pendant design. Others are collector's items — pieces where a particularly striking meteorite fragment or an unusual material combination demanded a form that didn't fit any standard category.</p>
+          <p>Authentic Gibeon meteorite underpins most of what you'll find here, often combined with materials like dinosaur bone, whiskey barrel oak, antler, or precious metal inlays to create layered, tactile objects that are as much about material history as wearability. Every piece of Gibeon meteorite used is sourced from pre-2004 inventory — legally acquired before Namibia's national monument designation closed new collection of this material permanently.</p>
+        </div>
+        <div>
+          <p>The supply of Gibeon meteorite is finite and slowly depleting. <strong>Pieces in this collection are not mass produced, not replicated, and not restocked in the same form twice.</strong> If something here speaks to you, the exact meteorite pattern in that piece exists nowhere else — and once it is sold, that particular fragment of the solar system moves on.</p>
+          <p>All pieces are made to order by Johan in Minneapolis and fulfilled through <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>, where custom inquiries for one-off commissions are also welcomed. Free laser engraving up to 25 characters is available on eligible pieces. Visit the <a href="/about">full story</a> to learn more about the craft and materials behind every Johan piece.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { blogPosts, formatBlogDate, getRecentPosts } from '../../data/blog';
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const recentPosts = getRecentPosts(3).filter((p) => p.slug !== post.slug).slice(0, 2);
+
+// Convert markdown-style content to HTML
+function mdToHtml(md: string): string {
+  return md
+    .trim()
+    // H2
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    // H3
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    // Bold
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // Italic
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // HR
+    .replace(/^---$/gm, '<hr>')
+    // Unordered lists
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n)+/gs, (m) => `<ul>${m}</ul>`)
+    // Paragraphs (double newlines)
+    .split(/\n\n+/)
+    .map((block) => {
+      const b = block.trim();
+      if (!b) return '';
+      if (b.startsWith('<h') || b.startsWith('<ul') || b.startsWith('<hr')) return b;
+      return `<p>${b.replace(/\n/g, ' ')}</p>`;
+    })
+    .join('\n');
+}
+
+const bodyHtml = mdToHtml(post.body);
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.metaDescription,
+  datePublished: post.date,
+  author: { '@type': 'Person', name: 'Johan', url: 'https://jewelrybyjohan.com' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Jewelry by Johan',
+    url: 'https://meteorite.jewelry',
+  },
+};
+---
+
+<BaseLayout
+  title={post.metaTitle}
+  description={post.metaDescription}
+  type="article"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+  <Nav />
+
+  <main style="padding-top:68px">
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="ah-bg" aria-hidden="true">
+        <div class="ah-glow"></div>
+      </div>
+      <div class="container-sm ah-inner">
+        <!-- Breadcrumb -->
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/blog">Journal</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">{post.category}</span>
+        </nav>
+
+        <div class="reveal">
+          <div class="ah-meta">
+            <span class="label">{post.category}</span>
+            <span class="ah-date">{formatBlogDate(post.date)}</span>
+            <span class="ah-time">{post.readTime} min read</span>
+          </div>
+
+          <h1 class="serif ah-heading">{post.title}</h1>
+          <p class="serif ah-subtitle">{post.subtitle}</p>
+          <p class="ah-excerpt">{post.excerpt}</p>
+        </div>
+
+        <!-- Tags -->
+        <div class="ah-tags reveal">
+          {post.tags.slice(0,5).map(tag => (
+            <span class="ah-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </header>
+
+    <!-- Article Body -->
+    <article class="article-body container-sm">
+      <div class="prose article-prose reveal" set:html={bodyHtml} />
+
+      <!-- Article footer -->
+      <div class="article-footer reveal">
+        <div class="af-divider"></div>
+        <div class="af-cta">
+          <p class="serif af-cta-heading">Ready to wear a piece of this history?</p>
+          <p class="af-cta-sub">
+            Browse authentic Gibeon meteorite jewelry — every piece handmade in the USA by Johan.
+          </p>
+          <div class="af-cta-btns">
+            <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary">
+              Shop Jewelry by Johan →
+            </a>
+            <a href="/rings" class="btn btn-outline">Browse Rings</a>
+          </div>
+        </div>
+        <div class="af-tags">
+          <span class="af-tags-label">Filed under:</span>
+          {post.tags.map(tag => (
+            <span class="af-tag-chip">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Posts -->
+    {recentPosts.length > 0 && (
+      <section class="related-posts container-sm">
+        <div class="rp-header reveal">
+          <p class="label">More from the Journal</p>
+        </div>
+        <div class="rp-grid">
+          {recentPosts.map((rpost, i) => (
+            <a href={`/blog/${rpost.slug}`} class="rp-card reveal" style={`animation-delay:${i * 0.1}s`}>
+              <span class="rp-cat">{rpost.category}</span>
+              <h3 class="serif rp-title">{rpost.title}</h3>
+              <p class="rp-excerpt">{rpost.excerpt}</p>
+              <span class="rp-read">Read Article →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Header */
+  .article-header {
+    position: relative;
+    padding: clamp(4rem,8vw,8rem) clamp(1.25rem,4vw,3rem) clamp(3rem,5vw,5rem);
+    overflow: hidden;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .ah-bg { position: absolute; inset: 0; z-index: 0; }
+  .ah-glow {
+    position: absolute;
+    top: -80px; right: 10%;
+    width: 500px; height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,.07) 0%, transparent 65%);
+    filter: blur(50px);
+  }
+
+  .ah-inner { position: relative; z-index: 1; }
+
+  .article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .8125rem;
+    color: var(--c-text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .article-breadcrumb a { color: var(--c-text-muted); transition: color .2s; }
+  .article-breadcrumb a:hover { color: var(--c-gold); }
+
+  .ah-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .ah-date, .ah-time {
+    font-size: .8125rem;
+    color: var(--c-text-muted);
+  }
+
+  .ah-heading {
+    font-size: clamp(2rem,5vw,4rem);
+    font-weight: 300;
+    letter-spacing: -.015em;
+    color: var(--c-text);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .ah-subtitle {
+    font-size: clamp(1.1rem,2vw,1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--c-gold-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .ah-excerpt {
+    font-size: 1.125rem;
+    color: var(--c-text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0;
+  }
+
+  .ah-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: 2rem;
+  }
+
+  .ah-tag {
+    font-size: .6875rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    background: var(--c-bg-3);
+    padding: .3rem .75rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Body */
+  .article-body {
+    padding: clamp(3rem,5vw,5rem) clamp(1.25rem,4vw,2.5rem);
+  }
+
+  .article-prose {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Article footer */
+  .article-footer {
+    max-width: 680px;
+    margin: 4rem auto 0;
+  }
+
+  .af-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--c-border-gold), transparent);
+    margin-bottom: 3rem;
+  }
+
+  .af-cta {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border-gold);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .af-cta-heading { font-size: 1.5rem; font-weight: 300; color: var(--c-text); margin-bottom: .75rem; }
+  .af-cta-sub { color: var(--c-text-muted); margin-bottom: 1.75rem; font-size: 1rem; }
+  .af-cta-btns { display: flex; gap: .875rem; flex-wrap: wrap; }
+
+  .af-tags { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .af-tags-label { font-size: .75rem; color: var(--c-text-faint); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+  .af-tag-chip {
+    font-size: .6875rem;
+    color: var(--c-text-muted);
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    padding: .2rem .625rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Related posts */
+  .related-posts {
+    padding: 3rem clamp(1.25rem,4vw,2.5rem) 5rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .rp-header { margin-bottom: 1.75rem; }
+
+  .rp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .rp-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    transition: border-color .3s, transform .3s var(--ease-smooth), box-shadow .3s;
+  }
+
+  .rp-card:hover { border-color: var(--c-border-gold); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+
+  .rp-cat { font-size: .625rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--c-gold); }
+  .rp-title { font-size: 1.125rem; font-weight: 400; color: var(--c-text); line-height: 1.3; margin: .25rem 0; }
+  .rp-excerpt { font-size: .875rem; color: var(--c-text-muted); line-height: 1.6; flex: 1; }
+  .rp-read { font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-gold); margin-top: .5rem; }
+
+  @media (max-width:640px) { .rp-grid { grid-template-columns: 1fr; } }
+</style>

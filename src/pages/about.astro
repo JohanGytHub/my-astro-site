@@ -1,0 +1,678 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Our Story — Meteorite Jewelry by Johan"
+  description="The story behind Jewelry by Johan — authentic Gibeon meteorite jewelry handmade in the USA. Learn about our artisan process, meteorite science, sustainable sourcing, and the cosmic history in every ring."
+>
+  <Nav />
+
+  <main style="padding-top:68px">
+
+    <!-- ─── HERO ─── -->
+    <section class="about-hero">
+      <div class="ah-bg" aria-hidden="true">
+        <div class="ah-glow"></div>
+        <div class="ah-grid"></div>
+      </div>
+      <div class="container ah-inner">
+        <div class="ah-eyebrow reveal">
+          <span class="label">The Story Behind Every Ring</span>
+        </div>
+        <h1 class="serif ah-heading reveal">
+          Ancient cosmos.<br />
+          <em>Human hands.</em>
+        </h1>
+        <p class="ah-sub reveal">
+          Jewelry by Johan began in 2008 as a husband-and-wife garage operation
+          in Minnesota — Johan handcrafting rings while his wife handled the business side.
+          They were among the first jewelers anywhere to work with authentic Gibeon meteorite,
+          and that founding obsession has never changed. Every piece that leaves the workshop
+          is still shaped by the same hands that select the meteorite, perform the acid etch,
+          and sign the certificate of authenticity.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── VALUES BAR ─── -->
+    <div class="values-bar">
+      <div class="container values-inner">
+        {[
+          ['2008', 'Founded', 'Family-built from day one'],
+          ['4.5B', 'Years of Origin', 'Pre-solar formation'],
+          ['100%', 'USA Handmade', 'Minnesota, since 2008'],
+          ['0', 'Compromises', 'On craft or materials'],
+        ].map(([num, title, sub]) => (
+          <div class="value-item">
+            <span class="value-num serif">{num}</span>
+            <span class="value-title">{title}</span>
+            <span class="value-sub">{sub}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ─── STORY SECTIONS ─── -->
+    <div class="story-sections">
+
+      <!-- 1. The Maker -->
+      <section class="story-section ss-alt">
+        <div class="container ss-grid">
+          <div class="ss-text reveal">
+            <p class="label ss-label">The Maker</p>
+            <h2 class="serif ss-heading">Founded 2008.<br />Family-built.<br />Every piece by hand.</h2>
+            <div class="ss-divider"></div>
+            <p class="ss-body">
+              Jewelry by Johan launched in 2008 as a husband-and-wife garage operation in Minnesota.
+              From day one, Johan worked hands-on with authentic Gibeon meteorite —
+              selecting raw material, cutting inlays, etching the Widmanstätten pattern,
+              and crafting each ring himself. They were one of the first jewelers anywhere
+              to offer meteorite rings, and they've been doing it ever since.
+            </p>
+            <p class="ss-body">
+              What started in a garage has grown into a full family business, but the
+              core has never changed: authentic materials, handmade process, and a
+              certificate of authenticity with every piece. No factory. No shortcuts.
+              Johan still selects every piece of meteorite personally and crafts each
+              ring the same way he did in 2008.
+            </p>
+            <p class="ss-body">
+              When you order from Jewelry by Johan, you are in direct contact with
+              the family who will make your ring. Not a customer service representative.
+              Not a production manager. The makers themselves — with over 17 years of
+              meteorite jewelry experience behind every piece they send you.
+            </p>
+          </div>
+          <div class="ss-visual reveal" style="animation-delay:.15s">
+            <div class="studio-card">
+              <div class="studio-img-placeholder">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="34" stroke="currentColor" stroke-width="1.5" opacity=".2"/>
+                  <path d="M24 40 L40 24 L56 40 L40 56 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity=".5"/>
+                  <circle cx="40" cy="40" r="6" fill="currentColor" opacity=".3"/>
+                </svg>
+                <p class="studio-placeholder-text serif">The Workshop</p>
+                <p class="studio-placeholder-sub">Minneapolis, USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. The Material -->
+      <section class="story-section">
+        <div class="container ss-grid ss-grid-reverse">
+          <div class="ss-visual reveal">
+            <div class="material-card">
+              <div class="wid-demo" aria-label="Widmanstätten pattern visualization">
+                <div class="wid-lines" aria-hidden="true">
+                  {Array.from({length: 12}).map((_, i) => (
+                    <div class="wid-line" style={`transform: rotate(${i * 15}deg); opacity: ${0.1 + (i % 3) * 0.15}`}></div>
+                  ))}
+                </div>
+                <div class="wid-label">
+                  <span class="label">Widmanstätten Pattern</span>
+                  <span class="wid-sub serif">4.5 Billion Years Old</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ss-text reveal" style="animation-delay:.15s">
+            <p class="label ss-label">The Material</p>
+            <h2 class="serif ss-heading">Gibeon Meteorite.<br />Nothing else<br />comes close.</h2>
+            <div class="ss-divider"></div>
+            <p class="ss-body">
+              Gibeon meteorite is classified as a Fine Octahedrite (IVA) — an iron-nickel
+              meteorite that cooled at approximately 1°C per million years inside the
+              ancient parent asteroid. This impossibly slow cooling rate allowed massive
+              crystals of kamacite and taenite to grow in interlocking geometric formations
+              that no furnace on Earth can replicate.
+            </p>
+            <p class="ss-body">
+              When Johan etches a piece of Gibeon meteorite with dilute acid, these
+              Widmanstätten figures emerge in crisp relief — as if the cosmos is signing
+              its own work. The depth of the etch, the contrast of the pattern, and the
+              final sealing are all performed by hand, with no two pieces treated identically.
+            </p>
+            <p class="ss-body">
+              Since 2004, Namibia has declared Gibeon a protected national monument.
+              New collection is prohibited. The supply is finite and irreplaceable.
+            </p>
+            <a href="/blog/cosmic-origins-of-gibeon-meteorite" class="btn btn-outline" style="margin-top:1.5rem">
+              Learn the Full Science →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. The Process -->
+      <section class="story-section ss-alt">
+        <div class="container">
+          <div class="process-header reveal">
+            <p class="label">The Artisan Process</p>
+            <h2 class="serif">How a meteorite ring is made.</h2>
+            <p class="process-sub">Every step performed by hand. No shortcuts. No factory.</p>
+          </div>
+          <div class="process-steps">
+            {[
+              {
+                num: '01',
+                title: 'Material Selection',
+                body: 'Johan hand-selects each piece of Gibeon meteorite for structural integrity, crystal density, and visual potential. Not all meteorite is equal — the finest pieces show the most defined Widmanstätten geometry.',
+              },
+              {
+                num: '02',
+                title: 'Cutting & Shaping',
+                body: 'The meteorite is precision-cut to fit the specific ring channel — sometimes to fractions of a millimeter. This is done with specialized diamond-tipped tools that are specifically calibrated for iron meteorite\'s unique hardness characteristics.',
+              },
+              {
+                num: '03',
+                title: 'Metal Fabrication',
+                body: 'The ring sleeve — titanium, gold, or other metal — is fabricated separately. The channel is precision-machined to exact tolerances that will hold the meteorite inlay securely for a lifetime of wear.',
+              },
+              {
+                num: '04',
+                title: 'Inlay Setting',
+                body: 'The meteorite is fitted into the ring channel using jeweler\'s grade adhesive and mechanical compression. The interface is checked under magnification to ensure the inlay is flush, level, and fully secure.',
+              },
+              {
+                num: '05',
+                title: 'The Etch',
+                body: 'The most dramatic moment: dilute nitric acid is applied to the meteorite surface, dissolving the iron at the boundaries between kamacite and taenite crystals. The Widmanstätten pattern emerges over minutes. Johan controls the depth carefully — this process cannot be undone.',
+              },
+              {
+                num: '06',
+                title: 'Sealing & Finishing',
+                body: 'The etched meteorite is sealed with a protective treatment that guards against oxidation while preserving the crystal texture. The entire ring is polished to final finish, inspected, and photographed before shipping.',
+              },
+            ].map((step, i) => (
+              <div class="process-step reveal" style={`animation-delay:${i * 0.08}s`}>
+                <div class="step-num serif">{step.num}</div>
+                <div class="step-content">
+                  <h3 class="step-title">{step.title}</h3>
+                  <p class="step-body">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Sustainability -->
+      <section class="story-section">
+        <div class="container ss-grid">
+          <div class="ss-text reveal">
+            <p class="label ss-label">Sustainability & Ethics</p>
+            <h2 class="serif ss-heading">Thoughtfully made.<br />Transparently sourced.</h2>
+            <div class="ss-divider"></div>
+            <p class="ss-body">
+              All Gibeon meteorite used by Jewelry by Johan was legally acquired
+              before the 2004 Namibian protection order — fully documented and
+              properly sourced. No new collection is involved. We are stewards
+              of a finite material, not exploiters of it.
+            </p>
+            <p class="ss-body">
+              Titanium — our most used metal — is hypoallergenic, infinitely
+              recyclable, and requires far less energy to process than platinum
+              or palladium. When we use gold, it is sourced through responsible
+              suppliers with full traceability documentation.
+            </p>
+            <p class="ss-body">
+              Lab-grown diamonds and gemstones are used as standard rather than
+              mined alternatives, wherever the piece permits. We believe a ring
+              carrying 4.5 billion years of natural history shouldn't require
+              additional environmental cost in its gemstones.
+            </p>
+          </div>
+          <div class="ss-visual reveal" style="animation-delay:.15s">
+            <div class="sustain-grid">
+              {[
+                ['🌍', 'Legal Meteorite', 'Pre-2004, fully documented'],
+                ['♻️', 'Recycled Metals', 'Where possible'],
+                ['💎', 'Lab-Grown Gems', 'Standard practice'],
+                ['🤝', 'Direct Studio', 'No middlemen'],
+                ['📜', 'Certified', 'Full provenance'],
+                ['🔬', 'Transparent', 'Open process'],
+              ].map(([icon, title, sub]) => (
+                <div class="sustain-card">
+                  <span class="sustain-icon">{icon}</span>
+                  <span class="sustain-title">{title}</span>
+                  <span class="sustain-sub">{sub}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Behind the piece lore cards -->
+      <section class="story-section ss-alt ss-lore">
+        <div class="container">
+          <div class="reveal" style="text-align:center;margin-bottom:3rem">
+            <p class="label">Behind Every Piece</p>
+            <h2 class="serif">Five things worth knowing.</h2>
+          </div>
+          <div class="lore-cards-grid">
+            {[
+              {
+                title: 'The Asteroid Parent Body',
+                body: 'Gibeon meteorite originated inside a molten iron-nickel asteroid approximately 4.5 billion years ago — formed before Earth itself. The asteroid differentiated, creating an iron core surrounded by rocky mantle. The crystals in your ring formed in that ancient core.',
+              },
+              {
+                title: 'The Namibian Fall',
+                body: '~30,000 years ago the parent body fragmented and entered Earth\'s atmosphere, creating a dispersed strewn field across southern Namibia spanning 275 by 100 km. Indigenous San people knew these "sky stones" long before Western collectors arrived in the 1830s.',
+              },
+              {
+                title: 'The Crystal Formation',
+                body: 'Widmanstätten figures form when iron and nickel separate into two crystalline phases — kamacite and taenite — during cooling. The scale of these crystals (some measurable in centimeters) is only possible through cooling so slow it defies earthly comprehension.',
+              },
+              {
+                title: 'Finite Supply',
+                body: 'Since the 2004 Namibian protection order, no new Gibeon meteorite can be legally collected. The existing supply worldwide is finite and slowly depleting as it gets made into jewelry, used in scientific research, and displayed in museums. Your piece is part of this legacy.',
+              },
+              {
+                title: 'Every Pattern is a Timestamp',
+                body: 'The specific Widmanstätten pattern in your ring reflects the exact thermal and chemical history of the fragment from which it was cut — its position within the parent asteroid, the gradient of cooling it experienced. Your ring\'s pattern is its fingerprint, and it is unique in the universe.',
+              },
+            ].map((lore, i) => (
+              <div class="lore-c reveal" style={`animation-delay:${i * 0.08}s`}>
+                <div class="lore-c-num serif">{String(i + 1).padStart(2, '0')}</div>
+                <h3 class="lore-c-title">{lore.title}</h3>
+                <p class="lore-c-body">{lore.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="about-cta">
+      <div class="container-sm" style="text-align:center">
+        <div class="reveal">
+          <p class="label">Ready to Own Yours?</p>
+          <h2 class="serif" style="font-size:clamp(2rem,4.5vw,3.5rem);margin:.5rem 0 1.25rem;font-weight:300">
+            Every ring starts with a conversation.
+          </h2>
+          <p style="font-size:1.0625rem;color:var(--c-text-muted);max-width:500px;margin:0 auto 2.5rem">
+            Browse the full collection, find your piece, and order with confidence
+            through our secure main store checkout.
+          </p>
+          <div class="about-cta-btns">
+            <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary">
+              Shop Jewelry by Johan →
+            </a>
+            <a href="/rings" class="btn btn-outline">Browse the Collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .about-hero {
+    position: relative;
+    padding: clamp(5rem,10vw,10rem) clamp(1.25rem,4vw,3rem) clamp(4rem,8vw,8rem);
+    overflow: hidden;
+  }
+
+  .ah-bg { position: absolute; inset: 0; z-index: 0; }
+
+  .ah-glow {
+    position: absolute;
+    top: -150px; right: -100px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,144,31,.08) 0%, transparent 65%);
+    filter: blur(80px);
+    animation: ahGlow 8s ease-in-out infinite;
+  }
+
+  @keyframes ahGlow {
+    0%,100% { transform: scale(1); opacity:.7; }
+    50% { transform: scale(1.1); opacity:1; }
+  }
+
+  .ah-grid {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px);
+    opacity: .3;
+  }
+
+  .ah-inner { position: relative; z-index: 1; max-width: 900px; }
+
+  .ah-eyebrow { margin-bottom: 1.5rem; }
+
+  .ah-heading {
+    font-size: clamp(3rem,7vw,7rem);
+    font-weight: 300;
+    letter-spacing: -.025em;
+    color: var(--c-text);
+    line-height: .95;
+    margin-bottom: 2rem;
+  }
+
+  .ah-heading em { font-style: italic; color: var(--c-gold-light); }
+
+  .ah-sub {
+    font-size: clamp(1rem,1.5vw,1.2rem);
+    color: var(--c-text-muted);
+    max-width: 680px;
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* Values bar */
+  .values-bar {
+    background: var(--c-bg-2);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .values-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .value-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    border-right: 1px solid var(--c-border);
+    text-align: center;
+    gap: .25rem;
+  }
+
+  .value-item:last-child { border-right: none; }
+
+  .value-num {
+    font-size: 2rem;
+    color: var(--c-gold-light);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .value-title {
+    font-size: .8125rem;
+    font-weight: 600;
+    color: var(--c-text);
+    letter-spacing: .04em;
+  }
+
+  .value-sub {
+    font-size: .6875rem;
+    color: var(--c-text-muted);
+    letter-spacing: .04em;
+  }
+
+  /* Story sections */
+  .story-section {
+    padding: clamp(4rem,8vw,8rem) clamp(1.25rem,4vw,3rem);
+  }
+
+  .ss-alt { background: var(--c-bg-2); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+
+  .ss-grid {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem,6vw,7rem);
+    align-items: center;
+  }
+
+  .ss-grid-reverse > :first-child { order: 2; }
+  .ss-grid-reverse > :last-child { order: 1; }
+
+  .ss-label { margin-bottom: 1rem; }
+
+  .ss-heading {
+    font-size: clamp(2rem,4vw,3.2rem);
+    font-weight: 300;
+    color: var(--c-text);
+    line-height: 1.15;
+    letter-spacing: -.015em;
+  }
+
+  .ss-divider {
+    width: 40px; height: 1px;
+    background: var(--c-gold);
+    margin: 1.75rem 0;
+  }
+
+  .ss-body {
+    font-size: 1.0625rem;
+    color: var(--c-text-muted);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Studio card */
+  .studio-card {
+    background: var(--c-bg-3);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .studio-img-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    color: var(--c-text-faint);
+  }
+
+  .studio-placeholder-text { font-size: 1.375rem; color: var(--c-text-muted); }
+  .studio-placeholder-sub { font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-text-faint); font-family: var(--font-sans); font-weight: 500; }
+
+  /* Widmanstätten demo */
+  .material-card {
+    background: var(--c-bg);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+
+  .wid-demo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .wid-lines {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wid-line {
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+  }
+
+  .wid-label {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    text-align: center;
+    background: rgba(10,10,15,.7);
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--c-border-gold);
+  }
+
+  .wid-sub { font-size: 1.375rem; color: var(--c-text); }
+
+  /* Process steps */
+  .process-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .process-header h2 { font-size: clamp(1.8rem,4vw,3rem); font-weight:300; margin:.5rem 0 .75rem; }
+  .process-sub { font-size: 1.0625rem; color: var(--c-text-muted); margin: 0; }
+
+  .process-steps {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .process-step {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    display: flex;
+    flex-direction: column;
+    gap: .875rem;
+    transition: background .3s;
+  }
+
+  .process-step:nth-child(3n) { border-right: none; }
+  .process-step:nth-child(n+4) { border-bottom: none; }
+  .process-step:hover { background: var(--c-bg-3); }
+
+  .step-num {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--c-gold);
+    opacity: .5;
+    line-height: 1;
+  }
+
+  .step-title { font-size: 1.125rem; font-weight: 600; color: var(--c-text); font-family: var(--font-sans); }
+  .step-body { font-size: .9375rem; color: var(--c-text-muted); line-height: 1.7; margin: 0; }
+
+  /* Sustain grid */
+  .sustain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .875rem;
+  }
+
+  .sustain-card {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    transition: border-color .3s;
+  }
+
+  .sustain-card:hover { border-color: var(--c-border-gold); }
+  .sustain-icon { font-size: 1.25rem; }
+  .sustain-title { font-size: .875rem; font-weight: 600; color: var(--c-text); }
+  .sustain-sub { font-size: .75rem; color: var(--c-text-muted); }
+
+  /* Lore cards */
+  .ss-lore .container { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,3rem); }
+
+  .lore-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .lore-c {
+    padding: 2.5rem 1.75rem;
+    border-right: 1px solid var(--c-border);
+    transition: background .3s;
+  }
+
+  .lore-c:last-child { border-right: none; }
+  .lore-c:hover { background: var(--c-bg-3); }
+
+  .lore-c-num {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--c-gold);
+    opacity: .4;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .lore-c-title { font-size: 1rem; font-weight: 600; color: var(--c-text); margin-bottom: .75rem; font-family: var(--font-sans); }
+  .lore-c-body { font-size: .875rem; color: var(--c-text-muted); line-height: 1.7; margin: 0; }
+
+  /* About CTA */
+  .about-cta {
+    padding: clamp(5rem,8vw,8rem) clamp(1.25rem,4vw,3rem);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .about-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* Responsive */
+  @media (max-width:1280px) {
+    .lore-cards-grid { grid-template-columns: repeat(3,1fr); }
+    .lore-c:nth-child(3) { border-right: none; }
+    .lore-c:nth-child(n+4) { border-top: 1px solid var(--c-border); }
+    .lore-c:nth-child(5) { border-right: none; }
+  }
+
+  @media (max-width:1024px) {
+    .ss-grid { grid-template-columns: 1fr; }
+    .ss-grid-reverse > :first-child { order: 1; }
+    .ss-grid-reverse > :last-child { order: 2; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .process-step:nth-child(2n) { border-right: none; }
+    .process-step { border-bottom: 1px solid var(--c-border); }
+    .process-step:nth-last-child(-n+2) { border-bottom: none; }
+    .values-inner { flex-wrap: wrap; }
+    .value-item { flex: 1 0 calc(50% - 1px); }
+  }
+
+  @media (max-width:768px) {
+    .lore-cards-grid { grid-template-columns: 1fr; }
+    .lore-c { border-right: none; border-bottom: 1px solid var(--c-border); }
+    .lore-c:last-child { border-bottom: none; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step { border-right: none; border-bottom: 1px solid var(--c-border); }
+    .process-step:last-child { border-bottom: none; }
+    .sustain-grid { grid-template-columns: 1fr; }
+  }
+</style>

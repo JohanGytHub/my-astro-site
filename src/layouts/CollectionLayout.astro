@@ -1,0 +1,388 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import TrustBar from '../components/TrustBar.astro';
+import type { Product } from '../types/product';
+
+export interface Props {
+  title: string;
+  metaTitle: string;
+  description: string;
+  heading: string;
+  subheading: string;
+  products: Product[];
+  category: string;
+}
+
+const { title, metaTitle, description, heading, subheading, products, category } = Astro.props;
+---
+
+<BaseLayout title={metaTitle} description={description}>
+  <Nav />
+
+  <!-- Page Header -->
+  <header class="collection-header">
+    <div class="ch-bg" aria-hidden="true">
+      <div class="ch-glow"></div>
+    </div>
+    <div class="container ch-inner">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">{title}</span>
+      </nav>
+
+      <div class="ch-text reveal">
+        <p class="label">{category}</p>
+        <h1 class="serif ch-heading">{heading}</h1>
+        <p class="ch-sub">{subheading}</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar reveal" id="filter-bar">
+        <div class="filter-left">
+          <span class="filter-count" id="product-count">{products.length} pieces</span>
+          <div class="filter-tags" id="active-filters"></div>
+        </div>
+        <div class="filter-right">
+          <label for="sort-select" class="sort-label">Sorted by</label>
+          <select class="filter-select" id="sort-select" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="name-asc">Name: A–Z</option>
+            <option value="name-desc">Name: Z–A</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <TrustBar />
+
+  <!-- Main Content -->
+  <main class="collection-main container" id="collection-main">
+    {products.length > 0 ? (
+      <div class="products-grid" id="products-grid">
+        {products.map((product, i) => (
+          <div class="reveal" style={`animation-delay: ${(i % 12) * 0.06}s`}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state reveal">
+        <div class="empty-icon" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            <path d="M20 32 L32 20 L44 32 L32 44 Z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+        <h2 class="serif empty-title">Coming Soon</h2>
+        <p class="empty-body">
+          We're adding new pieces to this collection.
+          In the meantime, explore our full range on the main store.
+        </p>
+        <a
+          href="https://jewelrybyjohan.com"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Browse Full Collection →
+        </a>
+      </div>
+    )}
+  </main>
+
+  <!-- Editorial text (per-collection SEO content, injected via named slot) -->
+  <slot name="editorial" />
+
+  <!-- CTA -->
+  <section class="collection-cta section">
+    <div class="container-sm" style="text-align:center">
+      <div class="reveal">
+        <p class="label">Complete Your Purchase</p>
+        <h2 class="serif" style="margin:0.5rem 0 1rem">Found something you love?</h2>
+        <p style="margin-bottom:2rem;font-size:1.0625rem">
+          All orders, customizations, and checkout happen on our main store —
+          Jewelry by Johan — with secure Shopify checkout.
+        </p>
+        <a
+          href="https://jewelrybyjohan.com"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >
+          Order at Jewelry by Johan →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const select = document.getElementById('sort-select') as HTMLSelectElement | null;
+  const grid = document.getElementById('products-grid');
+
+  if (select && grid) {
+    // Store original DOM order on page load so Featured can always restore it
+    const originalOrder = Array.from(grid.children) as HTMLElement[];
+
+    select.addEventListener('change', () => {
+      const wrappers = Array.from(grid.children) as HTMLElement[];
+
+      if (select.value === 'featured') {
+        // Restore exact original order
+        originalOrder.forEach((el) => grid.appendChild(el));
+        return;
+      }
+
+      wrappers.sort((a, b) => {
+        const cardA = a.querySelector<HTMLElement>('.product-card');
+        const cardB = b.querySelector<HTMLElement>('.product-card');
+
+        const nameA  = cardA?.dataset.name || '';
+        const nameB  = cardB?.dataset.name || '';
+
+        switch (select.value) {
+          case 'name-asc':   return nameA.localeCompare(nameB);
+          case 'name-desc':  return nameB.localeCompare(nameA);
+          default:           return 0;
+        }
+      });
+
+      // Re-append in sorted order with staggered animation
+      wrappers.forEach((el, i) => {
+        el.style.animationDelay = `${i * 0.04}s`;
+        grid.appendChild(el);
+      });
+    });
+  }
+</script>
+
+<style>
+  /* Header */
+  .collection-header {
+    padding-top: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ch-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .ch-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,0.07) 0%, transparent 65%);
+    filter: blur(40px);
+  }
+
+  .ch-inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--c-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb a {
+    color: var(--c-text-muted);
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover { color: var(--c-gold); }
+
+  .ch-text { margin-bottom: 2.5rem; }
+
+  .ch-heading {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    margin: 0.5rem 0 0.875rem;
+    color: var(--c-text);
+  }
+
+  .ch-sub {
+    font-size: 1.0625rem;
+    color: var(--c-text-muted);
+    max-width: 580px;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-right {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .filter-left {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+
+  .filter-count {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--c-text-muted);
+    white-space: nowrap;
+  }
+
+  .filter-select {
+    background: var(--c-bg-2);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    color: var(--c-text);
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.875rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: border-color 0.2s;
+  }
+
+  .sort-label {
+    font-size: 0.8125rem;
+    color: var(--c-text-muted);
+    white-space: nowrap;
+    font-family: var(--font-sans);
+  }
+
+  .filter-select:hover { border-color: var(--c-border-gold); }
+
+  /* Main */
+  .collection-main {
+    padding: 3rem clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Empty */
+  .empty-state {
+    text-align: center;
+    padding: 6rem 2rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .empty-icon {
+    color: var(--c-text-faint);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .empty-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--c-text);
+    margin-bottom: 1rem;
+  }
+
+  .empty-body {
+    color: var(--c-text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.0625rem;
+  }
+
+  /* Editorial */
+  .collection-editorial {
+    padding: 4rem clamp(1.25rem, 4vw, 2.5rem) 3rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .editorial-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .editorial-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--c-gold);
+    margin-bottom: 2rem;
+  }
+
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .editorial-grid p {
+    font-size: 0.9375rem;
+    line-height: 1.78;
+    color: var(--c-text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .editorial-grid p:last-child { margin-bottom: 0; }
+
+  .editorial-grid strong { color: var(--c-text); }
+
+  .editorial-grid a {
+    color: var(--c-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,144,31,0.3);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .editorial-grid a:hover {
+    color: var(--c-gold-light);
+    border-color: var(--c-gold-light);
+  }
+
+  @media (max-width: 768px) {
+    .editorial-grid { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  /* CTA */
+  .collection-cta {
+    border-top: 1px solid var(--c-border);
+    background: var(--c-bg-2);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 540px) {
+    .products-grid { grid-template-columns: 1fr; }
+  }
+</style>

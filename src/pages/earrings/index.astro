@@ -1,0 +1,33 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'earrings');
+---
+
+<CollectionLayout
+  title="Meteorite Earrings"
+  metaTitle="Meteorite Earrings — Studs, Drops & Ear Cuffs | Jewelry by Johan"
+  description="Meteorite earrings handcrafted from authentic Gibeon meteorite. Studs, drop earrings, and ear cuffs with the iconic Widmanstätten crystal pattern. Made in USA."
+  heading="Meteorite Earrings"
+  subheading="From delicate studs to bold drops — each earring carries a fragment of cosmic iron with its unmistakable Widmanstätten crystal signature."
+  products={products}
+  category="Earrings Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>Meteorite earrings bring the same authentic Gibeon iron at the heart of every wedding band down to a smaller, more intimate scale. Each piece is hand-cut and acid-etched to reveal the Widmanstätten crystal pattern — the same ancient structure found in meteorite rings, framed here as studs, drops, or more sculptural forms suited to everyday wear or a formal occasion.</p>
+          <p>Because every meteorite fragment is unique, no two pairs will ever carry an identical pattern. The geometric crystal figures that emerge from the etch process are a product of billions of years of formation — not any manufacturing technique — which means your earrings are genuinely one of a kind at a material level, not just in marketing language.</p>
+        </div>
+        <div>
+          <p>Gibeon meteorite is iron-based, so proper sealing is essential for longevity. Every piece that leaves the workshop is sealed and finished to resist oxidation during normal wear. The same <strong>lifetime re-etching and cleaning service</strong> that covers meteorite rings applies to all Johan meteorite jewelry — your earrings are supported long after the purchase.</p>
+          <p>Meteorite earrings also make a distinctive gift — for a partner who already wears a meteorite ring, for a bridesmaid, or for anyone drawn to jewelry that carries a genuine story. All orders are fulfilled on <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>, where free engraving is available on select pieces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

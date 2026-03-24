@@ -1,0 +1,33 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'rings');
+---
+
+<CollectionLayout
+  title="Meteorite Rings"
+  metaTitle="Meteorite Rings — Wedding Bands & Engagement Rings | Jewelry by Johan"
+  description="Authentic Gibeon meteorite wedding rings and engagement rings. Men's and women's bands in titanium, yellow gold, rose gold, and white gold. Unique Widmanstätten patterns. USA handmade."
+  heading="Meteorite Rings"
+  subheading="Wedding bands and engagement rings forged from authentic Gibeon meteorite — each piece bearing a crystal pattern 4.5 billion years in the making."
+  products={products}
+  category="Rings Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>Every meteorite ring in this collection begins as a fragment of authentic Gibeon iron — sourced from legally acquired inventory collected before Namibia declared Gibeon a protected national monument in 2004. Johan cuts, etches, and inlays each piece by hand in Minneapolis, revealing the Widmanstätten crystal pattern that formed when the parent asteroid cooled at approximately one degree Celsius per million years. No laboratory process can replicate this structure. No two rings will ever share the same pattern.</p>
+          <p>The collection spans titanium, 14k yellow gold, 14k white gold, and 14k rose gold bases — from slim 4mm bands to bold 10mm statement pieces. <strong>Men's meteorite wedding bands</strong>, women's meteorite rings, and engagement rings are all represented. Many designs incorporate additional materials: dinosaur bone, whiskey barrel oak, antler, diamond, moissanite, and sapphire alongside the Gibeon inlay.</p>
+        </div>
+        <div>
+          <p><strong>One important note before you order: meteorite inlay rings cannot be resized after production.</strong> Take your time with the <a href="/sizing-guide">ring sizing guide</a>, or order a <a href="https://jewelrybyjohan.com/products/ring-sizer-custom-made-1170" target="_blank" rel="noopener">custom ring sizer for $10</a> made in the exact width of your desired band — the most accurate way to confirm fit before a ring is made.</p>
+          <p>Free laser engraving — up to 25 characters with your choice of font — is included with every order. All purchases, customization, and checkout are completed securely on <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>, where Johan personally fulfills every order from his Minneapolis workshop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

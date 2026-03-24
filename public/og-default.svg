@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <!-- Widmanstatten pattern lines -->
+  <line x1="0" y1="200" x2="1200" y2="350" stroke="#c9901f" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="300" x2="1200" y2="450" stroke="#c9901f" stroke-width="0.5" opacity="0.06"/>
+  <line x1="0" y1="100" x2="1200" y2="250" stroke="#eeeef2" stroke-width="0.5" opacity="0.04"/>
+  <line x1="200" y1="0" x2="350" y2="630" stroke="#c9901f" stroke-width="0.5" opacity="0.06"/>
+  <line x1="500" y1="0" x2="650" y2="630" stroke="#c9901f" stroke-width="0.5" opacity="0.04"/>
+  <line x1="800" y1="0" x2="950" y2="630" stroke="#eeeef2" stroke-width="0.5" opacity="0.04"/>
+  <!-- Glow -->
+  <ellipse cx="600" cy="315" rx="500" ry="250" fill="#c9901f" opacity="0.04"/>
+  <!-- Logo mark -->
+  <circle cx="600" cy="270" r="70" stroke="#c9901f" stroke-width="1.5" opacity="0.3"/>
+  <path d="M560 270 L600 230 L640 270 L600 310 Z" stroke="#c9901f" stroke-width="2" fill="none" opacity="0.7"/>
+  <circle cx="600" cy="270" r="8" fill="#c9901f" opacity="0.6"/>
+  <!-- Text -->
+  <text x="600" y="390" font-family="Georgia, serif" font-size="42" fill="#eeeef2" text-anchor="middle" opacity="0.9" font-weight="300">Meteorite Jewelry by Johan</text>
+  <text x="600" y="430" font-family="system-ui, sans-serif" font-size="18" fill="#c9901f" text-anchor="middle" letter-spacing="4">AUTHENTIC GIBEON METEORITE · USA HANDMADE</text>
+</svg>

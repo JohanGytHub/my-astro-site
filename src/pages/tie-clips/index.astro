@@ -1,0 +1,33 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'tie-clips');
+---
+
+<CollectionLayout
+  title="Meteorite Tie Clips"
+  metaTitle="Meteorite Tie Clips, Tie Tacks & Tie Bars | Gibeon Meteorite Jewelry by Johan"
+  description="Handcrafted Gibeon meteorite tie clips, tie tacks, and tie bars. Featuring the authentic Widmanstätten crystal pattern formed over 4.5 billion years. USA made."
+  heading="Meteorite Tie Clips"
+  subheading="Tie clips, tie tacks, and tie bars handcrafted from authentic Gibeon meteorite — a subtle cosmic detail that sets your look apart from everything on Earth."
+  products={products}
+  category="Tie Clips Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>A meteorite tie clip is the kind of detail that goes unnoticed until someone looks closely — and then becomes the only thing they want to talk about. Gibeon meteorite's Widmanstätten crystal pattern, etched and sealed at this smaller scale, has a gem-like quality that reads as sophisticated rather than showy. It suits the boardroom as naturally as it suits a wedding.</p>
+          <p>Johan handcrafts each <strong>meteorite tie clip</strong>, tie tack, and tie bar in Minneapolis using authentic Gibeon iron. The meteorite face is acid-etched in-house to reveal the crystal pattern and sealed against oxidation. Settings are available in titanium and precious metal options, with the meteorite inlay positioned to maximize pattern visibility at the narrow dimensions of the piece.</p>
+        </div>
+        <div>
+          <p>For grooms coordinating a full meteorite look — ring, cufflinks, and tie clip — Johan's pieces are designed to complement each other in tone and finish. The same Gibeon meteorite source runs through all three, giving the overall look a material coherence that feels intentional without being matched-set rigid.</p>
+          <p>For <strong>groomsmen gifts</strong>, a meteorite tie clip is a practical, wearable keepsake that most men will use long after the wedding day. Free laser engraving is available on select pieces. No ring sizing complications — just choose, customize, and order on <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>. All pieces ship in premium gift packaging with a certificate of authenticity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

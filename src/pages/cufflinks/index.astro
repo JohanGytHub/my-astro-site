@@ -1,0 +1,33 @@
+---
+import CollectionLayout from '../../layouts/CollectionLayout.astro';
+import { fetchProducts, getCategoryProducts } from '../../data/products';
+
+const allProducts = await fetchProducts();
+const products = getCategoryProducts(allProducts, 'cufflinks');
+---
+
+<CollectionLayout
+  title="Meteorite Cuff Links"
+  metaTitle="Meteorite Cuff Links | Gibeon Meteorite Jewelry by Johan"
+  description="Handcrafted Gibeon meteorite cufflinks. Each pair features the iconic Widmanstätten crystal pattern — 4.5 billion years of cosmic history on your cuffs. USA made."
+  heading="Meteorite Cuff Links"
+  subheading="Wear a fragment of the ancient solar system on your cuffs — each pair handcrafted from authentic Gibeon meteorite with its unmistakable Widmanstätten crystal pattern."
+  products={products}
+  category="Cuff Links Collection"
+>
+  <section slot="editorial" class="collection-editorial">
+    <div class="editorial-inner">
+      <div class="editorial-divider"></div>
+      <div class="editorial-grid">
+        <div>
+          <p>Meteorite cufflinks are one of the most distinctive accessories a groom or groomsman can wear on a wedding day — and one of the few gifts that genuinely cannot be replicated by any other material. The Widmanstätten crystal pattern covering each meteorite face formed in deep space over billions of years. No two pairs are identical. No factory can print or engrave that pattern convincingly.</p>
+          <p>Johan's cufflinks are handcrafted from authentic Gibeon meteorite, paired with titanium or precious metal settings that complement the iron's natural grey-silver tones. The meteorite faces are acid-etched in-house to bring out maximum pattern contrast, then sealed and polished for daily wear. Every pair is sourced from pre-2004 Gibeon inventory — the finite supply that remains after Namibia's national monument designation ended new collection.</p>
+        </div>
+        <div>
+          <p>Beyond the wedding day, <strong>meteorite cufflinks</strong> hold up well as a long-term accessory for formal or professional settings. The scale of the cufflink face — small but always visible at the wrist — makes the Widmanstätten pattern legible and striking without demanding attention the way a ring does.</p>
+          <p>For a groomsmen gift, meteorite cufflinks pair naturally with any meteorite wedding band from this collection, creating a coordinated look across the entire wedding party. Free laser engraving is available on select pieces. All purchases are fulfilled through <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener">Jewelry by Johan</a>, where custom orders and groomsmen bulk inquiries are welcomed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</CollectionLayout>

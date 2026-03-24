@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact Jewelry by Johan — Questions, Custom Orders & Support"
+  description="Get in touch with Jewelry by Johan for custom ring inquiries, order questions, ring sizing help, and anything else. We respond personally to every message."
+>
+  <Nav />
+
+  <main style="padding-top:68px">
+
+    <header class="contact-header">
+      <div class="ch-bg" aria-hidden="true"><div class="ch-glow"></div></div>
+      <div class="container ch-inner">
+        <div class="reveal">
+          <p class="label">Get in Touch</p>
+          <h1 class="serif ch-heading">
+            Every message<br />
+            <em>answered personally.</em>
+          </h1>
+          <p class="ch-sub">
+            Johan reads and responds to every inquiry himself. No ticketing system,
+            no outsourced support. Just a direct conversation with the person who
+            will make your ring.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="contact-body section container">
+      <div class="contact-grid">
+
+        <!-- Contact options -->
+        <div class="contact-options reveal">
+          <h2 class="serif co-heading">How to reach us</h2>
+          <div class="co-cards">
+
+            <a href="https://jewelrybyjohan.com/pages/contact-us" target="_blank" rel="noopener" class="co-card co-primary">
+              <div class="co-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="co-title">Contact Form</h3>
+                <p class="co-desc">Use our contact form on the main store for order inquiries, custom requests, and general questions.</p>
+                <span class="co-link">Open Contact Form →</span>
+              </div>
+            </a>
+
+            <a href="mailto:support@jewelrybyjohan.com" class="co-card">
+              <div class="co-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="co-title">Email</h3>
+                <p class="co-desc">For detailed inquiries, custom design discussions, or anything that needs a thoughtful written response.</p>
+                <span class="co-link">support@jewelrybyjohan.com</span>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/jewelrybyjohan" target="_blank" rel="noopener" class="co-card">
+              <div class="co-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="co-title">Instagram</h3>
+                <p class="co-desc">Follow along, see recent work, and DM us for quick questions or to share your ring story.</p>
+                <span class="co-link">@jewelrybyjohan</span>
+              </div>
+            </a>
+
+            <a href="https://jewelrybyjohan.com/pages/faq" target="_blank" rel="noopener" class="co-card">
+              <div class="co-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="co-title">FAQ</h3>
+                <p class="co-desc">Browse common questions about meteorite rings, production time, shipping, sizing, and more.</p>
+                <span class="co-link">View FAQ →</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Info panel -->
+        <div class="contact-info reveal" style="animation-delay:.15s">
+          <div class="ci-card">
+            <h3 class="serif ci-heading">Before you write</h3>
+            <div class="ci-items">
+              {[
+                {
+                  q: 'How long does production take?',
+                  a: 'Most pieces take 2–4 weeks to produce, as each is made to order. Rush timelines can sometimes be accommodated — just ask.',
+                },
+                {
+                  q: 'Can I customize a piece?',
+                  a: 'Absolutely. Johan works with custom orders regularly — different metals, inlay widths, ring profiles, gemstones, and engravings. Use the contact form to start a conversation.',
+                },
+                {
+                  q: 'What if I don\'t know my ring size?',
+                  a: 'Order the "Unknown – Send Ring Sizer First" option. A ring sizer set is included with your purchase — once it arrives, find your size and we\'ll begin production. You can also purchase a Ring Sizer, Custom Sizer Made to Order for $10 before placing your ring order.',
+                },
+                {
+                  q: 'Do you ship internationally?',
+                  a: 'Yes. Johan ships worldwide. Shipping rates and estimated delivery times are calculated at checkout on the main store.',
+                },
+              ].map(item => (
+                <div class="ci-item">
+                  <h4 class="ci-q">{item.q}</h4>
+                  <p class="ci-a">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="ci-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+            </svg>
+            <p>
+              Response time is typically within 24–48 hours on business days.
+              Johan is a solo maker, so please allow a little grace around holidays and production deadlines.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Redirect banner -->
+    <section class="contact-redirect section">
+      <div class="container-sm" style="text-align:center">
+        <div class="reveal">
+          <p class="label">Complete Your Purchase</p>
+          <h2 class="serif" style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin:.5rem 0 1rem;font-weight:300">
+            All orders placed on the main store.
+          </h2>
+          <p style="color:var(--c-text-muted);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;font-size:1.0625rem">
+            Browse, customize, and complete your purchase on Jewelry by Johan —
+            with Shopify's secure checkout, Apple Pay, and flexible payment options.
+          </p>
+          <a href="https://jewelrybyjohan.com" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.9375rem;padding:1.0625rem 2.25rem">
+            Go to Jewelry by Johan →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact-header {
+    position: relative;
+    padding: clamp(5rem,10vw,9rem) clamp(1.25rem,4vw,3rem) clamp(3rem,5vw,5rem);
+    overflow: hidden;
+  }
+
+  .ch-bg { position: absolute; inset: 0; z-index: 0; }
+  .ch-glow {
+    position: absolute; top: -80px; right: 10%;
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(201,144,31,.07) 0%, transparent 65%);
+    filter: blur(60px);
+  }
+
+  .ch-inner { position: relative; z-index: 1; max-width: 680px; }
+
+  .ch-heading {
+    font-size: clamp(2.5rem,6vw,5.5rem);
+    font-weight: 300; letter-spacing: -.02em; line-height: .95;
+    color: var(--c-text); margin: .75rem 0 1.5rem;
+  }
+
+  .ch-heading em { font-style: italic; color: var(--c-gold-light); }
+  .ch-sub { font-size: 1.125rem; color: var(--c-text-muted); max-width: 560px; line-height: 1.7; margin: 0; }
+
+  /* Body */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+  .co-heading { font-size: 1.75rem; font-weight: 300; margin-bottom: 2rem; }
+
+  .co-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+  .co-card {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .3s, transform .3s var(--ease-smooth), box-shadow .3s;
+  }
+
+  .co-card:hover { border-color: var(--c-border-gold); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .co-primary { border-color: var(--c-border-gold); }
+
+  .co-icon { color: var(--c-gold); flex-shrink: 0; display: flex; align-items: flex-start; padding-top: .125rem; }
+  .co-title { font-size: 1rem; font-weight: 600; color: var(--c-text); margin-bottom: .375rem; font-family: var(--font-sans); }
+  .co-desc { font-size: .875rem; color: var(--c-text-muted); line-height: 1.55; margin: 0 0 .625rem; }
+  .co-link { font-size: .8125rem; font-weight: 600; color: var(--c-gold); letter-spacing: .04em; }
+
+  /* Info panel */
+  .ci-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .ci-heading { font-size: 1.375rem; font-weight: 300; margin-bottom: 1.5rem; }
+
+  .ci-items { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .ci-item { padding-bottom: 1.25rem; border-bottom: 1px solid var(--c-border); }
+  .ci-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .ci-q { font-size: .9375rem; font-weight: 600; color: var(--c-text); margin-bottom: .375rem; font-family: var(--font-sans); }
+  .ci-a { font-size: .875rem; color: var(--c-text-muted); line-height: 1.6; margin: 0; }
+
+  .ci-note {
+    display: flex; gap: .75rem; align-items: flex-start;
+    background: var(--c-bg-2); border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg); padding: 1.125rem 1.25rem;
+    font-size: .875rem; color: var(--c-text-muted); line-height: 1.6;
+  }
+
+  .ci-note svg { color: var(--c-gold); flex-shrink: 0; margin-top: 2px; }
+  .ci-note p { margin: 0; }
+
+  /* Redirect */
+  .contact-redirect {
+    border-top: 1px solid var(--c-border);
+    background: var(--c-bg-2);
+  }
+
+  @media (max-width:1024px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>
