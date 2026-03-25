@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://meteorite.jewelry/sitemap.xml
-
-# Block internal paths
-Disallow: /api/
-Disallow: /_astro/
