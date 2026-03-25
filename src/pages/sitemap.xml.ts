@@ -11,19 +11,21 @@ export const GET: APIRoute = async () => {
   const date = new Date().toISOString().split('T')[0];
 
   const staticPages = [
-    { url: '/', priority: '1.0', changefreq: 'weekly' },
-    { url: '/rings', priority: '0.9', changefreq: 'weekly' },
-    { url: '/ring-sets', priority: '0.85', changefreq: 'weekly' },
-    { url: '/earrings', priority: '0.8', changefreq: 'weekly' },
-    { url: '/pendants', priority: '0.8', changefreq: 'weekly' },
-    { url: '/cufflinks', priority: '0.8', changefreq: 'weekly' },
-    { url: '/tie-clips', priority: '0.8', changefreq: 'weekly' },
-    { url: '/unique', priority: '0.7', changefreq: 'weekly' },
-    { url: '/about', priority: '0.7', changefreq: 'monthly' },
-    { url: '/blog', priority: '0.8', changefreq: 'weekly' },
-    { url: '/sizing-guide', priority: '0.7', changefreq: 'monthly' },
-    { url: '/contact', priority: '0.6', changefreq: 'monthly' },
-    { url: '/return-policy', priority: '0.6', changefreq: 'yearly' },
+    { url: '/',              priority: '1.0',  changefreq: 'weekly'  },
+    { url: '/rings',         priority: '0.9',  changefreq: 'weekly'  },
+    { url: '/ring-sets',     priority: '0.85', changefreq: 'weekly'  },
+    { url: '/earrings',      priority: '0.8',  changefreq: 'weekly'  },
+    { url: '/pendants',      priority: '0.8',  changefreq: 'weekly'  },
+    { url: '/cufflinks',     priority: '0.8',  changefreq: 'weekly'  },
+    { url: '/tie-clips',     priority: '0.8',  changefreq: 'weekly'  },
+    { url: '/unique',        priority: '0.7',  changefreq: 'weekly'  },
+    { url: '/blog',          priority: '0.8',  changefreq: 'weekly'  },
+    { url: '/about',         priority: '0.7',  changefreq: 'monthly' },
+    { url: '/sizing-guide',  priority: '0.7',  changefreq: 'monthly' },
+    { url: '/contact',       priority: '0.6',  changefreq: 'monthly' },
+    { url: '/search',        priority: '0.5',  changefreq: 'monthly' },
+    { url: '/return-policy', priority: '0.5',  changefreq: 'yearly'  },
+    { url: '/disclaimer',    priority: '0.4',  changefreq: 'yearly'  },
   ];
 
   const productPages = products.map((p) => ({
@@ -35,7 +37,7 @@ export const GET: APIRoute = async () => {
   const blogPages = blogPosts.map((p) => ({
     url: `/blog/${p.slug}`,
     priority: '0.7',
-    changefreq: 'yearly',
+    changefreq: 'monthly',
   }));
 
   const allPages = [...staticPages, ...productPages, ...blogPages];
