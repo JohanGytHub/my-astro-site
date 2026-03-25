@@ -88,7 +88,8 @@ const currentPath = Astro.url.pathname;
         rel="noopener"
         class="btn btn-primary nav-cta"
       >
-        Visit Jewelry by Johan
+        <span class="cta-full">Visit Jewelry by Johan</span>
+        <span class="cta-short">Visit Store</span>
       </a>
 
       <!-- Mobile Menu -->
@@ -163,7 +164,7 @@ const currentPath = Astro.url.pathname;
     height: 68px;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   /* Logo */
@@ -291,7 +292,18 @@ const currentPath = Astro.url.pathname;
 
   .nav-cta {
     font-size: 0.75rem;
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Show full label on wide screens, short label on tighter laptops */
+  .cta-short { display: none; }
+  .cta-full  { display: inline; }
+
+  @media (max-width: 1200px) {
+    .cta-full  { display: none; }
+    .cta-short { display: inline; }
   }
 
   .mobile-only {

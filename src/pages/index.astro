@@ -26,7 +26,7 @@ const categories = [
     title: 'Earrings',
     sub: 'Studs, drops & ear cuffs',
     icon: '◇',
-    count: null,
+    count: getCategoryProducts(products, 'earrings').length,
     gradient: 'linear-gradient(135deg, #14101a 0%, #1f1428 100%)',
   },
   {
@@ -130,8 +130,8 @@ const categories = [
 
         <!-- Quick nav pills -->
         <div class="hero-pills">
-          {['Rings', 'Ring Sets', 'Earrings', 'Pendants', 'Unique'].map(cat => (
-            <a href={`/${cat.toLowerCase().replace(' ', '-')}`} class="pill">{cat}</a>
+          {['Rings', 'Ring Sets', 'Earrings', 'Pendants', 'Cufflinks', 'Tie Clips', 'Unique'].map(cat => (
+            <a href={`/${cat.toLowerCase().replace(/ /g, '-')}`} class="pill">{cat}</a>
           ))}
         </div>
       </div>
@@ -385,7 +385,7 @@ const categories = [
             carries hours of skilled artisan work alongside billions of years of cosmic formation.
           </p>
           <a href="/about" class="lore-link">
-            Meet the maker →
+            Meet the team →
           </a>
         </div>
 
