@@ -84,6 +84,17 @@ const productSchema: Record<string, unknown> = {
     url: 'https://jewelrybyjohan.com',
   },
 };
+
+// BreadcrumbList JSON-LD for Google rich results
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meteorite.jewelry/' },
+    { '@type': 'ListItem', position: 2, name: collection.label, item: `https://meteorite.jewelry${collection.href}` },
+    { '@type': 'ListItem', position: 3, name: product.title, item: `https://meteorite.jewelry/products/${product.handle}` },
+  ],
+};
 ---
 
 <BaseLayout
@@ -94,6 +105,7 @@ const productSchema: Record<string, unknown> = {
   canonicalUrl={shopUrl}
 >
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <Nav />
 
   <main class="product-page" itemscope itemtype="https://schema.org/Product">

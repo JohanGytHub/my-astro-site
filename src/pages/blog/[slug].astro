@@ -44,17 +44,29 @@ function mdToHtml(md: string): string {
 
 const bodyHtml = mdToHtml(post.body);
 
+// Word count for schema (strip markdown symbols, count words)
+const wordCount = post.body.trim().split(/\s+/).length;
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: post.title,
   description: post.metaDescription,
   datePublished: post.date,
+  dateModified: post.date,
+  wordCount,
+  image: post.coverImage
+    ? [post.coverImage]
+    : ['https://meteorite.jewelry/og-default.svg'],
   author: { '@type': 'Person', name: 'Johan', url: 'https://jewelrybyjohan.com' },
   publisher: {
     '@type': 'Organization',
     name: 'Jewelry by Johan',
     url: 'https://meteorite.jewelry',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://meteorite.jewelry/favicon.svg',
+    },
   },
 };
 ---
