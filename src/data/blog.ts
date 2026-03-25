@@ -99,7 +99,7 @@ Technical details matter to 2026's jewelry consumer. The comfort-fit profile —
 
 ## The Investment Mindset
 
-Perhaps the most significant shift: men in 2026 are thinking about their wedding band as an investment piece — not financial investment, but investment in meaning, quality, and longevity. The question isn't "what's the cheapest ring that looks good?" but "what's the piece I'll be proud to show my grandchildren?" 
+Perhaps the most significant shift: men in 2026 are thinking about their wedding band as an investment piece — not financial investment, but investment in meaning, quality, and longevity. The question isn't "what's the cheapest ring that looks good?" but "what's the piece I'll be proud to show my grandchildren?"
 
 Gibeon meteorite, with its finite supply and unrepeatable patterns, answers that question definitively.
     `,
@@ -402,7 +402,7 @@ The Gibeon strewn field is finite. The pre-2004 inventory is slowly depleting as
     title: 'Meteorite Ring vs. Tungsten: Which Is Right for You?',
     subtitle: 'Two popular alternative metals — one ancient, one engineered — compared honestly',
     excerpt:
-      'Tungsten and meteorite are both popular choices for men\'s wedding bands. They look completely different, wear very differently, and carry different meanings. Here is a clear-eyed comparison.',
+      "Tungsten and meteorite are both popular choices for men's wedding bands. They look completely different, wear very differently, and carry different meanings. Here is a clear-eyed comparison.",
     date: '2026-02-03',
     readTime: 6,
     category: 'Buying Guide',
@@ -638,7 +638,7 @@ Whether you are buying from Jewelry by Johan or another jeweler, these questions
 
 A reputable jeweler will answer all of these questions readily.
 
-## Why Buy from Jewelry by Johan
+## Why Order from Jewelry by Johan
 
 Every meteorite ring from Jewelry by Johan uses authenticated Gibeon meteorite sourced before the 2004 Namibian protection order. The inlay process, acid etch, and sealing are performed in-house by skilled craftsmen in Minneapolis, USA. Free laser engraving is standard. Custom sizing support is available. The workshop stands behind every piece with lifetime support for structural issues.
 
@@ -956,8 +956,8 @@ One practical advantage of a meteorite engagement ring: it comes with a built-in
   // ─── 14 ──────────────────────────────────────────────────────────────────
   {
     slug: 'meteorite-jewelry-for-women',
-    title: 'Meteorite Jewelry for Women: Breaking the "Rugged" Stereotype',
-    subtitle: 'The most extraordinary material on Earth is not just for men\'s wedding bands',
+    title: "Meteorite Jewelry for Women: Breaking the \"Rugged\" Stereotype",
+    subtitle: "The most extraordinary material on Earth is not just for men's wedding bands",
     excerpt:
       'Meteorite jewelry is often marketed toward men, but some of the most striking meteorite pieces are designed for women. From delicate pendants to elegant engagement rings, here is the full picture.',
     date: '2026-03-18',
@@ -1018,7 +1018,7 @@ Asymmetric styling (one meteorite stud, one plain or differently textured ear) i
 
 ## For the Partner Who Wants Something Different
 
-If you are shopping for a partner who has specifically said she does not want a conventional diamond ring, or who is drawn to science, astronomy, natural materials, or genuinely unusual jewelry — meteorite is worth serious consideration.
+If you are selecting a piece for a partner who has specifically said she does not want a conventional diamond ring, or who is drawn to science, astronomy, natural materials, or genuinely unusual jewelry — meteorite is worth serious consideration.
 
 Bring her into the selection process if possible: the unique pattern of each piece means she will want some say in which specific stone becomes her ring. Each piece truly is different, and the selection experience is part of the pleasure.
 
@@ -1109,7 +1109,7 @@ Store in a dry location — not the bathroom counter, where ambient moisture fro
   {
     slug: 'dinosaur-bone-meteorite-ring-guide',
     title: 'Dinosaur Bone and Meteorite Ring: The Ancient Materials Ring Guide',
-    subtitle: 'Two of Earth\'s most extraordinary materials, combined in one ring',
+    subtitle: "Two of Earth's most extraordinary materials, combined in one ring",
     excerpt:
       'A dinosaur bone and meteorite ring combines the oldest life on Earth with a fragment of space — a piece that spans hundreds of millions of years of planetary history. Here is everything you need to know.',
     date: '2026-03-22',
@@ -1383,7 +1383,7 @@ A few reference points:
 
 **Dates**: Your wedding date, the date you met, a proposal date. Clean, permanent, and unmistakably personal. A date in a format you find meaningful — numerals, written out, with dashes or periods — takes relatively few characters.
 
-**Coordinates**: The latitude and longitude of a meaningful place — where you met, where you got engaged, your home city. "44.9778° N 93.2650° W" is your exact Minneapolis coordinates and fits within 25 characters with careful formatting.
+**Coordinates**: The latitude and longitude of a meaningful place — where you met, where you got engaged, your home city. Coordinates fit within 25 characters with careful formatting.
 
 **A phrase from your vows**: If your ceremony includes a phrase that is entirely your own, a fragment of it as an engraving connects the ring to the specific words spoken on the day.
 
@@ -1509,6 +1509,1150 @@ These are different kinds of meaning. Neither is superior. But they appeal to di
 It is worth noting that meteorite rings do not require you to choose between meteorite and gold — they can be both. A 14k gold carrier ring with a Gibeon meteorite inlay gives you the warmth and precious-metal prestige of gold combined with the unique, ancient cosmic character of meteorite. Many couples choose precisely this combination.
 
 *Gold is the traditional choice. Meteorite is the extraordinary one. The right answer is whichever one you will be more proud to wear every day for the rest of your life.*
+    `,
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // NEW POSTS 21–35  (added in v7 session)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // ─── 21 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-meteorite-ring-cost',
+    title: 'How Much Does a Meteorite Ring Cost? A Transparent Pricing Guide',
+    subtitle: 'What drives the price of an authentic meteorite ring — and what to expect',
+    excerpt:
+      'Meteorite ring prices vary widely depending on carrier metal, ring width, additional materials, and the quality of the craft. Here is a clear breakdown of what you are actually paying for — and why.',
+    date: '2026-04-01',
+    readTime: 6,
+    category: 'Buying Guide',
+    tags: ['meteorite ring cost', 'how much is a meteorite ring', 'meteorite ring price', 'wedding band cost', 'meteorite jewelry price'],
+    metaTitle: 'How Much Does a Meteorite Ring Cost? Pricing Guide | Meteorite by Johan',
+    metaDescription:
+      'Transparent pricing guide for meteorite rings — what drives the cost, what different carrier metals cost, and how to think about value when buying an authentic Gibeon meteorite ring.',
+    body: `
+## Why Meteorite Ring Prices Vary So Much
+
+If you have searched for meteorite rings, you have noticed a wide price range — from under $200 to well over $2,000 for rings that all appear to feature the same material. Understanding what drives those differences is essential before you make a decision.
+
+The short answer: you are paying for the meteorite material itself, the carrier metal, the complexity of the design, and the quality of the craft. Each of these varies enormously between sellers.
+
+## What You Are Actually Paying For
+
+**The meteorite material**: Gibeon meteorite is a finite, legally protected resource. The supply available to jewelers globally comes entirely from pre-2004 inventory collected before Namibia declared it a national monument. That supply is slowly depleting. The material itself has real and increasing scarcity value — it is not a commodity that can be restocked.
+
+**The carrier metal**: This is often the largest single price driver. A titanium carrier adds modest cost because titanium, while an excellent metal, is not precious. A 14k gold carrier adds substantial cost — the weight of the gold alone represents significant material cost, before any labor. Platinum carriers are the most expensive.
+
+**The craft**: An inlaid meteorite ring requires precise cutting, meticulous fitting, controlled acid etching, and careful sealing. These are skilled operations performed on irreplaceable material. A workshop with experienced bench jewelers commands a higher price than a mass-production operation because the craftsmanship directly affects how long the ring wears well.
+
+**Design complexity**: A simple band with a single meteorite inlay costs less than a ring combining meteorite with dinosaur bone, multiple gold pinstripes, and bezel-set diamond accents. Additional materials and steps each add to the final price.
+
+## Approximate Price Ranges by Carrier Metal
+
+These ranges reflect general market pricing for authentic Gibeon meteorite rings made with quality craftsmanship:
+
+**Titanium carrier**: Entry point for meteorite rings. A simple titanium band with a Gibeon meteorite inlay typically falls in the $400–$700 range. Wider bands, additional inlay materials, or added gemstones will push toward the higher end of that range or beyond.
+
+**14k Yellow, White, or Rose Gold carrier**: Gold significantly raises the floor. Expect $700–$1,400 for most designs. The weight of gold in a ring adds up quickly — a wider 8mm gold band carries substantially more metal than a 6mm band.
+
+**Platinum carrier**: The most expensive option, typically $1,200–$2,500+ for most designs. Platinum is denser and more expensive by weight than 14k gold.
+
+**Multi-material combinations**: Rings combining meteorite with dinosaur bone, wood, or multiple gemstone accents typically command a premium of $100–$400 over single-material designs, depending on the additional materials used.
+
+## What Separates a $200 Ring from a $900 Ring
+
+This is the most important question, and the answer is rarely visible in product photos.
+
+**Material authenticity**: Low-cost "meteorite rings" sometimes use mimetic materials — substances that mimic the look of meteorite but are not authentic Gibeon. These are not fraudulent if disclosed, but they should be priced and presented accordingly. Authentic, documented Gibeon meteorite cannot be produced at bargain-basement price points.
+
+**Sealing quality**: A properly sealed meteorite ring will maintain its appearance for years with basic care. An improperly sealed ring will begin rusting within months of normal wear. You cannot tell from photos whether the sealing was done correctly — you can only tell from the jeweler's reputation and process transparency.
+
+**Etch quality**: A skilled acid etch reveals the Widmanstätten pattern with maximum clarity and depth. A rushed or incorrect etch produces a faint, flat, or over-pitted surface. Again, photos often don't capture this distinction.
+
+**Inlay security**: The meteorite must be bonded correctly across its entire contact surface with the ring channel. Partial bonding looks fine initially but can lead to loosening over years of wear. This is invisible at purchase.
+
+## The Value Calculation
+
+A meteorite ring is not a commodity purchase — it is a piece you will wear every day for decades. In that context, the relevant calculation is not "what is the cheapest way to get a meteorite ring?" but "what is the best ring I can get for the money I am spending?"
+
+For a ring worn daily for 30 years, the difference between a $500 ring and an $800 ring works out to about $10 per year. The difference between a ring that lasts 30 years looking extraordinary and one that begins rusting within a year is not measured in dollars.
+
+## Why "Contact for Price" on Some Pieces
+
+Some pieces in the Jewelry by Johan collection display "Contact for price" rather than a specific price. This reflects pieces made entirely to order with highly custom specifications — unusual metal combinations, rare additional materials, or design requirements that require a direct consultation before accurate pricing can be provided. It is not evasiveness; it is honesty about the custom nature of those specific pieces.
+
+## The Free Engraving Factor
+
+Every Jewelry by Johan ring includes free laser engraving up to 25 characters. This is a meaningful included value — at other jewelers, engraving is typically a $30–$75 add-on. Factor this into any price comparison you make.
+
+*A meteorite ring is an investment in something you will interact with every day for the rest of your life. Spend accordingly — not extravagantly, but thoughtfully.*
+    `,
+  },
+
+  // ─── 22 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'can-you-wear-meteorite-ring-every-day',
+    title: 'Can You Wear a Meteorite Ring Every Day? The Complete Answer',
+    subtitle: 'Designed for daily wear — with a few things to know first',
+    excerpt:
+      'The most common concern about meteorite rings is whether they hold up to everyday life. The answer is yes — with a clear understanding of what "everyday" means and what minimal care is required.',
+    date: '2026-04-03',
+    readTime: 5,
+    category: 'Care Guide',
+    tags: ['meteorite ring everyday wear', 'wearing meteorite ring daily', 'meteorite ring durability', 'active lifestyle ring', 'meteorite wearability'],
+    metaTitle: 'Can You Wear a Meteorite Ring Every Day? Complete Guide | Meteorite by Johan',
+    metaDescription:
+      'Yes, you can wear a meteorite ring every day — here is exactly what it handles well, what to avoid, and the minimal care routine that keeps it looking extraordinary for decades.',
+    body: `
+## The Short Answer: Yes
+
+Meteorite wedding bands from Jewelry by Johan are designed to be worn every day. Hundreds of customers wear theirs continuously — through work, travel, exercise, and daily life — and their rings continue to look extraordinary years later.
+
+But "designed for everyday wear" does not mean "zero care required." Understanding the specific conditions your ring handles well — and the handful it does not — makes the difference between a ring that ages beautifully and one that develops problems.
+
+## What a Meteorite Ring Handles Without Issue
+
+These are the everyday conditions your ring manages without any special intervention:
+
+**Office and professional environments**: Computer work, meetings, writing, handling documents and equipment. No concerns whatsoever.
+
+**Light outdoor activity**: Walking, hiking on dry trails, gardening with gloves, casual outdoor recreation. Fine.
+
+**Cooking and food prep**: Brief exposure to water while washing hands or rinsing produce, general kitchen work. Fine if you dry the ring when you wash up.
+
+**Casual exercise**: Yoga, light running, cycling, walking workouts. The ring handles these without concern.
+
+**Temperature changes**: Air conditioning, cold weather, warm weather. Iron-nickel alloy is not sensitive to normal temperature variation.
+
+**Light sweating**: Normal perspiration from everyday activity is not a meaningful concern for a properly sealed meteorite ring.
+
+## What to Remove the Ring For
+
+These are the specific situations where you should take your ring off:
+
+**Ocean swimming**: Salt water is the single most aggressive environment for a meteorite ring. The electrolytes accelerate iron oxidation dramatically. Always remove before ocean swimming, surfing, or extended time in salt spray.
+
+**Pool and hot tub swimming**: Chlorinated water attacks the iron-nickel matrix. Remove before entering any chlorinated pool or hot tub.
+
+**Heavy manual labor with chemical exposure**: Construction work involving concrete, solvents, harsh cleaning agents, or acids. These environments are aggressive toward the iron surface.
+
+**Contact sports or heavy impact risk**: Weightlifting with barbells, contact sports, or any activity where the ring risks significant impact against hard surfaces. The ring itself is not fragile, but impacts against concrete or steel edges are worth avoiding for any ring.
+
+## The Care Routine That Makes It All Work
+
+Daily maintenance is essentially zero — wear it, dry it if it gets wet, that's it.
+
+The meaningful maintenance takes about five minutes per month:
+
+1. Rinse briefly under cool, clean water
+2. Dry thoroughly with a soft cloth and let air-dry completely
+3. Apply a small amount of Renaissance Wax or light mineral oil and buff into the meteorite surface
+4. Done
+
+This monthly wax treatment is the protective barrier that prevents the oxidation that causes rust. Skip it consistently, and problems can develop over time. Do it consistently, and you will have a ring that wears beautifully for decades.
+
+## What "Wearing Every Day" Actually Looks Like Over Time
+
+In the first year: the ring looks essentially as it did when new. The Widmanstätten pattern is crisp and dramatic.
+
+After 3-5 years: the highest points of the meteorite surface will show very gentle smoothing from daily contact. The pattern remains clear; the micro-peaks develop a slightly polished character while the valleys retain their depth. Many wearers find this natural wear makes the ring feel more personal — like a piece of lived history rather than a fresh object.
+
+After 10+ years: If maintained consistently, the ring remains attractive and wears-its-history. A re-etch from Jewelry by Johan can restore the full definition of the Widmanstätten pattern to new-ring clarity if desired. Many couples choose the 10-year anniversary as the moment for this renewal.
+
+## For Active Professionals and Tradespeople
+
+If you work with your hands in a trade — construction, mechanics, landscaping, manufacturing — you will want to remove your ring for the workday and put it back on afterward. This is not unique to meteorite rings; it is good practice for any ring in these environments. A ring stored safely during an eight-hour work shift still provides the full daily-wear experience for the remaining sixteen hours.
+
+## The Titanium Advantage
+
+Meteorite rings with titanium carriers are particularly well-suited to active daily wear. Titanium is extraordinarily tough, essentially hypoallergenic, and never tarnishes. The carrier metal will handle what the meteorite inlay cannot — impacts, scratches, general wear — while the meteorite inlay provides the visual distinction.
+
+*Designed for life. Built for decades. Maintained in minutes per month.*
+    `,
+  },
+
+  // ─── 23 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'is-meteorite-jewelry-hypoallergenic',
+    title: 'Is Meteorite Jewelry Hypoallergenic? Nickel Allergy Facts',
+    subtitle: 'What you need to know about nickel content, allergy risk, and the best options',
+    excerpt:
+      'Meteorite contains nickel — and nickel allergies are common. Here is a clear, honest guide to understanding the allergy risk of Gibeon meteorite jewelry and what options exist for sensitive skin.',
+    date: '2026-04-05',
+    readTime: 5,
+    category: 'Materials Guide',
+    tags: ['meteorite ring hypoallergenic', 'nickel allergy rings', 'meteorite nickel content', 'hypoallergenic wedding bands', 'metal allergy rings'],
+    metaTitle: 'Is Meteorite Jewelry Hypoallergenic? Nickel Allergy Guide | Meteorite by Johan',
+    metaDescription:
+      'Gibeon meteorite contains nickel — here is what that means for allergy risk, how ring construction affects exposure, and the best options for those with metal sensitivities.',
+    body: `
+## The Direct Answer
+
+Gibeon meteorite is approximately 7.7% nickel by weight. Nickel is one of the most common contact allergens — nickel allergy affects roughly 10-15% of the population, with higher rates among women. So: can a meteorite ring cause an allergic reaction?
+
+The honest answer is: potentially, but the risk is significantly lower than it might appear, and there are straightforward ways to manage or eliminate it.
+
+## Why the Risk Is Lower Than the Numbers Suggest
+
+The nickel content of Gibeon meteorite — 7.7% — sounds significant. But context matters.
+
+**The meteorite is an inlay, not a continuous band.** In a typical meteorite ring, the Gibeon meteorite occupies the outer face of the ring — the part visible when worn. The interior of the ring (the part in direct contact with your skin) is the carrier metal: titanium, gold, or platinum.
+
+Titanium is one of the most hypoallergenic metals available — it is used in medical implants and surgical hardware precisely because it is biologically inert. Gold (14k and above) is also essentially non-allergenic for most people. If you have a metal allergy and you choose a titanium-carrier or gold-carrier meteorite ring, the surface touching your skin is hypoallergenic even though the outer inlay contains nickel.
+
+The nickel exposure from the outer meteorite surface is dramatically lower than, say, a solid nickel-alloy ring, because the contact is primarily visual rather than dermal.
+
+## The Stardust Alternative
+
+For customers with significant nickel sensitivity, Jewelry by Johan offers rings featuring **Stardust** — an alternative material made from genuine meteorite pieces and shavings that has been processed to dramatically reduce direct nickel contact while preserving the cosmic aesthetic. Stardust is not a fake or synthetic substitute: it is authentic meteorite material in a different form. It provides the genuine provenance and space-origin narrative with reduced allergy risk.
+
+Stardust rings are a meaningful option for those who are drawn to meteorite jewelry but have legitimate concerns about nickel sensitivity. The aesthetic is distinctive — meteorite-inspired texture with a somewhat different visual character than the Widmanstätten-inlay approach.
+
+## If You Know You Have a Nickel Allergy
+
+A few practical steps:
+
+**Choose a titanium carrier.** Titanium is the most reliably hypoallergenic carrier metal available for rings. It contacts your skin on all interior surfaces; the meteorite contacts your skin only minimally through the outer face of the inlay.
+
+**Ensure the sealing is complete.** A well-sealed meteorite inlay has an additional barrier between the nickel-containing iron surface and external contact. Jewelry by Johan seals every meteorite piece after etching for exactly this reason — among others.
+
+**Consider Stardust rings.** If your nickel sensitivity is severe, Stardust rings offer the meteorite story without the traditional inlay format.
+
+**Test first if possible.** If you have had significant reactions to nickel jewelry in the past, discuss your specific situation with the Jewelry by Johan team before ordering. They can advise on the specific construction of any ring you are considering and whether it is appropriate for your sensitivity level.
+
+## What Is Not Hypoallergenic in Ring Jewelry
+
+For comparison purposes: white gold contains nickel in many alloys (though rhodium plating provides a barrier), some silver alloys contain nickel, and many fashion jewelry pieces are made primarily of nickel alloys. The nickel exposure from a properly constructed titanium-carrier meteorite ring is typically less than from standard white gold jewelry.
+
+## The Stardust Clarification
+
+One important note: Stardust is sometimes confused with synthetic or imitation meteorite. It is neither. It is genuine meteorite material — pieces and shavings from authentic meteorite — used in a different construction format than the traditional Widmanstätten-inlay approach. Rings featuring Stardust are authentic meteorite jewelry. They are not "fake." They are an alternative format for genuine material.
+
+*Your ring should be comfortable for a lifetime of wear. The right construction makes meteorite accessible even for sensitive skin.*
+    `,
+  },
+
+  // ─── 24 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-wedding-ring-sets',
+    title: 'His and Hers Meteorite Wedding Ring Sets: A Complete Guide',
+    subtitle: 'Matching the cosmos for couples who want something extraordinary',
+    excerpt:
+      'Meteorite wedding ring sets bring the same cosmic material to both partners — with designs tailored to each. Here is everything to know about choosing, coordinating, and ordering matching meteorite bands.',
+    date: '2026-04-07',
+    readTime: 6,
+    category: 'Wedding Guide',
+    tags: ['meteorite ring sets', 'his and hers wedding bands', 'matching meteorite rings', 'couples wedding bands', 'wedding ring sets'],
+    metaTitle: 'His and Hers Meteorite Wedding Ring Sets | Matching Bands | Meteorite by Johan',
+    metaDescription:
+      'Complete guide to his and hers meteorite wedding ring sets — how to coordinate designs for both partners, width options, metal choices, and what makes a set feel truly matched.',
+    body: `
+## Why Couples Choose Matching Meteorite Sets
+
+The appeal of a matching wedding ring set is obvious: a shared material, a shared provenance, a shared story worn on both fingers. For couples drawn to meteorite, the matching-set approach adds another layer of meaning — every piece of Gibeon meteorite comes from the same strewn field, the same parent asteroid, the same cosmic event. Your rings are, in a very real sense, fragments of the same original object.
+
+This is a more literal interpretation of "matched" than any manufactured matching set can claim.
+
+## The Design Challenge: Same Material, Different Proportions
+
+Men's and women's wedding bands have different conventions around width, weight, and proportion. A ring that looks commanding and intentional at 8mm on a man's hand may look oversized and heavy on a woman's hand. The design goal for a matched set is visual cohesion at each partner's natural scale, not identical dimensions.
+
+The most successful matched meteorite sets share:
+
+**The same carrier metal** (or a deliberate complementary choice): Both partners in titanium creates a unified, modern aesthetic. One partner in titanium and one in rose gold creates a complementary warm-cool contrast that reads as a set while differentiating the pieces.
+
+**The same meteorite treatment**: Both rings should be etched to the same depth and sealed with the same treatment, so the Widmanstätten patterns have similar visual character — both crisp and dramatic, not one crisp and one faint.
+
+**Proportionally appropriate widths**: A common pairing is a 4-6mm band for the female partner and a 7-9mm band for the male partner. The wider band makes a stronger statement on a larger hand; the narrower band shows the meteorite pattern elegantly on a smaller hand without overwhelming it.
+
+## Popular Matched Set Combinations
+
+**Classic titanium pair**: His 8mm titanium-meteorite band, her 5mm titanium-meteorite band. Clean, modern, unified in material and finish. The most popular entry point for matched meteorite sets.
+
+**Meteorite + gold accented pair**: Both bands feature Gibeon meteorite center inlays flanked by yellow gold rails or pinstripes. The gold detailing adds warmth, ties the set together visually, and works in both widths. Popular for couples who want meteorite with a more formal, precious-metal appearance.
+
+**Mixed carrier metals**: His ring in titanium, her ring in rose gold — both featuring Gibeon meteorite inlays. The different carrier metals distinguish the rings while the shared meteorite creates the narrative link. This pairing works particularly well for couples with different aesthetic preferences who still want a coherent set story.
+
+**Three-material set**: Both rings feature meteorite and dinosaur bone inlays, with gold or platinum accents. The shared multi-material story — cosmic and terrestrial ancient materials united — creates an unusually compelling matched-set narrative.
+
+## Engraving Matched Sets
+
+Free laser engraving (up to 25 characters) is included with every Jewelry by Johan ring. Matched sets offer particular creative possibilities:
+
+**Complementary inscriptions**: One ring engraved with the first half of a phrase, the other with the second. "You are" on one, "everything" on the other. Or one ring with the wedding date, the other with the location.
+
+**Matching dates**: Both rings engraved with the wedding date in a format you both choose. Simple, permanent, universally understood.
+
+**Coordinates**: Both rings engraved with the coordinates of the ceremony location, or of where you first met. A discreet and meaningful shared reference.
+
+## Sizing Matched Sets
+
+Because meteorite rings cannot be resized, both partners need precise size measurements before ordering. The $10 custom ring sizer from Jewelry by Johan accommodates both partners — one sizer set can measure both sizes before the order is placed.
+
+Do not assume you know your partner's ring size — measure precisely. The most common matched-set complication is one ring fitting well and the other fitting incorrectly because a size was estimated rather than measured.
+
+## The Ordering Process for Sets
+
+Jewelry by Johan's team is experienced with matched-set orders. When placing a set order, you will specify:
+- Each ring's width and design
+- Each ring's carrier metal
+- Each ring's size
+- Any additional materials (gemstones, wood inlays, dinosaur bone)
+- Engraving for each ring
+
+The team will ensure both rings are made from meteorite that is visually compatible — similar etch quality, similar pattern character — so the pieces feel like a genuine matched pair rather than two separately ordered rings.
+
+## The Shared Story
+
+Perhaps the most compelling aspect of a matched meteorite set: the story you tell together. When guests ask about your rings at the wedding, or when you explain them to curious friends over the years, you have something to say together. "They're made from the same asteroid. They fell to Earth 30,000 years ago. The pattern on each ring formed over billions of years in space. No two are exactly alike — not even ours."
+
+That is a more interesting answer than any conventional jewelry set provides.
+
+*Same universe. Same asteroid. Same vows. Different fingers.*
+    `,
+  },
+
+  // ─── 25 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'real-vs-fake-meteorite-jewelry',
+    title: 'Real vs. Fake Meteorite Jewelry: How to Spot Authentic Gibeon',
+    subtitle: 'What to look for, what to ask, and how to protect your investment',
+    excerpt:
+      'The meteorite jewelry market includes authentic pieces, clearly labeled mimetics, and outright fakes. Here is how to tell the difference — and what documentation to demand before you buy.',
+    date: '2026-04-09',
+    readTime: 6,
+    category: 'Buying Guide',
+    tags: ['authentic meteorite jewelry', 'fake meteorite rings', 'real meteorite identification', 'gibeon meteorite authentication', 'meteorite ring scam'],
+    metaTitle: 'Real vs Fake Meteorite Jewelry: Spot Authentic Gibeon | Meteorite by Johan',
+    metaDescription:
+      'How to identify authentic Gibeon meteorite jewelry vs. fakes and mimetics — what to look for visually, what documentation to request, and what red flags to avoid.',
+    body: `
+## The Market Reality
+
+Meteorite jewelry exists on a spectrum. At one end: fully authenticated Gibeon meteorite with documented chain of custody, properly acid-etched to reveal the genuine Widmanstätten pattern. At the other end: materials that look vaguely like meteorite but contain no actual meteorite at all.
+
+In between: mimetic materials — substances intentionally designed to resemble meteorite — which are not fraudulent if properly disclosed, but are worth knowing how to identify. And there are genuinely authentic meteorite types that are not Gibeon, which have different characteristics, durability profiles, and market values.
+
+Knowing how to navigate this spectrum protects your investment and ensures what is on your finger is what you were told it is.
+
+## What Authentic Gibeon Meteorite Looks Like
+
+**The Widmanstätten pattern is the primary visual identifier.** Authentic Gibeon meteorite, properly acid-etched, shows the unmistakable interlocking geometric crystal structure — angular bands of kamacite and taenite in a pattern that looks almost architectural. This pattern:
+
+- Is not uniform or repeating — it is chaotic geometry, not a stamped or printed design
+- Varies across the surface — the pattern shifts as you rotate the ring
+- Has genuine depth — the etch creates actual surface relief, not just a printed or painted surface
+- Is three-dimensional — you can feel the texture of the etch if you run a fingernail lightly across the meteorite surface
+
+**The color**: Authentic Gibeon has a warm iron-gray tone. It is not uniformly silver, not black, not brown — it is the color of iron with a gentle golden-gray quality in certain lighting conditions.
+
+**The weight**: Gibeon meteorite is relatively dense — denser than stone, slightly lighter than pure iron. When you hold an authentic Gibeon ring, the inlay has perceptible weight even in small amounts.
+
+## Red Flags That Suggest Inauthenticity
+
+**Uniform, printed-looking "patterns"**: Some fake meteorite products use etched or printed patterns that repeat uniformly across the surface. Authentic Widmanstätten patterns are never uniform — they vary continuously because they reflect actual crystal growth, not a manufacturing process.
+
+**Extremely low prices**: Authentic Gibeon meteorite has real material cost. Rings claiming to contain authentic Gibeon meteorite at prices well below market norms for the carrier metal alone warrant scrutiny.
+
+**No documentation**: Reputable sellers of authentic Gibeon meteorite can provide documentation of the material's provenance — a record that the material was legally collected before Namibia's 2004 protection order and sourced through a verifiable chain of custody. If a seller cannot or will not provide any such documentation, treat the authenticity claim with caution.
+
+**"Meteorite-style" language**: Some sellers use phrases like "meteorite-inspired," "meteorite-look," or "space pattern" without explicitly claiming authentic meteorite. Read carefully. This language typically indicates a mimetic material, not authentic meteorite.
+
+## Mimetic Materials: Not Fraud, But Not Meteorite
+
+Mimetic materials are substances made to resemble meteorite. They are not fraud if clearly disclosed — and they serve a real market for people who want the visual aesthetic without the cost or maintenance of authentic meteorite.
+
+The most common mimetic types use industrial or chemical processes to create a Widmanstätten-like pattern in steel, titanium, or other materials. Some are created by processing actual meteorite dust into a carrier — these are also not authentic Gibeon inlays, though they may contain trace meteorite material.
+
+**Jewelry by Johan clearly identifies all products.** Authentic Gibeon meteorite products are identified as such with documentation. Mimetic or Stardust products (which use genuine meteorite material in a different format) are identified accordingly. No authentic-meteorite labeling is applied to any product that does not contain documented authentic Gibeon meteorite.
+
+## What to Ask Before Buying Anywhere
+
+1. **Is this authenticated Gibeon meteorite?** Expect a direct yes or no.
+2. **What documentation do you have of provenance?** Expect a specific answer, not vagueness.
+3. **Was this material collected before Namibia's 2004 protection order?** Any authentic Gibeon in the jewelry market must predate this order.
+4. **Is the meteorite sealed after etching?** This indicates a workshop that understands the material.
+5. **Can I see the specific piece of meteorite that will be in my ring?** Reputable custom jewelers often accommodate this.
+
+## The Spectrometry Test
+
+Gibeon meteorite can be positively identified through X-ray fluorescence (XRF) spectrometry — a non-destructive test that measures the chemical composition of the surface. Authentic Gibeon will show approximately 91-92% iron, 7.5-8% nickel, with trace gallium and germanium in characteristic ratios. This is not a test most consumers need to commission, but it exists as a final verification for those who want absolute certainty.
+
+For everyday purchases, provenance documentation and visual examination by a knowledgeable party are sufficient.
+
+*The authentic material is extraordinary enough to be worth protecting. Know what you are buying before you buy it.*
+    `,
+  },
+
+  // ─── 26 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-ring-pros-and-cons',
+    title: 'Meteorite Ring Pros and Cons: The Honest Breakdown',
+    subtitle: 'Everything that is extraordinary — and everything that requires consideration',
+    excerpt:
+      'Meteorite rings are genuinely extraordinary. They also have real tradeoffs. This is the most honest, balanced breakdown you will find — covering every advantage and every limitation before you decide.',
+    date: '2026-04-11',
+    readTime: 7,
+    category: 'Buying Guide',
+    tags: ['meteorite ring pros cons', 'meteorite ring advantages', 'meteorite ring disadvantages', 'should i get a meteorite ring', 'meteorite wedding band tradeoffs'],
+    metaTitle: 'Meteorite Ring Pros and Cons: Complete Honest Breakdown | Meteorite by Johan',
+    metaDescription:
+      'A completely honest breakdown of meteorite ring pros and cons — what makes them extraordinary, what requires real consideration, and how to decide if meteorite is right for you.',
+    body: `
+## The Case for Honest Assessment
+
+There is no shortage of content celebrating meteorite rings. This guide does something different: it gives equal weight to the genuine advantages and the genuine limitations. If meteorite is right for you, you will know by the end. If it is not, you will also know — and that is equally valuable.
+
+## The Pros
+
+### 1. Absolute Uniqueness
+
+No two pieces of Gibeon meteorite have the same Widmanstätten pattern. The crystal formation on your ring developed over billions of years in a specific location within a specific asteroid, under conditions that will never be reproduced. Your ring's pattern exists nowhere else in the world — not on any other ring, not in any specimen, not in any collection.
+
+For people who value genuine uniqueness (as opposed to "limited edition" manufactured uniqueness), this is not just marketing — it is material science.
+
+### 2. Extraordinary Provenance
+
+Gibeon meteorite formed approximately 4.5 billion years ago, before Earth existed, in an asteroid in what would become our solar system. It cooled over geological timescales, survived atmospheric entry, lay in the Namibian desert for 30,000 years, and is now legally protected by the Namibian government as a national monument. The supply is finite and slowly depleting.
+
+No manufactured material can offer this provenance. No gemstone has a comparable origin story. This is the only material used in consumer jewelry that predates the planet you live on.
+
+### 3. Conversation and Connection
+
+A meteorite ring reliably attracts attention and questions. If you enjoy sharing the story of your ring — and the story is genuinely compelling — this is a significant daily quality-of-life advantage. Your ring becomes a social asset rather than just an accessory.
+
+### 4. Visual Distinctiveness That Rewards Attention
+
+At a glance, a meteorite ring is an unusual, textured gray ring. On closer examination, it reveals geometric complexity and depth unlike anything manufactured. This is a rare combination: wearable at distance, extraordinary up close.
+
+### 5. Free Personalization
+
+Every Jewelry by Johan ring includes free laser engraving up to 25 characters. The personalization is included, not an add-on.
+
+---
+
+## The Cons
+
+### 1. Cannot Be Resized
+
+This is the most significant practical limitation of meteorite rings. The meteorite inlay is cut precisely to fit a specific ring channel. If your finger size changes meaningfully — and finger size does change over decades of life — the ring cannot be adjusted. You would need to order a new ring.
+
+This is not a dealbreaker for everyone, but it is a real consideration for anyone whose finger size has changed significantly in the past, or who expects significant changes due to weight, health, or aging.
+
+**Mitigation**: Use a precise ring sizer before ordering. The $10 custom ring sizer from Jewelry by Johan is specifically designed to take an accurate size before the ring is made.
+
+### 2. Requires Regular Maintenance
+
+Meteorite rings require more care than titanium-only, tungsten, or gold rings. Specifically: remove before salt water and pool swimming, dry after any water exposure, and apply a protective wax once a month. This is approximately five minutes per month of active attention.
+
+If you are a person who will simply never do this — who puts a ring on and does not think about it again until something goes wrong — meteorite may not be the right material for you. A titanium or tungsten ring requires no maintenance and will forgive complete neglect.
+
+**Mitigation**: The maintenance is genuinely minimal for those willing to do it. Most meteorite ring owners find the monthly care ritual to be a small, satisfying habit rather than a burden.
+
+### 3. Potential Rust if Neglected
+
+Gibeon meteorite contains iron. Improperly maintained rings — particularly those exposed to salt water, chlorine, or prolonged moisture without rinsing and drying — can develop rust spots. With proper care, rust is entirely preventable. With consistent neglect of the care guidelines, it is possible.
+
+**Mitigation**: The sealing applied at the workshop provides significant baseline protection. Rust only becomes a meaningful risk with consistent negligence of care guidelines.
+
+### 4. Nickel Content (Allergy Risk)
+
+Gibeon meteorite is approximately 7.7% nickel. Nickel allergy affects a meaningful percentage of the population. For people with nickel sensitivity, the carrier metal choice (titanium is hypoallergenic) and the fact that the interior of the ring does not contain meteorite significantly reduce actual exposure — but this requires consideration for sensitive individuals.
+
+**Mitigation**: Titanium-carrier rings minimize skin contact with the nickel-containing meteorite surface. Stardust alternatives (authentic meteorite material in a different format) offer reduced nickel exposure. See the dedicated hypoallergenic guide for full details.
+
+### 5. Higher Price Point Than Non-Meteorite Alternatives
+
+Authentic meteorite rings from reputable jewelers cost more than titanium-only bands or tungsten rings. The premium reflects real scarcity value of the material and the skilled craft required to set it correctly.
+
+**Mitigation**: For a ring worn daily for decades, the cost-per-year calculation often favors the more expensive option when durability and long-term satisfaction are accounted for.
+
+### 6. Pattern Cannot Be Previewed Before Cutting
+
+Because each piece of meteorite is unique, the exact Widmanstätten pattern on your specific ring cannot be fully known before the stone is cut. You know the general character of Gibeon meteorite; you do not know the specific pattern of your piece until it is made.
+
+**Mitigation**: Many reputable jewelers can show photos or samples of the specific material that will be used in your ring. Ask about this when ordering.
+
+---
+
+## The Verdict
+
+Meteorite rings are the right choice for people who genuinely value extraordinary provenance, unique material, and a compelling story — and who are willing to accept the maintenance commitment and the no-resizing limitation.
+
+They are the wrong choice for people who want zero-maintenance jewelry, expect their ring size to change significantly, or are choosing primarily on price.
+
+If you are honestly in the first group, no other material at any price offers what meteorite offers.
+
+*Know what you are choosing. Then choose it fully.*
+    `,
+  },
+
+  // ─── 27 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-pendant-guide',
+    title: 'Meteorite Pendant Necklaces: A Complete Style and Buying Guide',
+    subtitle: 'The most accessible way to wear a piece of the solar system',
+    excerpt:
+      'A meteorite pendant is the single most versatile way to own and wear authentic Gibeon meteorite — no sizing required, works for any gender, and shows the Widmanstätten pattern in full. Here is everything to know.',
+    date: '2026-04-13',
+    readTime: 5,
+    category: 'Style Guide',
+    tags: ['meteorite pendant', 'meteorite necklace', 'gibeon meteorite pendant', 'space jewelry pendant', 'meteorite pendant guide'],
+    metaTitle: 'Meteorite Pendant Necklaces: Complete Guide | Meteorite by Johan',
+    metaDescription:
+      'Complete guide to meteorite pendant necklaces — design options, chain choices, sizing considerations, and why a pendant is the most versatile meteorite jewelry purchase you can make.',
+    body: `
+## Why Pendants Are the Best Entry Point
+
+If you are new to meteorite jewelry, a pendant is the ideal first piece. Here is why: no sizing is required, it works for any gender and any age, and a pendant setting allows the full face of the meteorite to be displayed — which means a larger, more visible Widmanstätten pattern than most ring designs allow.
+
+A pendant is also a gift that requires no measurements, fits on any chain the recipient chooses, and can be worn with almost any outfit from casual to formal.
+
+## What a Meteorite Pendant Actually Is
+
+A meteorite pendant is typically a cross-section slice of Gibeon meteorite — cut from the asteroid mass in a thin slab, then shaped, etched, and mounted in a metal setting. The flat face of the slice is where the Widmanstätten pattern is fully visible, and because it is a flat surface rather than a curved ring inlay, the pattern has more room to develop and display itself.
+
+The slice may be cut to a geometric shape (oval, rectangular, hexagonal) for a more structured, architectural look, or left in an organic, free-form shape that preserves the natural outline of the meteorite fragment for a more raw, naturalistic aesthetic.
+
+## Design Options
+
+**Geometric bezel settings**: The meteorite is surrounded by a continuous band of metal (the bezel) that holds it securely and frames it cleanly. This is the most formal and most protective setting — the meteorite is fully enclosed and protected from impact on its edges. Available in gold, rose gold, white gold, and silver.
+
+**Prong or tension settings**: A more open setting that allows light to reach the meteorite from multiple angles. Shows more of the stone but provides less edge protection.
+
+**Free-form or raw settings**: The meteorite is presented in its natural, irregular shape with minimal metalwork. This maximizes the organic, cosmic character of the material and is the most visually dramatic presentation.
+
+**Layered pendants**: A meteorite slice combined with a secondary element — a diamond accent, a celestial symbol, a complementary gemstone — in a single pendant design.
+
+## Chain Considerations
+
+The pendant chain is not an afterthought — it significantly affects the overall look and wear experience.
+
+**Length**: A 16-inch chain positions a pendant at the collarbone — a dramatic, visible position for large pendants. An 18-inch chain positions it at the upper chest, the most common length for daily wear. A 20-22-inch chain positions it lower on the chest for a more casual, layered aesthetic.
+
+**Weight**: The chain must be proportional to the pendant. A heavy meteorite slice requires a chain with enough weight not to look spindly. A fine chain under a heavy pendant also risks stress fractures over time.
+
+**Metal matching**: The chain metal should match or intentionally contrast with the pendant setting. A yellow gold bezel on a silver chain works if the contrast is intentional (a warm-cool pairing), but often reads as mismatched if unconsidered.
+
+## Meteorite Pendants for Men
+
+While pendants are worn across genders, men's meteorite pendants tend toward:
+
+- Larger, more substantial slice sizes
+- Darker, simpler settings (oxidized silver, titanium, or matte gold)
+- Shorter chains (16-18 inches) worn higher on the chest
+- More organic, free-form slice shapes rather than geometric cuts
+
+A substantial meteorite pendant worn on a simple matte titanium chain is a quiet, confident piece of jewelry with none of the flamboyance of chains associated with fashion jewelry. It rewards attention from those who know what they are looking at.
+
+## Care for Pendants vs. Rings
+
+Pendant care is slightly simpler than ring care in one important way: pendants spend less time in environments that stress the meteorite. They are typically removed before showering, swimming, or workouts — situations where a ring might be left on.
+
+The same basic rules apply: avoid salt water and chlorine, dry immediately after any water exposure, apply a thin wax coating monthly. Because pendants are not subject to the constant abrasion that rings experience against surfaces and other objects, the Widmanstätten pattern tends to remain crisp longer without re-etching.
+
+## As a Gift
+
+Meteorite pendants are the most recommended meteorite gift precisely because sizing is not a concern. If you want to give someone the meteorite experience without the commitment of ordering a custom-sized ring, a pendant delivers the material, the story, and the beauty in a form that fits anyone.
+
+*A pendant carries the cosmos at your chest. Every time someone asks about it, you get to explain what 4.5 billion years looks like.*
+    `,
+  },
+
+  // ─── 28 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-cufflinks-guide',
+    title: 'Meteorite Cufflinks: The Most Extraordinary Men\'s Formal Accessory',
+    subtitle: 'Ancient iron from space — at your cuffs',
+    excerpt:
+      'Meteorite cufflinks take the Gibeon meteorite story into formal dressing. Here is what makes them special, how to wear them, and why they make the most memorable accessory for a wedding day or any formal occasion.',
+    date: '2026-04-15',
+    readTime: 4,
+    category: 'Style Guide',
+    tags: ['meteorite cufflinks', 'mens cufflinks unique', 'space cufflinks', 'gibeon meteorite cufflinks', 'wedding day cufflinks'],
+    metaTitle: 'Meteorite Cufflinks: Extraordinary Men\'s Formal Accessories | Meteorite by Johan',
+    metaDescription:
+      'Authentic Gibeon meteorite cufflinks for men — what makes them special, how to style them, and why they are the most memorable formal accessory for weddings and special occasions.',
+    body: `
+## The Overlooked Category
+
+Meteorite rings dominate the conversation around meteorite jewelry, and for good reason. But meteorite cufflinks represent an entirely different way to carry authentic Gibeon meteorite — one that is exclusively formal, supremely subtle, and arguably the most effective way to bring the material into a dressed-up context.
+
+Cufflinks are visible only when a jacket sleeve falls back. When they are visible, they are close to the hand — exactly where attention falls during a handshake, during signing, during any formal interaction. The person who notices them is close, and the impression is intimate.
+
+## What Meteorite Cufflinks Are
+
+A pair of Gibeon meteorite cufflinks features small discs or rectangles of authentic acid-etched meteorite — the same material, the same Widmanstätten pattern — set into a cufflink mechanism in gold, silver, or titanium. Each face of the cufflink shows a unique section of the meteorite pattern.
+
+Because cufflinks are a matched pair, the two faces will always show different pattern sections — no two pieces of meteorite show identical patterns, so even cufflinks from the same fragment will be visually distinct up close while being visually cohesive from a distance.
+
+## Why the Wedding Day
+
+Meteorite cufflinks have become a significant purchase category for grooms. The logic is straightforward: the groom is wearing a meteorite wedding ring as a symbol of the occasion; cufflinks in the same material create visual and narrative continuity across the wedding day outfit without being excessive or costumy.
+
+When the groom is photographed, hands visible at the altar, the cufflinks are in frame. When he shakes hands with guests, they notice. When he explains the material — "it's the same meteorite as the ring" — the entire outfit acquires a coherent story.
+
+Meteorite cufflinks are also frequently given as groomsman gifts, precisely because they are memorable, appropriate for formal wear, and carry a story worth telling.
+
+## Styling Meteorite Cufflinks
+
+**With a dark suit**: The cool gray of the meteorite reads as a sophisticated, non-standard metal accent against dark suiting. Pair with simple silver or white gold other metals — tie bar, watch — for visual cohesion.
+
+**With morning dress or black tie**: Meteorite cufflinks bring a subtle material distinction to the most formal dress codes without violating convention. They photograph beautifully in the close-up shots that formal occasions produce.
+
+**With a French-cuff shirt in any context**: Meteorite cufflinks are a talking point in any professional or formal setting, not just weddings. A scientific or technical professional who wears them to a conference or client meeting creates an immediate, positive impression of someone who pays attention to unusual details.
+
+## Care for Cufflinks
+
+Because cufflinks are worn occasionally rather than daily, the care routine is minimal. After wearing, wipe with a soft dry cloth and store in a dry location. The same restrictions apply — avoid salt water and chemical exposure — but the occasional wear schedule means the risk of neglect-related rust is substantially lower than with rings.
+
+Cufflinks should not be stored in a bathroom or in a case that traps humidity. A dry jewelry box or the original packaging is appropriate.
+
+## Matching Cufflinks with a Meteorite Ring
+
+For the groom wearing both: the visual connection between meteorite cufflinks and a meteorite ring requires no additional coordination. The material is the connection — the Widmanstätten pattern is immediately recognizable regardless of the specific pattern section shown in each piece. You do not need the cufflinks to "match" the ring pattern; the material match is sufficient and is, in fact, more interesting than perfect visual repetition.
+
+*Wear the cosmos at your wrists. Let the person across the table notice first.*
+    `,
+  },
+
+  // ─── 29 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-tie-clips-guide',
+    title: 'Meteorite Tie Clips: Ancient Space Material at the Collar',
+    subtitle: 'The most conversation-starting accessory you can clip to a tie',
+    excerpt:
+      'A meteorite tie clip brings authentic Gibeon meteorite into men\'s formal accessory territory — visible, tactile, and with a story that stops conversations. Here is everything to know about this distinctive piece.',
+    date: '2026-04-17',
+    readTime: 4,
+    category: 'Style Guide',
+    tags: ['meteorite tie clip', 'meteorite tie bar', 'mens accessories', 'space tie clip', 'unique tie bar'],
+    metaTitle: 'Meteorite Tie Clips: Space Material Meets Men\'s Style | Meteorite by Johan',
+    metaDescription:
+      'Authentic Gibeon meteorite tie clips and tie bars — what they are, how to style them, and why a meteorite tie clip is the most distinctive men\'s accessory for formal occasions.',
+    body: `
+## What Makes a Meteorite Tie Clip Remarkable
+
+A tie clip sits at eye level. It is visible in conversation, in photographs, in every moment of formal interaction. And yet it is small enough that most people register it as an interesting detail rather than a statement piece — which is exactly the right register for formal menswear accessory.
+
+A meteorite tie clip brings a 4.5-billion-year-old asteroid fragment to that position of subtle visibility. The Widmanstätten pattern etched into the face of the clip — identical in origin and character to the pattern on a meteorite ring — is visible to anyone who looks, immediately unusual, and impossible to identify without explanation.
+
+This is the definition of understated distinction.
+
+## Construction
+
+A Gibeon meteorite tie clip consists of a thin rectangular slice of acid-etched meteorite set into or mounted on a clip mechanism in gold, silver, or titanium. The meteorite face is the visible element; the clip mechanism is functional metalwork behind it.
+
+The meteorite slice in a tie clip is typically cut from the same pre-2004 Gibeon inventory as the ring and pendant material. Each slice shows a unique section of the Widmanstätten pattern — the angular geometric crystal structure that developed over billions of years in space.
+
+## How to Wear It
+
+**Position**: A tie clip should be placed between the third and fourth shirt buttons, roughly at mid-tie. Too high looks constricted; too low looks informal. The clip should hold the tie firmly against the shirt placket without distorting the tie's fall.
+
+**Width**: The clip should be approximately 70-80% of the tie's width — not wider than the tie, not so narrow it looks like it is clinging to the edge. A standard 3-inch tie pairs with a clip in the 2-2.25 inch range.
+
+**Metal matching**: The clip metal (gold, silver, titanium) should harmonize with other metals in the outfit — belt buckle, watch, cufflinks. Matching the tie clip to meteorite cufflinks creates a full meteorite accessory story for the most formal occasions.
+
+## The Wedding Day Combination
+
+For a groom wearing a meteorite ring: adding a meteorite tie clip and/or meteorite cufflinks creates a complete material narrative across the outfit. Three pieces, same asteroid, same Widmanstätten origin — visually cohesive without being repetitive.
+
+At the reception, when someone asks about the ring and then notices the tie clip, the conversation becomes: "The ring, the tie clip — they're all from the same meteorite. Same asteroid." That is a remarkable thing to be able to say about a wedding outfit.
+
+## As a Gift
+
+Meteorite tie clips are one of the most distinctive professional gifts available. For a colleague, a business partner, or a mentor who wears ties regularly — a meteorite tie clip is unusual enough to be genuinely memorable, appropriate for any professional context, and small enough to not feel excessive as a gift.
+
+The story attached to it ("this is authentic meteorite from Namibia — 4.5 billion years old") does the rest.
+
+## Care
+
+Tie clips are worn occasionally and removed carefully. The care requirements are minimal: store in a dry location, wipe after wearing, avoid chemical exposure. The occasional wear schedule means a tie clip maintained even casually will last indefinitely without the rust risk that requires attention in daily-wear rings.
+
+*A piece of the asteroid belt, clipped to Italian silk. This is what wearing the unusual looks like.*
+    `,
+  },
+
+  // ─── 30 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-rings-for-active-men',
+    title: 'Meteorite Rings for Active Men: Outdoor, Athletic & Hands-On Lifestyles',
+    subtitle: 'Can a meteorite ring survive your life? The honest answer for active wearers.',
+    excerpt:
+      'Titanium-carrier meteorite rings are genuinely durable for active lifestyles — but a few specific activities require the ring to come off. Here is the complete guide for active men considering meteorite.',
+    date: '2026-04-19',
+    readTime: 5,
+    category: 'Lifestyle',
+    tags: ['meteorite ring active lifestyle', 'outdoor wedding band', 'ring for active man', 'titanium meteorite ring', 'durable wedding band'],
+    metaTitle: 'Meteorite Rings for Active Men: Outdoor & Athletic Lifestyle Guide | Meteorite by Johan',
+    metaDescription:
+      'Can a meteorite ring handle an active lifestyle? Complete guide for outdoor enthusiasts, athletes, and tradespeople — what a titanium meteorite ring handles and when to remove it.',
+    body: `
+## The Question Active Men Ask
+
+Before committing to a meteorite ring, active men — hikers, rock climbers, CrossFitters, tradespeople, outdoor enthusiasts — want to know: will this ring survive my life? Will I be taking it off constantly? Will it rust after one trail run?
+
+The honest answer: a titanium-carrier meteorite ring is one of the best choices for active men, with a small number of specific exceptions.
+
+## Why Titanium-Carrier Meteorite Works for Active Lifestyles
+
+**The carrier metal is the key.** In a meteorite ring, the structural component — the ring band itself — is typically titanium. Titanium is the material of aerospace and surgical implants. It is extraordinarily strong, essentially immune to corrosion, and about 45% lighter than gold. A titanium ring can take serious impact, endure constant abrasion, and be worn through nearly any activity without damage to the carrier metal.
+
+The meteorite inlay sits in a protected channel in the titanium, flush with the outer surface of the ring. It is not a raised gemstone that catches edges or risks being knocked loose. It is inlaid and protected.
+
+**The ring is light.** One of the most practical advantages of titanium-meteorite for active men is weight. A titanium ring weighs a fraction of a gold ring of comparable size. In activities requiring grip strength — climbing, weightlifting, obstacle courses — ring weight matters. Titanium is barely perceptible.
+
+**Titanium never tarnishes.** Salt, sweat, rain, mud, sunscreen, bug spray — none of these affect titanium. You can hike for a week in the rain and the titanium carrier will look the same on day seven as it did on day one.
+
+## What the Meteorite Inlay Needs
+
+The meteorite inlay is the part that requires attention in active contexts:
+
+**Sweat**: Light to moderate sweating is fine. Heavy, sustained sweating — a long summer trail run in high heat — introduces salt-laden moisture to the meteorite surface. If this happens regularly, just incorporate ring rinsing and drying into your post-workout routine. Thirty seconds under a tap and a dry with a cloth after a sweaty workout is sufficient.
+
+**Freshwater submersion**: River crossings, kayaking in freshwater, rain hiking — the meteorite handles brief to moderate freshwater exposure if you dry it afterward. Do not leave the ring wet for hours.
+
+**Saltwater and chlorine**: Remove before ocean swimming, surfing, or pool swimming. These are the two consistent exceptions for any meteorite ring wearer. The salt and chlorine are aggressive toward iron regardless of how well the ring is sealed.
+
+## Specific Activity Scenarios
+
+**Trail running and hiking**: Wear it. Sweat is the only consideration — rinse and dry afterward for sustained sweat-heavy activity.
+
+**Rock climbing**: Wear it if you prefer, but many climbers remove rings for grip safety regardless of material. Titanium-meteorite is not fragile, but wedging situations can put stress on any ring.
+
+**CrossFit and gym training**: Barbell work specifically risks ring-to-bar impact that can damage any inlay material. Many active people remove their ring for barbell training and replace it immediately after. For bodyweight and machine work, the ring is fine.
+
+**Camping and backpacking**: Wear it. Brief rain exposure, stream crossings (rinse and dry), camp cooking, general outdoor use — all fine.
+
+**Swimming in a lake**: Freshwater is not aggressive toward meteorite. Wear it if you want, rinse and dry afterward.
+
+**Construction and trade work**: Remove for the workday. Chemical exposure, impact risk, and concrete or solvent contact make any fine jewelry inappropriate during trade work. Wear it before and after.
+
+**Cycling**: Wear it — road and trail cycling pose no particular risk to a titanium-meteorite ring.
+
+**Surfing**: Remove it. Salt water, constant immersion, and the impact of wipeouts make surfing an exception for meteorite rings.
+
+## The Remove-and-Replace Habit
+
+The most practical approach for highly active men: establish a daily habit of removing the ring for specific activities (ocean swimming, heavy barbell work, trade work) and replacing it immediately after. A ring worn 20 out of 24 hours daily is still a daily-wear ring by any reasonable definition — and that 4-hour removal prevents the handful of scenarios that stress the meteorite surface.
+
+A small silicone ring worn during activities that require ring removal is a popular approach for those who want something on their finger throughout the day. The silicone ring handles the active portion; the meteorite ring handles everything else.
+
+## The Monthly Maintenance Minute
+
+The entire active-lifestyle maintenance routine comes down to this: after any significant moisture or sweat exposure, rinse and dry the ring. Once a month, apply a small amount of Renaissance Wax or mineral oil. That is the complete maintenance commitment.
+
+*Tough carrier. Cosmic inlay. Designed to go where you go.*
+    `,
+  },
+
+  // ─── 31 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'types-of-meteorite-jewelry',
+    title: 'Types of Meteorite Used in Jewelry: Gibeon, Muonionalusta & More',
+    subtitle: 'Not all meteorite is created equal — here is what separates the best from the rest',
+    excerpt:
+      'Gibeon is the most prized meteorite for jewelry, but it is not the only type used. Here is a guide to the major meteorite types you will encounter in the market — and what makes each one different.',
+    date: '2026-04-21',
+    readTime: 7,
+    category: 'Meteorite Science',
+    tags: ['types of meteorite', 'muonionalusta meteorite', 'campo del cielo', 'gibeon vs muonionalusta', 'iron meteorite types'],
+    metaTitle: 'Types of Meteorite in Jewelry: Gibeon vs Muonionalusta & More | Meteorite by Johan',
+    metaDescription:
+      'Guide to the major meteorite types used in jewelry — Gibeon, Muonionalusta, Campo del Cielo, and others. What makes each one different and why Gibeon is the preferred choice for fine jewelry.',
+    body: `
+## Why Meteorite Type Matters
+
+Not all iron meteorites are identical. They vary significantly in chemical composition, crystal structure quality, visual pattern characteristics, stability, and machinability. These differences determine which meteorites are suitable for everyday-wear jewelry and which are better suited for display specimens or occasional pieces.
+
+Understanding the major types helps you evaluate what you are buying — and explains why Gibeon meteorite commands the premium it does.
+
+## Gibeon Meteorite (Namibia)
+
+**Classification**: Fine Octahedrite, Group IVA
+**Nickel content**: ~7.7%
+**Widmanstätten band width**: 0.2–0.5mm (fine, dense, intricate)
+**Origin**: Fell ~30,000 years ago near Gibeon, Namibia; strewn field covers ~27,500 km²
+
+Gibeon is the benchmark against which all other jewelry-grade meteorites are measured. Its combination of fine Widmanstätten pattern, high nickel content (for relative stability), excellent machinability, and historically large supply made it the dominant jewelry meteorite. The 2004 Namibian protection order capped the available supply permanently.
+
+**For jewelry**: Excellent. The pattern is detailed and dramatic. Stability under normal wear is the best among common iron meteorites. Cuts and shapes predictably to tight tolerances.
+
+**At Jewelry by Johan**: All authentic meteorite products use documented pre-2004 Gibeon meteorite.
+
+---
+
+## Muonionalusta Meteorite (Sweden)
+
+**Classification**: Fine Octahedrite, Group IVA
+**Nickel content**: ~8.4%
+**Widmanstätten band width**: ~0.4mm
+**Origin**: Fell approximately 1 million years ago in northern Sweden; oldest known meteorite fall in Scandinavia
+
+Muonionalusta is the other highly prized iron meteorite for jewelry. Its slightly higher nickel content than Gibeon provides excellent corrosion resistance, and its Widmanstätten pattern is similar in fineness. There is one distinguishing feature: Muonionalusta sometimes shows **Neumann lines** — fine structural lines within the kamacite bands that create an additional layer of internal geometric detail not typically seen in Gibeon.
+
+Aesthetically, Muonionalusta produces a slightly different pattern character than Gibeon — often described as slightly coarser, with the Neumann lines adding a distinctive cross-hatching effect in some specimens.
+
+**For jewelry**: Excellent. Very similar to Gibeon in most practical respects. Slightly rarer in the market due to smaller overall supply; this tends to make Muonionalusta pieces marginally more expensive.
+
+**Comparison to Gibeon**: Both are fine choices. Gibeon has longer market history and broader supply. Muonionalusta is comparable in quality with a distinctive pattern character.
+
+---
+
+## Campo del Cielo (Argentina)
+
+**Classification**: Coarse Octahedrite, Group IAB
+**Nickel content**: ~6.7%
+**Widmanstätten band width**: 2–3mm (coarse, bold, widely-spaced)
+**Origin**: Fell approximately 4,000–5,000 years ago in the Gran Chaco region of Argentina; one of the largest known meteorite strewn fields
+
+Campo del Cielo is one of the most abundant iron meteorites in the world. Its wide availability has made it a common material in lower-cost meteorite jewelry. The coarser Widmanstätten pattern — significantly wider bands than Gibeon or Muonionalusta — creates a bolder, less intricate visual effect.
+
+**For jewelry**: Functional but with limitations. The lower nickel content makes it more prone to corrosion than Gibeon. The coarser pattern is less detailed and less visually complex. Wide availability means the supply is not as constrained, which affects perceived value and rarity.
+
+**Comparison to Gibeon**: Campo del Cielo is visually less refined and materially less stable than Gibeon. It is appropriate for entry-level meteorite jewelry or pieces where cost is a primary constraint. For fine daily-wear jewelry, Gibeon or Muonionalusta are preferable.
+
+---
+
+## Seymchan Meteorite (Russia)
+
+**Classification**: Pallasite (olivine-iron mixture)
+**Nickel content**: Varies by phase
+**Origin**: Found in 1967 near Seymchan, Russia
+
+Seymchan is a pallasite — a rare meteorite type consisting of iron-nickel metal interspersed with olivine crystals. Some sections of Seymchan show a metallic matrix with embedded olivine crystals that appear gem-like when cut and polished; other sections show the Widmanstätten pattern in the iron-nickel areas.
+
+Seymchan with olivine crystals is visually spectacular — the yellow-green olivine crystals distributed through the iron matrix create a stained-glass effect. However, olivine crystals are relatively soft and fragile for daily-wear applications.
+
+**For jewelry**: Limited suitability for daily-wear rings; better for display pieces or occasional-wear jewelry. The olivine crystals can crack or chip under the stress of daily wear.
+
+---
+
+## Moldavite (Czech Republic)
+
+**Note**: Moldavite is not a meteorite — it is a tektite, a natural glass formed from terrestrial rock melted by a meteorite impact approximately 15 million years ago. It is often marketed alongside meteorite jewelry but is a fundamentally different material: a surface glass, not a fragment of the impacting object.
+
+Moldavite is a legitimate natural material with its own appeal — the distinctive green color and surface texture are beautiful in jewelry — but it should not be presented as meteorite. If you are buying what you believe is meteorite and the material is green and glassy, you are looking at moldavite or glass.
+
+---
+
+## The Summary
+
+For fine, daily-wear jewelry with authentic meteorite that will last decades: **Gibeon or Muonionalusta** are the clear choices. Both offer fine Widmanstätten patterns, appropriate stability, and documented provenance.
+
+For lower-cost pieces: **Campo del Cielo** is functional but requires more maintenance consideration due to lower nickel content.
+
+For display or occasional-wear pieces only: Seymchan pallasites offer extraordinary visual interest not possible with iron-only meteorites.
+
+*The material tells the story. Know which material you are telling.*
+    `,
+  },
+
+  // ─── 32 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-ring-symbolism',
+    title: 'What Does a Meteorite Ring Symbolize? Meaning Beyond the Material',
+    subtitle: 'The deeper significance of choosing the cosmos as your wedding symbol',
+    excerpt:
+      'Every wedding ring carries meaning — but a meteorite ring carries a specific kind of meaning that manufactured materials cannot replicate. Here is what it actually symbolizes, and why the symbolism resonates so deeply.',
+    date: '2026-04-23',
+    readTime: 6,
+    category: 'Wedding Guide',
+    tags: ['meteorite ring meaning', 'meteorite ring symbolism', 'what does meteorite ring mean', 'cosmic ring symbolism', 'unique wedding ring meaning'],
+    metaTitle: 'What Does a Meteorite Ring Symbolize? Meaning & Significance | Meteorite by Johan',
+    metaDescription:
+      'The deeper symbolism of meteorite wedding rings — what they represent beyond their material value, why the cosmic provenance resonates, and the meaning couples find in wearing ancient space material.',
+    body: `
+## The Question Worth Asking
+
+When you choose a wedding ring, you are choosing a symbol. The question of what that symbol means — not to a marketing copywriter, but to you, in your life, in your marriage — is worth thinking about seriously.
+
+A meteorite ring carries specific, inherent symbolic content that is worth examining honestly. Some of it you may find profound. Some of it may not resonate with you at all. Both responses are valid.
+
+## What a Meteorite Ring Objectively Is
+
+Before the symbolism: the material facts.
+
+Gibeon meteorite formed approximately 4.5 billion years ago — before the Earth existed. It crystallized in space at a rate of 1 degree Celsius per million years. It fell to Earth 30,000 years ago. It lay in the Namibian desert for three hundred centuries. Its supply is now legally protected and finite. The specific pattern on your ring has never appeared on any other object and never will.
+
+These are not metaphors or marketing claims. They are verified scientific facts about the material on your finger.
+
+## The Symbolisms That Emerge
+
+**Permanence beyond circumstance**: Human lives are brief. Meteorite is not. Wearing a piece of material that predates Earth by a billion years is a daily reminder that the universe operates on timescales beyond human concern — and that what matters most endures through those timescales.
+
+**The rarity of the extraordinary**: The Widmanstätten pattern formed because the cooling rate was correct, the chemical composition was correct, and the time available was unimaginably vast. Extraordinary things emerge from particular conditions that will not repeat. Many couples find this resonates with how they understand their relationship — not an inevitable outcome, but a rare convergence of particular circumstances at a particular moment.
+
+**Uniqueness as identity**: No two pieces of meteorite have the same pattern. Your ring is unlike any other in the world. For couples who believe their relationship is genuinely singular — not just "unique" in the clichéd sense, but specifically, irreducibly theirs — this material uniqueness is not a trivial aesthetic feature. It is the ring made physical.
+
+**The cosmos as witness**: A meteorite ring was part of the universe before any human lived. It will be part of the universe long after any human who wears it is gone. Some couples find significance in the idea that their marriage is witnessed by something ancient enough to transcend the human timescale — not a supernatural witness, but a material one.
+
+**What survives impact**: Gibeon meteorite survived atmospheric entry at tens of thousands of miles per hour. The material that now rests on your finger has already endured conditions that destroyed most of what came before it. The fragment you wear is what made it. This is not an obscure metaphor for marriage — it is a direct one.
+
+## What a Meteorite Ring Does Not Symbolize
+
+It is worth being specific about what this material does not carry:
+
+It does not imply cosmic destiny or fate. The meteorite did not "choose" to arrive on Earth; physics and chance determined its path.
+
+It does not promise immortality to a marriage. No ring does. The durability of the material says nothing about the durability of the relationship — only the people in it can determine that.
+
+It does not replace the intention behind the ring. A meteorite ring worn with indifference carries no more meaning than a plain gold band worn with love. The material provides the possibility of meaning; the wearer provides the meaning itself.
+
+## The Meaning Couples Actually Report
+
+In practice, meteorite ring owners most often describe the symbolism in these terms:
+
+"We wanted something that wasn't like everyone else's, because we're not like everyone else."
+
+"It felt right to have something that old mark something that important."
+
+"Every time I notice the pattern, I remember what it is. And then I remember what the ring means. It keeps reminding me."
+
+"We're science people. We wanted a ring that was honest — made of real stuff with a real story, not a commodity dressed up in sentiment."
+
+These are not grand poetic claims. They are practical people describing a real response to a real object. That practical authenticity is part of what makes the symbolism work.
+
+*An asteroid needed 4.5 billion years to become your ring. You have a lifetime to make it mean something.*
+    `,
+  },
+
+  // ─── 33 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'meteorite-ring-with-diamond',
+    title: 'Meteorite Ring with Diamond: The Complete Pairing Guide',
+    subtitle: 'Ancient iron meets compressed carbon — the cosmic and the brilliant',
+    excerpt:
+      'Combining Gibeon meteorite with diamonds creates one of the most visually compelling ring designs available. Here is how the materials interact, what design options work best, and how to choose the right diamond for a meteorite setting.',
+    date: '2026-04-25',
+    readTime: 6,
+    category: 'Style Guide',
+    tags: ['meteorite diamond ring', 'meteorite and diamond wedding band', 'diamond meteorite ring', 'meteorite with gemstone', 'luxury meteorite ring'],
+    metaTitle: 'Meteorite Ring with Diamond: Complete Design Guide | Meteorite by Johan',
+    metaDescription:
+      'How to combine Gibeon meteorite and diamonds in a wedding band or engagement ring — design options, diamond setting styles, metal pairings, and why this combination works so well.',
+    body: `
+## Two Extraordinary Materials
+
+Gibeon meteorite and diamonds share one characteristic: both are formed through processes that operate on geological timescales and cannot be replicated by human manufacturing. Meteorite crystallizes over billions of years in space. Diamonds form over billions of years under extreme pressure and heat deep within the Earth's mantle.
+
+When these two materials appear in a single ring, the visual result is immediate: the organic, crystalline gray texture of the meteorite contrasted with the bright, sharp fire of the diamond creates a pairing that reads simultaneously as ancient and precise, cosmic and brilliant.
+
+## Why the Pairing Works Visually
+
+The contrast principle is central. Meteorite is matte, textured, irregular, warm-gray. Diamonds are transparent, faceted, regular, and maximally reflective. These properties contrast along every dimension — surface texture, light behavior, color, geometric character.
+
+In jewelry design, strong contrast between materials creates visual interest that neither material produces alone. The meteorite makes the diamond sparkle more dramatically against its dark, crystalline background. The diamonds make the meteorite's texture read as richer and more complex against their precise clarity.
+
+## Design Options
+
+**Flush diamond accents on a meteorite band**: The most popular combination. Small round diamonds are flush-set into the carrier metal of a meteorite ring — bezel-set or channel-set for maximum security in a daily-wear band. The diamonds appear as bright points within the ring design without raising above the surface, protecting them from impact damage.
+
+**Diamond accent alongside meteorite inlay**: The carrier metal features a meteorite inlay across most of the band width, with a row or cluster of diamonds set in a discrete section of the carrier metal. This creates a clear hierarchy: meteorite is the primary visual element, diamonds are the accent.
+
+**Meteorite engagement ring with diamond center stone**: A large center diamond (brilliant cut, cushion, oval, or pear) set in the carrier metal with meteorite inlay on either side. The diamond provides the engagement ring focal point; the meteorite provides the material distinction that sets it apart from conventional diamond solitaires.
+
+**Diamond meteorite engagement set**: An engagement ring featuring a center diamond with meteorite accents, matched with a meteorite wedding band set with complementary diamond accents. The complete set reads as a unified design across both rings.
+
+## Diamond Types That Work Best with Meteorite
+
+**White diamonds**: The classic choice. The colorless sparkle of a white diamond against the warm gray of meteorite is immediate and effective. Brilliant cuts (round, cushion, oval) maximize fire and contrast with the meteorite's matte texture.
+
+**Black diamonds**: Unexpected and sophisticated. A black diamond against meteorite creates a monochromatic pairing — the deep, opaque black of the diamond against the patterned gray of the meteorite. Less about contrast in lightness, more about contrast in texture: the faceted black diamond face against the organic crystalline meteorite surface.
+
+**Salt and pepper diamonds**: Diamonds with significant visible inclusions — gray, black, or multicolored flecks within the stone — pair uniquely well with meteorite because the inclusions echo the visual complexity of the Widmanstätten pattern. The pairing reads as intentional and cohesive rather than precious-stone-versus-rough-material.
+
+**Sapphires and moissanite**: While not diamonds, these work on the same pairing principle. Blue sapphires against meteorite create a cooler, more restrained elegance. Moissanite provides diamond-like fire at a lower cost and is an increasingly common choice in meteorite rings.
+
+## Setting Considerations for Durability
+
+Diamonds in a daily-wear ring require secure settings. For meteorite rings specifically:
+
+**Bezel settings** are the most protective — the diamond is surrounded by a rim of metal that prevents it from being knocked loose by impact. Best for active wearers.
+
+**Channel settings** protect diamonds within a metal channel, also very secure for daily wear.
+
+**Prong settings** are traditional for diamond jewelry but less ideal in daily-wear rings because prongs can catch on surfaces and bend over time. If you choose prong settings for a daily-wear meteorite ring, have the prongs checked annually.
+
+## Metal Carrier Considerations
+
+The metal carrier affects how the diamond-meteorite combination reads overall:
+
+**Yellow gold carrier**: Warm, traditional, creates a rich jewel-tone palette — gold, gray meteorite, bright white diamond. Formal and luxurious.
+
+**White gold or platinum carrier**: The silver-gray carrier creates a cohesive cool palette with the meteorite. The diamonds sparkle against a unified tonal background.
+
+**Rose gold carrier**: The most distinctive combination — the warm copper-pink of rose gold, the cool gray of meteorite, and the brilliant white of diamond. Three tones, all in contrast. Particularly popular for women's meteorite engagement rings.
+
+## The Question of Balance
+
+The design challenge in a meteorite-diamond ring is balance: how much of each material, and which one leads? There is no single right answer, but two useful frames:
+
+**If the meteorite story is primary**: Diamonds are accent and sparkle. The meteorite occupies most of the visible face; diamonds are set discretely in the carrier metal. This approach honors the provenance narrative while adding traditional bridal sparkle.
+
+**If the diamond is primary**: A center diamond engagement ring with meteorite as the distinctive carrier-material choice. This approach works well for partners who want a conventional diamond focal point but want the ring as a whole to be unusual and personal.
+
+*When cosmic iron meets compressed Earth carbon, the result is more than either alone.*
+    `,
+  },
+
+  // ─── 34 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'where-to-buy-meteorite-rings',
+    title: 'Where to Buy Authentic Meteorite Rings: What to Look For',
+    subtitle: 'Not all sources are equal — here is how to find the right jeweler',
+    excerpt:
+      'The meteorite jewelry market includes exceptional jewelers and questionable ones. Here is exactly what separates trustworthy sources of authentic Gibeon meteorite rings from the rest — and what to verify before you order.',
+    date: '2026-04-27',
+    readTime: 6,
+    category: 'Buying Guide',
+    tags: ['where to buy meteorite ring', 'authentic meteorite jewelry', 'best meteorite ring jeweler', 'buying meteorite ring online', 'meteorite jewelry brands'],
+    metaTitle: 'Where to Buy Authentic Meteorite Rings: Complete Guide | Meteorite by Johan',
+    metaDescription:
+      'How to find a trustworthy source for authentic Gibeon meteorite rings — what documentation to require, what red flags to avoid, and what distinguishes exceptional meteorite jewelers.',
+    body: `
+## Why Source Matters More Than Usual
+
+Buying a meteorite ring is not like buying a gold ring. A gold ring can be inspected, hallmarked, verified, and repaired by any jeweler anywhere in the world. Meteorite jewelry is a specialty material requiring specific expertise in sourcing, authentication, etching, sealing, and ongoing support.
+
+The difference between a well-made ring from a knowledgeable jeweler and a poorly-made ring from a mass-production operation is not always visible in photographs — it shows up in how the ring wears over months and years. Investing in the right source upfront is how you get a ring you are still proud of in a decade.
+
+## What Distinguishes a Trustworthy Meteorite Jeweler
+
+### 1. Documented Material Provenance
+
+Authentic Gibeon meteorite comes entirely from pre-2004 inventory — material collected before Namibia's national monument designation. A reputable jeweler can tell you clearly where their Gibeon meteorite was sourced, through which dealer, and can provide documentation confirming it was legally acquired.
+
+If a jeweler cannot answer questions about where their Gibeon meteorite came from, or responds vaguely to documentation requests, this is a significant concern. Authentic material has a verifiable chain of custody. The absence of that documentation should prompt serious questions.
+
+### 2. In-House Etching and Finishing
+
+The acid etch process that reveals the Widmanstätten pattern is a skilled, time-sensitive operation that determines the visual quality and durability of the finished piece. Jewelers who perform this process in-house — by trained craftsmen who monitor the etch depth and perform quality checks at each stage — produce consistently better results than operations that outsource finishing.
+
+Ask directly: do you etch the meteorite in-house? Who performs the etch, and what does the quality control process look like? A knowledgeable jeweler will answer this with specifics.
+
+### 3. Post-Etch Sealing
+
+Every authentic meteorite ring should be sealed after etching. The sealant fills the micro-texture of the etched surface, providing a meaningful barrier against oxidation and extending the time between maintenance treatments. An unsealed meteorite ring is significantly more prone to rust development.
+
+Ask: what sealing treatment do you apply after etching? A reputable jeweler will have a specific answer.
+
+### 4. Lifetime Structural Support
+
+Ring construction involving inlaid materials — meteorite, wood, gemstones — can develop issues over years of wear. The inlay can begin to lift or loosen; the channel can develop wear; the bond between inlay and carrier metal can weaken over time. A reputable jeweler stands behind their work and will address structural issues.
+
+At Jewelry by Johan, every piece carries lifetime support for structural issues. This commitment is part of what makes a ring from a reputable jeweler a genuinely long-term investment.
+
+### 5. Transparent Re-Etching Services
+
+The Widmanstätten pattern in a well-maintained ring remains attractive for years, but it does gradually soften over time as the high points of the crystal structure smooth with wear. Re-etching — a professional refreshing of the acid etch to restore pattern definition — is a normal and expected service for meteorite rings after years of wear.
+
+A reputable jeweler offers this service, prices it honestly, and discusses it openly before sale. It is not a failure of the ring; it is part of the ownership experience.
+
+## Red Flags to Avoid
+
+**No documentation of meteorite provenance**: Authentic Gibeon has a documented chain of custody. Reluctance to provide this information is a warning sign.
+
+**Extraordinarily low prices**: Authentic Gibeon meteorite with proper etching, sealing, and craftsmanship has a real cost floor. Rings claiming to contain authentic Gibeon at prices far below that floor should be examined closely.
+
+**Mass-production aesthetics with no craftsman information**: Meteorite rings from anonymous mass-production suppliers often have the appearance of authentic rings in photographs but lack the controlled etching and sealing that determines long-term performance.
+
+**No re-etching or repair services**: If a seller has no service infrastructure for the rings they sell, you have no recourse when the ring needs attention years from now.
+
+**"Meteorite-inspired" or "meteorite-look" language**: These phrases are signals of mimetic materials, not authentic meteorite. Read product descriptions carefully.
+
+## Why Jewelry by Johan
+
+Jewelry by Johan is a workshop-based jeweler operating in Minneapolis, Minnesota, with a full staff of skilled bench jewelers. Every meteorite ring is made from documented, authenticated Gibeon meteorite sourced from pre-2004 inventory. The etch and seal processes are performed in-house. Free laser engraving is standard on every ring. The workshop provides lifetime support for structural issues and offers re-etching services. Every piece can be explored at Jewelry by Johan.
+
+This is not a drop-shipper or a marketplace reseller. It is a jewelry workshop where the people making your ring understand exactly what the material is and exactly what it requires.
+
+*Your ring will be on your finger every day for the rest of your life. Source it accordingly.*
+    `,
+  },
+
+  // ─── 35 ──────────────────────────────────────────────────────────────────
+  {
+    slug: 'how-long-does-meteorite-ring-last',
+    title: 'How Long Does a Meteorite Ring Last? Durability Over Decades',
+    subtitle: 'Designed for a lifetime — if you understand what it needs',
+    excerpt:
+      'A well-made and properly maintained meteorite ring can last a lifetime and beyond. Here is exactly what determines longevity, what to expect at each stage of a ring\'s life, and how to ensure yours goes the distance.',
+    date: '2026-04-29',
+    readTime: 6,
+    category: 'Care Guide',
+    tags: ['meteorite ring durability', 'how long meteorite ring lasts', 'meteorite ring longevity', 'lifetime ring durability', 'meteorite ring heirloom'],
+    metaTitle: 'How Long Does a Meteorite Ring Last? Durability Guide | Meteorite by Johan',
+    metaDescription:
+      'How long does a well-made meteorite ring last? A complete durability guide — what affects longevity, what to expect over decades of wear, and how to ensure your ring becomes an heirloom.',
+    body: `
+## The Simple Answer
+
+A properly made, properly maintained Gibeon meteorite ring will last indefinitely. The meteorite itself is 4.5 billion years old; what you are actually asking is whether the human craftsmanship — the carrier ring, the inlay bonding, the etch, the seal — holds up to decades of daily wear.
+
+The answer: with appropriate care and occasional professional service, yes. Many meteorite rings from earlier generations of the modern meteorite jewelry movement (1990s and early 2000s) are still being worn today, decades later, by their original owners. The material, when properly handled, is genuinely durable.
+
+## The Three Things That Determine Longevity
+
+### 1. Initial Craftsmanship Quality
+
+This is the single most important factor — and it is determined before the ring is ever on your finger.
+
+The quality of the inlay bonding determines whether the meteorite begins to lift after years of wear. The quality of the acid etch determines whether the surface is properly developed or over-etched and fragile. The quality of the sealing determines whether rust is held at bay with normal care or begins within months.
+
+None of these are visible in photographs or upon first inspection. They are revealed over years of wear. This is why sourcing from a reputable jeweler — one who performs these steps in-house with trained craftspeople — is the most important decision in the longevity equation.
+
+### 2. Maintenance Consistency
+
+Properly maintained meteorite rings last indefinitely. Neglected ones develop problems that can compromise the piece. The maintenance is minimal, but it must be consistent:
+
+- Remove before salt water and pool swimming (every time)
+- Dry after water exposure (habit, not effort)
+- Apply protective wax monthly (5 minutes, once a month)
+
+Consistent adherence to these three practices is what separates a ring that looks extraordinary at 20 years of wear from one that has developed rust issues within five.
+
+### 3. Periodic Professional Service
+
+A meteorite ring is not a set-and-forget piece. Like a fine watch, a leather jacket, or a quality knife, it rewards periodic professional attention:
+
+**The re-etch**: After 5-10 years of daily wear, the Widmanstätten pattern will soften somewhat as the highest points of the crystal structure polish smooth. This is not failure — it is natural wear. A professional re-etch restores the pattern to full definition. Many owners schedule this as part of a meaningful anniversary — the 5-year, 10-year, or 25-year mark.
+
+**Structural check**: Every 5-10 years, have the inlay checked for proper bonding. Any loosening of the meteorite inlay should be addressed before it becomes separation.
+
+**Carrier metal attention**: If the carrier is gold, it may benefit from professional polishing after years of wear. If titanium, no attention needed — titanium is essentially impervious to surface wear at the ring level.
+
+## What a Meteorite Ring Looks Like Over Time
+
+**Year 1**: The pattern is crisp, the etch is at full definition, the surface has maximum visual contrast. The ring looks exactly as it did when new.
+
+**Years 2-5**: Normal daily wear introduces very slight smoothing on the highest crystal peaks. The pattern remains clearly visible and dramatic; the smoothed areas develop a slightly more polished character that many wearers find attractive — the ring begins to look worn-in rather than new.
+
+**Years 5-10**: The patina of daily wear is fully established. The pattern is somewhat softer than it was at year one, but still clearly legible and distinctive. Many people find the ring at this stage to be more personal and meaningful than it was when new — it carries the marks of years of daily life.
+
+**Years 10+**: At this point, most owners either embrace the aged character of the ring (a gentle but present patina, the record of years of wear) or choose to re-etch, which restores the pattern to near-new definition. Both are valid choices. The ring is not damaged; it has simply aged with you.
+
+## The Heirloom Potential
+
+A meteorite ring that is maintained and serviced over decades can genuinely become an heirloom — not in the theoretical sense that any durable object can be passed down, but in the practical sense of a piece that remains remarkable enough to be worth passing down.
+
+The meteorite itself does not age. It is 4.5 billion years old at the time of purchase; another 50 or 60 years of human wear is a rounding error in its history. The carrier metal (titanium) does not corrode. What age adds is the patina of wear — the record of a specific life, lived with this specific ring on.
+
+That is not diminishment. That is meaning accumulating.
+
+## The Professional Service Plan
+
+For maximum longevity, the following schedule is recommended:
+
+**Annually**: Personal inspection for any early rust spots, inlay loosening, or unusual wear. Address any issues immediately rather than allowing them to develop.
+
+**Every 5 years**: Professional inspection at Jewelry by Johan. Check inlay bonding. Assess whether re-etching would benefit the piece.
+
+**Every 10 years**: Consider a professional re-etch. Evaluate carrier metal condition.
+
+This is not a burdensome schedule — it is a minimal investment in a piece you wear every day. The same logic that drives watch service and leather conditioning drives meteorite ring care.
+
+*The meteorite on your finger has already lasted 4.5 billion years. With minimal care, it will last the rest of your life — and remain worth passing on.*
     `,
   },
 ];
