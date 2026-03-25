@@ -64,7 +64,7 @@ export function getPrimaryImage(product: Product): string {
 
 export function getProductAlt(product: Product): string {
   const img = product.images.find((i) => i.position === 1) || product.images[0];
-  return img ? img.alt : product.title;
+  return (img?.alt?.trim()) || product.title;
 }
 
 export function getCategoryProducts(products: Product[], category: ProductCategory): Product[] {

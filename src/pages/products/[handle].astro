@@ -129,7 +129,7 @@ const breadcrumbSchema = {
         <div class="gallery-main shimmer-overlay" id="gallery-main">
           <img
             src={product.images[0]?.src}
-            alt={product.images[0]?.alt || product.title}
+            alt={(product.images[0]?.alt?.trim()) || product.title}
             loading="eager"
             decoding="async"
             class="gallery-main-img"
@@ -172,7 +172,7 @@ const breadcrumbSchema = {
               >
                 <img
                   src={img.src}
-                  alt={img.alt || product.title}
+                  alt={(img.alt?.trim()) || product.title}
                   loading="lazy"
                   decoding="async"
                   width="120"
