@@ -41,9 +41,9 @@ When you wear a Gibeon meteorite ring, you carry one of the rarest materials in 
 
 ## The Widmanstätten Effect in Jewelry
 
-At Jewelry by Johan, every Gibeon meteorite inlay is hand-cut, etched, and set with obsessive precision. The acid etch process is performed in-house, allowing the artisan to control exactly how deep the crystalline figures emerge. Too shallow, and the pattern is faint. Too deep, and the iron becomes fragile. The sweet spot — where cosmic geometry meets human craftsmanship — is what you see in every Johan piece.
+At Jewelry by Johan, every Gibeon meteorite inlay is hand-cut, etched, and set with exacting precision by skilled bench jewelers. The acid etch process is performed in-house, with the craftsman controlling exactly how deep the crystalline figures emerge. Too shallow, and the pattern is faint. Too deep, and the iron becomes fragile. The sweet spot — where cosmic geometry meets human craftsmanship — is what you see in every Johan piece.
 
-The meteorite is then sealed with a protective treatment to guard against corrosion. This is critical: iron meteorite, while durable, will oxidize if not properly treated. Johan's meteorite care process ensures your piece remains as crisp and dramatic as the day it left the workshop.
+The meteorite is then sealed with a protective treatment to guard against corrosion. This is critical: iron meteorite, while durable, will oxidize if not properly treated. The workshop's care process ensures your piece remains as crisp and dramatic as the day it left the bench.
 
 *Your ring carries a piece of cosmic time. Treat it accordingly.*
     `,
@@ -298,7 +298,7 @@ That's a symbol worth wearing.
 
 The meteorite itself is ancient and wild. The craft that contains it and places it on your finger is precisely human. This is what makes a well-made meteorite ring such a powerful object: it unites the cosmic with the intimate, the geological with the personal.
 
-At Jewelry by Johan, the meteorite inlay process involves cutting the fragment to specific tolerances (sometimes fractions of a millimeter), hand-fitting it to the ring channel, bonding it with jeweler's precision, etching to reveal the pattern, sealing against corrosion, and then checking the piece against the maker's exacting standards. This is hours of skilled work on material that cannot be replaced if an error is made.
+At Jewelry by Johan, the meteorite inlay process involves cutting the fragment to specific tolerances (sometimes fractions of a millimeter), hand-fitting it to the ring channel, bonding it with jeweler's precision, etching to reveal the pattern, sealing against corrosion, and then checking the piece against the workshop's exacting standards. This is hours of skilled work on material that cannot be replaced if an error is made.
 
 The result carries the tension of that craft: something ancient enough to be humbling, finished with enough precision to be wearable art.
 
@@ -1266,7 +1266,7 @@ A final comprehensive inspection confirms the ring meets every specification: wi
 
 Every step described above involves judgment calls that separate excellent meteorite ring makers from mediocre ones. The depth of the etch. The quality of the fit. The completeness of the seal. The precision of the inlay bonding. None of these are binary — they exist on a spectrum of quality, and the choices made at each stage determine how the ring wears over years and decades.
 
-At Jewelry by Johan, every piece passes through these steps in-house, with the same hands responsible for the outcome at each stage. This accountability in the craft is what produces pieces that age well and reward long-term ownership.
+At Jewelry by Johan, every piece passes through these steps in-house, with skilled craftsmen accountable at each stage. This consistency in the craft is what produces pieces that age well and reward long-term ownership.
 
 *A ring that took billions of years to become a meteorite deserves the precision it takes to become your ring.*
     `,
@@ -1395,7 +1395,7 @@ A few reference points:
 
 ## Font Options
 
-Multiple font styles are available for laser engraving. Classic serif fonts read as traditional and timeless. Modern sans-serif fonts read as clean and contemporary. Script fonts add elegance. Johan's workshop will show you options at time of ordering — choose the font that matches the character of the ring and the inscription.
+Multiple font styles are available for laser engraving. Classic serif fonts read as traditional and timeless. Modern sans-serif fonts read as clean and contemporary. Script fonts add elegance. The team will show you options at time of ordering — choose the font that matches the character of the ring and the inscription.
 
 ## What the Engraving Looks Like
 
